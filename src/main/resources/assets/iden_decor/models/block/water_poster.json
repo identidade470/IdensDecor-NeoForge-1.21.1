@@ -1,0 +1,26 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "iden_decor:block/base/poster",
+	"texture_size": [32, 32],
+	"textures": {
+		"particle": "iden_decor:block/water_poster",
+		"front": "iden_decor:block/water_poster",
+		"side": "iden_decor:block/poster_side_black"
+	},
+	"elements": [
+		{
+			"from": [2, 0, 15],
+			"to": [14, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, -1, 16]},
+			"faces": {
+				"north": {"uv": [2, 0, 14, 16], "texture": "#front"},
+				"east": {"uv": [0, 0, 1, 16], "texture": "#side"},
+				"south": {"uv": [2, 0, 14, 16], "texture": "#front"},
+				"west": {"uv": [0, 0, 1, 16], "texture": "#side"},
+				"up": {"uv": [0, 16, 1, 0], "rotation": 90, "texture": "#side"},
+				"down": {"uv": [1, 0, 0, 16], "rotation": 270, "texture": "#side"}
+			}
+		}
+	]
+}

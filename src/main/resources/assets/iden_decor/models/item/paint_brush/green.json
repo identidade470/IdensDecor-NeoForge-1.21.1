@@ -1,0 +1,7 @@
+
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "iden_decor:item/paint_brush/green"
+  }
+}

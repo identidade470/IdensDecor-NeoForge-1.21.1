@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "iden_decor:block/ccs_poster" },
+    "facing=south": { "model": "iden_decor:block/ccs_poster", "y": 180 },
+    "facing=west":  { "model": "iden_decor:block/ccs_poster", "y": 270 },
+    "facing=east":  { "model": "iden_decor:block/ccs_poster", "y": 90 }
+  }
+}

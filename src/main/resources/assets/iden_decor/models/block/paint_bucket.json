@@ -1,0 +1,37 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "iden_decor:block/paint_bucket/base",
+		"particle": "iden_decor:block/paint_bucket/base"
+	},
+	"elements": [
+		{
+			"from": [4, 0, 4],
+			"to": [12, 11, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 7]},
+			"faces": {
+				"north": {"uv": [4, 0, 8, 5.5], "texture": "#0"},
+				"east": {"uv": [8, 0, 4, 5.5], "texture": "#0"},
+				"south": {"uv": [4, 0, 8, 5.5], "texture": "#0"},
+				"west": {"uv": [8, 0, 4, 5.5], "texture": "#0"},
+				"up": {"uv": [4, 4, 0, 0], "texture": "#0"},
+				"down": {"uv": [4, 4, 0, 8], "texture": "#0"}
+			}
+		},
+		{
+			"from": [3, 8, 8],
+			"to": [13, 17, 8],
+			"rotation": {"angle": 45, "axis": "x", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [8, 0, 13, 4.5], "texture": "#0"},
+				"east": {"uv": [0, 0, 0, 4.5], "texture": "#0"},
+				"south": {"uv": [8, 0, 13, 4.5], "texture": "#0"},
+				"west": {"uv": [0, 0, 0, 4.5], "texture": "#0"},
+				"up": {"uv": [5, 0, 0, 0], "texture": "#0"},
+				"down": {"uv": [5, 0, 0, 0], "texture": "#0"}
+			}
+		}
+	]
+}

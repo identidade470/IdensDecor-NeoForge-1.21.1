@@ -1,0 +1,11 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "iden_decor:gui/title.png",
+      "ascent": 9,
+      "height": 12,
+      "chars": ["⚫"]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "button_use": {
+    "subtitle": "sounds.iden_decor.button_use",
+    "sounds": [
+      "iden_decor:button_use"
+    ]
+  },
+  "lever_use": {
+    "subtitle": "sounds.iden_decor.lever_use",
+    "sounds": [
+      "iden_decor:lever_use"
+    ]
+  },
+  "phone_pick": {
+    "subtitle": "sounds.iden_decor.phone_pick",
+    "sounds": [
+      "iden_decor:phone_pick"
+    ]
+  },
+  "phone_slam": {
+    "subtitle": "sounds.iden_decor.phone_slam",
+    "sounds": [
+      "iden_decor:phone_slam"
+    ]
+  },
+  "phone_ring": {
+    "subtitle": "sounds.iden_decor.phone_ring",
+    "sounds": [
+      "iden_decor:phone_ring"
+    ]
+  },
+  "toy_use": {
+    "subtitle": "sounds.iden_decor.toy_use",
+    "sounds": [
+      "iden_decor:toy_use"
+    ]
+  }
+}

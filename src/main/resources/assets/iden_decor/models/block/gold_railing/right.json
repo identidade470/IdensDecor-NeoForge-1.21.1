@@ -1,0 +1,52 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "iden_decor:block/base/railing",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "iden_decor:block/gold_railing/base",
+		"1": "iden_decor:block/gold_railing/colors/base",
+		"particle": "iden_decor:block/gold_railing/base"
+	},
+	"elements": [
+		{
+			"from": [0, 4, 15],
+			"to": [16, 11, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -7.5, 14]},
+			"faces": {
+				"north": {"uv": [0, 7, 8, 10.5], "texture": "#0"},
+				"east": {"uv": [0, 0, 0, 3.5], "texture": "#0"},
+				"south": {"uv": [0, 7, 8, 10.5], "texture": "#0"},
+				"west": {"uv": [0, 0, 0, 3.5], "texture": "#0"},
+				"up": {"uv": [8, 0, 0, 0], "texture": "#0"},
+				"down": {"uv": [0, 0, 8, 0], "texture": "#0"}
+			}
+		},
+		{
+			"from": [14, 0, 14],
+			"to": [16, 14, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-2, 0, 14]},
+			"faces": {
+				"north": {"uv": [0, 5.5, 7, 6.5], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [0, 5.5, 7, 6.5], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [0, 5.5, 7, 6.5], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [0, 5.5, 7, 6.5], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [7, 5.5, 8, 6.5], "texture": "#0"},
+				"down": {"uv": [8, 6.5, 7, 5.5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 14, 14],
+			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -2, 14]},
+			"faces": {
+				"north": {"uv": [0, 3.5, 8, 4.5], "texture": "#1"},
+				"east": {"uv": [7, 5.5, 8, 6.5], "texture": "#1"},
+				"south": {"uv": [0, 3.5, 8, 4.5], "texture": "#1"},
+				"west": {"uv": [7, 5.5, 8, 6.5], "texture": "#1"},
+				"up": {"uv": [8, 3.5, 0, 2.5], "texture": "#1"},
+				"down": {"uv": [8, 4.5, 0, 5.5], "texture": "#1"}
+			}
+		}
+	]
+}

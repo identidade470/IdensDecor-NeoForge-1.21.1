@@ -1,0 +1,38 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/block",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "iden_decor:block/light_water_dispenser",
+		"particle": "block/white_concrete"
+	},
+	"elements": [
+		{
+			"from": [3, 0, 3],
+			"to": [13, 6, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3, -16, 2]},
+			"faces": {
+				"north": {"uv": [0, 0, 2.5, 1.5], "texture": "#0"},
+				"east": {"uv": [2.5, 0, 5, 1.5], "texture": "#0"},
+				"south": {"uv": [0, 5.5, 2.5, 7], "texture": "#0"},
+				"west": {"uv": [2.5, 0, 5, 1.5], "texture": "#0"},
+				"up": {"uv": [5, 8, 2.5, 5.5], "texture": "#0"},
+				"down": {"uv": [7.5, 5.5, 5, 8], "texture": "#0"}
+			}
+		},
+		{
+			"from": [4, 6, 4],
+			"to": [12, 16, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3, -4, 2]},
+			"faces": {
+				"north": {"uv": [5, 0, 7, 2.5], "texture": "#0"},
+				"east": {"uv": [5, 0, 7, 2.5], "texture": "#0"},
+				"south": {"uv": [5, 0, 7, 2.5], "texture": "#0"},
+				"west": {"uv": [5, 0, 7, 2.5], "texture": "#0"},
+				"up": {"uv": [7, 4.5, 5, 2.5], "texture": "#0"},
+				"down": {"uv": [9, 2.5, 7, 4.5], "texture": "#0"}
+			}
+		}
+	]
+}

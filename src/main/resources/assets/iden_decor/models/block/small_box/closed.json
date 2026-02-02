@@ -1,0 +1,25 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+    "parent": "iden_decor:block/base/small_box",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "iden_decor:block/small_box",
+		"particle": "iden_decor:block/small_box"
+	},
+	"elements": [
+		{
+			"from": [5, 0, 4],
+			"to": [11, 5, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 7]},
+			"faces": {
+				"north": {"uv": [6, 0, 9, 2.5], "texture": "#0"},
+				"east": {"uv": [3, 4, 7, 6.5], "texture": "#0"},
+				"south": {"uv": [9, 0, 6, 2.5], "texture": "#0"},
+				"west": {"uv": [3, 4, 7, 6.5], "texture": "#0"},
+				"up": {"uv": [3, 4, 0, 0], "texture": "#0"},
+				"down": {"uv": [6, 0, 3, 4], "texture": "#0"}
+			}
+		}
+	]
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "iden_decor:block/white_couch"
+    },
+    "facing=south": {
+      "model": "iden_decor:block/white_couch",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "iden_decor:block/white_couch",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "iden_decor:block/white_couch",
+      "y": 90
+    }
+  }
+}

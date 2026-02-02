@@ -1,0 +1,36 @@
+{
+  "itemGroup.examplemod": "Example Mod Tab",
+  "block.examplemod.example_block": "Example Block",
+  "item.examplemod.example_item": "Example Item",
+
+  "item.iden_decor.plastic_cup": "Copo de Plástico",
+  "item.iden_decor.water_cup": "Copo de Água",
+  "block.iden_decor.iron_grate": "Grade de Ferro",
+  "block.iden_decor.steel_grate": "Grade de Aço",
+  "block.iden_decor.dark_water_dispenser": "Dispensador de Água Preto",
+  "block.iden_decor.light_water_dispenser": "Dispensador de Água",
+  "block.iden_decor.ccs_poster": "Cartaz da C.C.S.",
+  "block.iden_decor.heavy_button": "Botão Pesado",
+  "block.iden_decor.gate_button": "Botão de Portão",
+  "block.iden_decor.light_switch": "Interruptor de Luz",
+  "block.iden_decor.power_switch": "Interruptor de Energia",
+  "block.iden_decor.heavy_lever": "Alavanca Pesada",
+  "block.iden_decor.emergency_lever": "Alavanca de Emergência",
+  "block.iden_decor.couch": "Sofá",
+
+  "tooltip.iden_decor.shift_down": "ℹ SHIFT ℹ",
+  "tooltip.iden_decor.shift_up": "ℹ SHIFT ℹ",
+
+  "tooltip.iden_decor.ccs_poster": "Um cartaz com uma figura um tanto quanto familiar...",
+  "tooltip.iden_decor.heavy_lever": "Pode ser §6Tingido§r usando corantes",
+
+  "creativetab.iden_decor.base": "Iden's Decor",
+
+  "examplemod.configuration.title": "Example Mod Configs",
+  "examplemod.configuration.section.examplemod.common.toml": "Example Mod Configs",
+  "examplemod.configuration.section.examplemod.common.toml.title": "Example Mod Configs",
+  "examplemod.configuration.items": "Item List",
+  "examplemod.configuration.logDirtBlock": "Log Dirt Block",
+  "examplemod.configuration.magicNumberIntroduction": "Magic Number Text",
+  "examplemod.configuration.magicNumber": "Magic Number"
+}
