@@ -19,13 +19,18 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.IRON_GRATE.get());
         dropSelf(ModBlocks.STEEL_GRATE.get());
 
+        dropSelf(ModBlocks.WHITE_BRICKS.get());
+        dropSelf(ModBlocks.WHITE_BRICKS_SLAB.get());
+        dropSelf(ModBlocks.WHITE_BRICKS_STAIRS.get());
+
         dropSelf(ModBlocks.WHITE_TILES.get());
         dropSelf(ModBlocks.WHITE_TILES_SLAB.get());
         dropSelf(ModBlocks.WHITE_TILES_STAIRS.get());
 
-        dropSelf(ModBlocks.STONE_TILES.get());
-        dropSelf(ModBlocks.STONE_TILES_SLAB.get());
-        dropSelf(ModBlocks.STONE_TILES_STAIRS.get());
+        dropSelf(ModBlocks.SMOOTH_STONE_TILES.get());
+        dropSelf(ModBlocks.SMOOTH_STONE_TILES_SLAB.get());
+        dropSelf(ModBlocks.SMOOTH_STONE_TILES_STAIRS.get());
+        dropSelf(ModBlocks.SMOOTH_STONE_BRICKS.get());
 
         dropSelf(ModBlocks.DARK_WATER_DISPENSER.get());
         dropSelf(ModBlocks.LIGHT_WATER_DISPENSER.get());

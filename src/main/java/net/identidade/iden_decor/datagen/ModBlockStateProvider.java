@@ -5,12 +5,10 @@ import net.identidade.iden_decor.block.ModBlocks;
 import net.identidade.iden_decor.block.custom.*;
 import net.identidade.iden_decor.block.properties.ColorProperty;
 import net.identidade.iden_decor.block.properties.ThreeConnectableProperty;
-import net.identidade.iden_decor.block.properties.TwoConnectableProperty;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.BarrelBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.properties.AttachFace;
@@ -55,13 +53,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.IRON_GRATE);
         blockItem(ModBlocks.STEEL_GRATE);
 
+        blockWithItem(ModBlocks.WHITE_BRICKS);
+        stairsBlock(ModBlocks.WHITE_BRICKS_STAIRS.get(), blockTexture(ModBlocks.WHITE_BRICKS.get()));
+        slabBlock(ModBlocks.WHITE_BRICKS_SLAB.get(), blockTexture(ModBlocks.WHITE_BRICKS.get()), blockTexture(ModBlocks.WHITE_BRICKS.get()));
+
         blockWithItem(ModBlocks.WHITE_TILES);
         stairsBlock(ModBlocks.WHITE_TILES_STAIRS.get(), blockTexture(ModBlocks.WHITE_TILES.get()));
         slabBlock(ModBlocks.WHITE_TILES_SLAB.get(), blockTexture(ModBlocks.WHITE_TILES.get()), blockTexture(ModBlocks.WHITE_TILES.get()));
 
-        blockWithItem(ModBlocks.STONE_TILES);
-        stairsBlock(ModBlocks.STONE_TILES_STAIRS.get(), blockTexture(ModBlocks.STONE_TILES.get()));
-        slabBlock(ModBlocks.STONE_TILES_SLAB.get(), blockTexture(ModBlocks.STONE_TILES.get()), blockTexture(ModBlocks.STONE_TILES.get()));
+        blockWithItem(ModBlocks.SMOOTH_STONE_TILES);
+        blockWithItem(ModBlocks.SMOOTH_STONE_BRICKS);
+        stairsBlock(ModBlocks.SMOOTH_STONE_TILES_STAIRS.get(), blockTexture(ModBlocks.SMOOTH_STONE_TILES.get()));
+        slabBlock(ModBlocks.SMOOTH_STONE_TILES_SLAB.get(), blockTexture(ModBlocks.SMOOTH_STONE_TILES.get()), blockTexture(ModBlocks.SMOOTH_STONE_TILES.get()));
 
         blockItemWithItemTexture(ModBlocks.LIGHT_WATER_DISPENSER);
         blockItemWithItemTexture(ModBlocks.DARK_WATER_DISPENSER);
@@ -76,10 +79,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.LIGHT_SWITCH);
         blockItem(ModBlocks.POWER_SWITCH);
         blockItem(ModBlocks.EMERGENCY_LEVER);
+        blockItem(ModBlocks.WHITE_BRICKS_SLAB);
+        blockItem(ModBlocks.WHITE_BRICKS_STAIRS);
         blockItem(ModBlocks.WHITE_TILES_SLAB);
         blockItem(ModBlocks.WHITE_TILES_STAIRS);
-        blockItem(ModBlocks.STONE_TILES_SLAB);
-        blockItem(ModBlocks.STONE_TILES_STAIRS);
+        blockItem(ModBlocks.SMOOTH_STONE_TILES_SLAB);
+        blockItem(ModBlocks.SMOOTH_STONE_TILES_STAIRS);
         blockItem(ModBlocks.AIR_VENT, "_bottom");
 
         blockWithItem(ModBlocks.IRON_SHEET_METAL);

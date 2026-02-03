@@ -38,19 +38,33 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 // Railings
                 .add(ModBlocks.IRON_RAILING.get())
                 .add(ModBlocks.COPPER_RAILING.get())
+                .add(ModBlocks.GOLD_RAILING.get())
                 // Blocks
                 .add(ModBlocks.IRON_GRATE.get())
                 .add(ModBlocks.STEEL_GRATE.get())
 
-                .add(ModBlocks.STONE_TILES.get())
-                .add(ModBlocks.STONE_TILES_STAIRS.get())
-                .add(ModBlocks.STONE_TILES_SLAB.get())
+                .add(ModBlocks.SMOOTH_STONE_BRICKS.get())
+
+                .add(ModBlocks.SMOOTH_STONE_TILES.get())
+                .add(ModBlocks.SMOOTH_STONE_TILES_STAIRS.get())
+                .add(ModBlocks.SMOOTH_STONE_TILES_SLAB.get())
 
                 .add(ModBlocks.WHITE_TILES.get())
                 .add(ModBlocks.WHITE_TILES_STAIRS.get())
                 .add(ModBlocks.WHITE_TILES_SLAB.get())
 
-                .add(ModBlocks.TELEPHONE.get());
+                .add(ModBlocks.WHITE_BRICKS.get())
+                .add(ModBlocks.WHITE_BRICKS_STAIRS.get())
+                .add(ModBlocks.WHITE_BRICKS_SLAB.get())
+
+                .add(ModBlocks.IRON_SHEET_METAL.get())
+                .add(ModBlocks.AIR_DUCT.get())
+
+                .add(ModBlocks.METAL_BARREL.get())
+                .add(ModBlocks.BLUE_METAL_BARREL.get())
+
+                .add(ModBlocks.TELEPHONE.get())
+                .add(ModBlocks.FLUORESCENT_LIGHT.get());
 
         tag(ModTags.Blocks.RAILINGS)
                 .add(ModBlocks.GOLD_RAILING.get())
@@ -58,6 +72,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.COPPER_RAILING.get());
 
         ModBlocks.PAINTED_PLANKS.values().forEach(block -> tag(BlockTags.PLANKS)
+                .add(block.get()));
+
+        ModBlocks.PAINTED_PLANKS.values().forEach(block -> tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(block.get()));
 //
 //        tag(BlockTags.PLANKS)

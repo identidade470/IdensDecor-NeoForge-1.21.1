@@ -25,12 +25,16 @@ public class ModCreativeModeTab {
 
                         output.accept(ModBlocks.METAL_BARREL);
                         output.accept(ModBlocks.BLUE_METAL_BARREL);
+                        output.accept(ModBlocks.WHITE_BRICKS);
+                        output.accept(ModBlocks.WHITE_BRICKS_STAIRS);
+                        output.accept(ModBlocks.WHITE_BRICKS_SLAB);
                         output.accept(ModBlocks.WHITE_TILES);
                         output.accept(ModBlocks.WHITE_TILES_STAIRS);
                         output.accept(ModBlocks.WHITE_TILES_SLAB);
-                        output.accept(ModBlocks.STONE_TILES);
-                        output.accept(ModBlocks.STONE_TILES_STAIRS);
-                        output.accept(ModBlocks.STONE_TILES_SLAB);
+                        output.accept(ModBlocks.SMOOTH_STONE_BRICKS);
+                        output.accept(ModBlocks.SMOOTH_STONE_TILES);
+                        output.accept(ModBlocks.SMOOTH_STONE_TILES_STAIRS);
+                        output.accept(ModBlocks.SMOOTH_STONE_TILES_SLAB);
                         output.accept(ModBlocks.IRON_SHEET_METAL);
                         output.accept(ModBlocks.AIR_DUCT);
                         output.accept(ModBlocks.AIR_VENT);

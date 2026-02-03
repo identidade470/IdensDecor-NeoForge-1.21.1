@@ -1,19 +1,15 @@
 package net.identidade.iden_decor.datagen;
 
 import net.identidade.iden_decor.block.ModBlocks;
-import net.identidade.iden_decor.block.properties.ColorProperty;
 import net.identidade.iden_decor.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.ShapelessRecipe;
 import net.minecraft.world.level.block.Blocks;
-import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 
 import java.util.concurrent.CompletableFuture;
@@ -35,31 +31,59 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('A', DyeItem.byColor(color))
                 .unlockedBy("has_planks", has(ItemTags.PLANKS)).save(recipeOutput));
 
-        // Stone Tiles
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STONE_TILES.get(), 4)
+        // Smooth Stone Tiles
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTH_STONE_TILES.get(), 4)
+                .pattern("AA")
+                .pattern("AA")
+                .define('A', ModBlocks.SMOOTH_STONE_BRICKS)
+                .unlockedBy("has_smooth_stone", has(Blocks.SMOOTH_STONE.asItem())).save(recipeOutput);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTH_STONE_TILES, ModBlocks.SMOOTH_STONE_BRICKS);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTH_STONE_TILES_STAIRS, ModBlocks.SMOOTH_STONE_TILES);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTH_STONE_TILES_SLAB, ModBlocks.SMOOTH_STONE_TILES, 2);
+
+        stairBuilder(ModBlocks.SMOOTH_STONE_TILES_STAIRS.get(), Ingredient.of(ModBlocks.SMOOTH_STONE_TILES)).group("stone_tiles")
+                .unlockedBy("has_stone_tiles", has(ModBlocks.SMOOTH_STONE_TILES.asItem())).save(recipeOutput);
+
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTH_STONE_TILES_SLAB.get(), ModBlocks.SMOOTH_STONE_TILES.get());
+
+        // Smooth Stone Bricks
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTH_STONE_BRICKS.get(), 4)
                 .pattern("AA")
                 .pattern("AA")
                 .define('A', Blocks.SMOOTH_STONE)
-                .unlockedBy("has_stone", has(Blocks.SMOOTH_STONE.asItem())).save(recipeOutput);
-
-        stairBuilder(ModBlocks.STONE_TILES_STAIRS.get(), Ingredient.of(ModBlocks.STONE_TILES)).group("stone_tiles")
-                .unlockedBy("has_stone_tiles", has(ModBlocks.STONE_TILES.asItem())).save(recipeOutput);
-
-        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.STONE_TILES_SLAB.get(), ModBlocks.STONE_TILES.get());
+                .unlockedBy("has_smooth_stone", has(Blocks.SMOOTH_STONE.asItem())).save(recipeOutput);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTH_STONE_BRICKS, Blocks.SMOOTH_STONE);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTH_STONE_TILES_STAIRS, Blocks.SMOOTH_STONE);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTH_STONE_TILES_SLAB, Blocks.SMOOTH_STONE, 2);
 
         // White Tiles
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHITE_TILES.get(), 8)
                 .pattern("BBB")
                 .pattern("BAB")
                 .pattern("BBB")
-                .define('B', ModBlocks.STONE_TILES.get())
+                .define('B', ModBlocks.SMOOTH_STONE_TILES.get())
                 .define('A', Items.WHITE_DYE)
-                .unlockedBy("has_stone_tiles", has(ModBlocks.STONE_TILES.asItem())).save(recipeOutput);
+                .unlockedBy("has_stone_tiles", has(ModBlocks.SMOOTH_STONE_TILES.asItem())).save(recipeOutput);
 
         stairBuilder(ModBlocks.WHITE_TILES_STAIRS.get(), Ingredient.of(ModBlocks.WHITE_TILES)).group("white_tiles")
                 .unlockedBy("has_stone_tiles", has(ModBlocks.WHITE_TILES.asItem())).save(recipeOutput);
 
         slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHITE_TILES_SLAB.get(), ModBlocks.WHITE_TILES.get());
+
+        // White Bricks
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHITE_BRICKS.get(), 8)
+                .pattern("BBB")
+                .pattern("BAB")
+                .pattern("BBB")
+                .define('B', Blocks.BRICKS)
+                .define('A', Items.WHITE_DYE)
+                .unlockedBy("has_bricks", has(Blocks.BRICKS.asItem())).save(recipeOutput);
+
+        stairBuilder(ModBlocks.WHITE_BRICKS_STAIRS.get(), Ingredient.of(ModBlocks.WHITE_BRICKS)).group("white_bricks")
+                .unlockedBy("has_white_bricks", has(ModBlocks.WHITE_BRICKS.asItem())).save(recipeOutput);
+
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHITE_BRICKS_SLAB.get(), ModBlocks.WHITE_BRICKS.get());
 
         // Iron Block
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.IRON_SHEET_METAL.get(), Blocks.IRON_BLOCK, 32);

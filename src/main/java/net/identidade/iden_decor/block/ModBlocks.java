@@ -30,6 +30,13 @@ public class ModBlocks {
             () -> new WaterloggedTransparentBlock(BlockBehaviour.Properties.of().strength(3.0F, 6.0F).sound(SoundType.COPPER_GRATE).mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().noOcclusion().isViewBlocking((state, level, pos) -> false).isSuffocating((state, level, pos) -> false)));
 
     // Tiles
+    public static final DeferredBlock<Block> WHITE_BRICKS = registerBlock("white_bricks",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.0F, 6.0F)));
+    public static final DeferredBlock<SlabBlock> WHITE_BRICKS_SLAB = registerBlock("white_brick_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().strength(2.0F, 6.0F)));
+    public static final DeferredBlock<StairBlock> WHITE_BRICKS_STAIRS = registerBlock("white_brick_stairs",
+            () -> new StairBlock(ModBlocks.WHITE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.of().strength(2.0F, 6.0F)));
+
     public static final DeferredBlock<Block> WHITE_TILES = registerBlock("white_tiles",
             () -> new Block(BlockBehaviour.Properties.of().strength(2.0F, 6.0F)));
     public static final DeferredBlock<SlabBlock> WHITE_TILES_SLAB = registerBlock("white_tiles_slab",
@@ -37,12 +44,14 @@ public class ModBlocks {
     public static final DeferredBlock<StairBlock> WHITE_TILES_STAIRS = registerBlock("white_tiles_stairs",
             () -> new StairBlock(ModBlocks.WHITE_TILES.get().defaultBlockState(), BlockBehaviour.Properties.of().strength(2.0F, 6.0F)));
 
-    public static final DeferredBlock<Block> STONE_TILES = registerBlock("stone_tiles",
+    public static final DeferredBlock<Block> SMOOTH_STONE_BRICKS = registerBlock("smooth_stone_bricks",
+            () -> new Block(BlockBehaviour.Properties.of().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> SMOOTH_STONE_TILES = registerBlock("smooth_stone_tiles",
             () -> new Block(BlockBehaviour.Properties.of().strength(2.0F, 6.0F).sound(SoundType.STONE)));
-    public static final DeferredBlock<SlabBlock> STONE_TILES_SLAB = registerBlock("stone_tiles_slab",
+    public static final DeferredBlock<SlabBlock> SMOOTH_STONE_TILES_SLAB = registerBlock("smooth_stone_tiles_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.of().strength(2.0F, 6.0F).sound(SoundType.STONE)));
-    public static final DeferredBlock<StairBlock> STONE_TILES_STAIRS = registerBlock("stone_tiles_stairs",
-            () -> new StairBlock(ModBlocks.WHITE_TILES.get().defaultBlockState(), BlockBehaviour.Properties.of().strength(2.0F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<StairBlock> SMOOTH_STONE_TILES_STAIRS = registerBlock("smooth_stone_tiles_stairs",
+            () -> new StairBlock(ModBlocks.SMOOTH_STONE_TILES.get().defaultBlockState(), BlockBehaviour.Properties.of().strength(2.0F, 6.0F).sound(SoundType.STONE)));
 
     // Water Dispensers
     public static final DeferredBlock<Block> DARK_WATER_DISPENSER = registerBlock("dark_water_dispenser",
