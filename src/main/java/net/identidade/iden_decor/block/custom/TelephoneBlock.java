@@ -28,7 +28,7 @@ public class TelephoneBlock extends SimpleHorizontalBlock {
 
     public TelephoneBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(defaultBlockState().setValue(PHONE, true));
+        this.registerDefaultState(defaultBlockState().setValue(PHONE, false));
         this.registerDefaultState(defaultBlockState().setValue(POWERED, false));
     }
 

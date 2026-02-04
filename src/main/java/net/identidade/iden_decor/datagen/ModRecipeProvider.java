@@ -201,10 +201,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.TELEPHONE.get())
-                .pattern(" A ")
-                .pattern(" B ")
+                .pattern("   ")
+                .pattern("ABA")
                 .pattern("BBB")
-                .define('A', ModItems.TELEPHONE_ITEM)
+                .define('A', Items.REDSTONE)
                 .define('B', Items.IRON_INGOT)
                 .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
                 .save(recipeOutput);

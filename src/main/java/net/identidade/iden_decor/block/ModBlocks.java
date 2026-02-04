@@ -151,9 +151,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> TELEPHONE = registerBlock("telephone",
             () -> new TelephoneBlock(BlockBehaviour.Properties.of().noOcclusion()));
 
+    public static final DeferredBlock<Block> SEWING_MACHINE = registerBlock("sewing_machine",
+            () -> new SewingMachineBlock(BlockBehaviour.Properties.of().strength(1.5f)));
+
     // Planks
-
-
     public static final Map<DyeColor, Supplier<Block>> PAINTED_PLANKS = new HashMap<>();
     static {
         for (DyeColor color:DyeColor.values()) {

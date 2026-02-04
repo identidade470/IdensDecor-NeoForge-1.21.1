@@ -73,6 +73,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
         dropSelf(ModBlocks.FLUORESCENT_LIGHT.get());
 
+        dropSelf(ModBlocks.SEWING_MACHINE.get());
 
         ModBlocks.PAINTED_PLANKS.values().forEach(block -> dropSelf(block.get()));
 
