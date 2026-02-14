@@ -34,5 +34,23 @@
     "sounds": [
       "iden_decor:toy_use"
     ]
+  },
+  "floppy_disk_insert": {
+    "subtitle": "sounds.iden_decor.floppy_disk_insert",
+    "sounds": [
+      "iden_decor:floppy_disk_insert"
+    ]
+  },
+  "guarana_sound": {
+    "subtitle": "sounds.iden_decor.guarana_sound",
+    "sounds": [
+      "iden_decor:guarana_sound"
+    ]
+  },
+  "eletronic_beep": {
+    "subtitle": "sounds.iden_decor.eletronic_beep",
+    "sounds": [
+      "iden_decor:eletronic_beep"
+    ]
   }
 }

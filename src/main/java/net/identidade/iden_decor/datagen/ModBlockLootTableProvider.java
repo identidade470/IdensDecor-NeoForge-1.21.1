@@ -20,15 +20,12 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.STEEL_GRATE.get());
 
         dropSelf(ModBlocks.WHITE_BRICKS.get());
-        dropSelf(ModBlocks.WHITE_BRICKS_SLAB.get());
         dropSelf(ModBlocks.WHITE_BRICKS_STAIRS.get());
 
         dropSelf(ModBlocks.WHITE_TILES.get());
-        dropSelf(ModBlocks.WHITE_TILES_SLAB.get());
         dropSelf(ModBlocks.WHITE_TILES_STAIRS.get());
 
         dropSelf(ModBlocks.SMOOTH_STONE_TILES.get());
-        dropSelf(ModBlocks.SMOOTH_STONE_TILES_SLAB.get());
         dropSelf(ModBlocks.SMOOTH_STONE_TILES_STAIRS.get());
         dropSelf(ModBlocks.SMOOTH_STONE_BRICKS.get());
 
@@ -56,7 +53,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.METAL_BARREL.get());
 
         dropSelf(ModBlocks.SMALL_BOX.get());
-//        dropSelf(ModBlocks.MEDIUM_BOX.get());
+        dropSelf(ModBlocks.MEDIUM_BOX.get());
 //        dropSelf(ModBlocks.BIG_BOX.get());
 
         dropSelf(ModBlocks.GUARANA_ANTARTICA.get());
@@ -74,28 +71,40 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.FLUORESCENT_LIGHT.get());
 
         dropSelf(ModBlocks.SEWING_MACHINE.get());
+        dropSelf(ModBlocks.COMPUTER.get());
+        dropSelf(ModBlocks.FLOODLIGHT.get());
+        dropSelf(ModBlocks.KEYCARD_READER.get());
+        dropSelf(ModBlocks.VALVE_SWITCH.get());
+        dropSelf(ModBlocks.DOUBLE_IRON_PIPES.get());
+        dropSelf(ModBlocks.DRINKING_FOUNTAIN.get());
+        dropSelf(ModBlocks.FLOOD_LAMP.get());
+        dropSelf(ModBlocks.CUP_DISPENSER.get());
+        dropSelf(ModBlocks.SIGN_POST.get());
+        dropSelf(ModBlocks.STOP_SIGN.get());
+        dropSelf(ModBlocks.TRAFFIC_CONE.get());
+        dropSelf(ModBlocks.CONCRETE_BARRIER.get());
+        dropSelf(ModBlocks.CAUTION_BLOCK.get());
+        dropSelf(ModBlocks.CAUTION_BLOCK_STAIRS.get());
 
         ModBlocks.PAINTED_PLANKS.values().forEach(block -> dropSelf(block.get()));
+        ModBlocks.PAINTED_PLANKS_STAIRS.values().forEach(block -> dropSelf(block.get()));
 
-//        add(ModBlocks.BLOODY_SLAB.get(),
-//                block -> createSlabItemTable(ModBlocks.BLOODY_SLAB.get()));
+        add(ModBlocks.WHITE_TILES_SLAB.get(), block -> createSlabItemTable(ModBlocks.WHITE_TILES_SLAB.get()));
+        add(ModBlocks.WHITE_BRICKS_SLAB.get(), block -> createSlabItemTable(ModBlocks.WHITE_BRICKS_SLAB.get()));
+        add(ModBlocks.SMOOTH_STONE_TILES_SLAB.get(), block -> createSlabItemTable(ModBlocks.SMOOTH_STONE_TILES_SLAB.get()));
+        add(ModBlocks.CAUTION_BLOCK_SLAB.get(), block -> createSlabItemTable(ModBlocks.CAUTION_BLOCK_SLAB.get()));
+
+        ModBlocks.PAINTED_PLANKS_SLABS.values().forEach(block -> {
+            add(block.get(), block1 -> createSlabItemTable(block.get()));
+        });
 //
-//        add(ModBlocks.BLOODY_DOOR.get(),
-//                block -> createDoorTable(ModBlocks.BLOODY_DOOR.get()));
-//
-//        dropSelf(ModBlocks.BLOODY_LOG.get());
-//        dropSelf(ModBlocks.BLOODY_WOOD.get());
-//        dropSelf(ModBlocks.STRIPPED_BLOODY_LOG.get());
-//        dropSelf(ModBlocks.STRIPPED_BLOODY_WOOD.get());
-//        dropSelf(ModBlocks.BLOODY_PLANKS.get());
-//        dropSelf(ModBlocks.BLOODY_STAIRS.get());
-//        dropSelf(ModBlocks.BLOODY_PRESSURE_PLATE.get());
-//        dropSelf(ModBlocks.BLOODY_BUTTON.get());
-//        dropSelf(ModBlocks.BLOODY_FENCE.get());
-//        dropSelf(ModBlocks.BLOODY_FENCE_GATE.get());
-//        dropSelf(ModBlocks.BLOODY_TRAPDOOR.get());
-//        dropSelf(ModBlocks.FLESH_BLOCK.get());
-//        dropSelf(ModBlocks.PULSAR_BULB.get());
+        add(ModBlocks.GRID_METAL_DOOR.get(),
+                block -> createDoorTable(ModBlocks.GRID_METAL_DOOR.get()));
+        add(ModBlocks.YELLOW_METAL_DOOR.get(),
+                block -> createDoorTable(ModBlocks.YELLOW_METAL_DOOR.get()));
+        add(ModBlocks.WHITE_METAL_DOOR.get(),
+                block -> createDoorTable(ModBlocks.WHITE_METAL_DOOR.get()));
+
 //
 //        dropOther(ModBlocks.FLESH_PLANT.get(), ModItems.RAW_FLESH_PLANT.get());
 

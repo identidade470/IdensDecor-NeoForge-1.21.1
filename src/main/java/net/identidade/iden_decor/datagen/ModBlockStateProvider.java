@@ -5,6 +5,7 @@ import net.identidade.iden_decor.block.ModBlocks;
 import net.identidade.iden_decor.block.custom.*;
 import net.identidade.iden_decor.block.properties.ColorProperty;
 import net.identidade.iden_decor.block.properties.ThreeConnectableProperty;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -47,14 +48,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
         stairsBlock(ModBlocks.SMOOTH_STONE_TILES_STAIRS.get(), blockTexture(ModBlocks.SMOOTH_STONE_TILES.get()));
         slabBlock(ModBlocks.SMOOTH_STONE_TILES_SLAB.get(), blockTexture(ModBlocks.SMOOTH_STONE_TILES.get()), blockTexture(ModBlocks.SMOOTH_STONE_TILES.get()));
 
-        blockItemWithItemTexture(ModBlocks.LIGHT_WATER_DISPENSER);
-        blockItemWithItemTexture(ModBlocks.DARK_WATER_DISPENSER);
-
-        blockItem(ModBlocks.CCS_POSTER);
-        blockItem(ModBlocks.WATER_POSTER);
+        blockWithItem(ModBlocks.CAUTION_BLOCK);
+        stairsBlock(ModBlocks.CAUTION_BLOCK_STAIRS.get(), blockTexture(ModBlocks.CAUTION_BLOCK.get()));
+        slabBlock(ModBlocks.CAUTION_BLOCK_SLAB.get(), blockTexture(ModBlocks.CAUTION_BLOCK.get()), blockTexture(ModBlocks.CAUTION_BLOCK.get()));
 
         trapdoorBlockWithRenderType(ModBlocks.AIR_VENT.get(), ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/air_vent"), true, "cutout");
 
+//        blockItem(ModBlocks.CCS_POSTER);
+//        blockItem(ModBlocks.WATER_POSTER);
         blockItem(ModBlocks.HEAVY_BUTTON);
         blockItem(ModBlocks.GATE_BUTTON);
         blockItem(ModBlocks.LIGHT_SWITCH);
@@ -67,6 +68,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.SMOOTH_STONE_TILES_SLAB);
         blockItem(ModBlocks.SMOOTH_STONE_TILES_STAIRS);
         blockItem(ModBlocks.AIR_VENT, "_bottom");
+        blockItem(ModBlocks.VALVE_SWITCH);
+        blockItem(ModBlocks.DOUBLE_IRON_PIPES);
+        blockItem(ModBlocks.FLOOD_LAMP);
+        blockItem(ModBlocks.SIGN_POST);
+        blockItem(ModBlocks.TRAFFIC_CONE);
+        blockItem(ModBlocks.CAUTION_BLOCK_SLAB);
+        blockItem(ModBlocks.CAUTION_BLOCK_STAIRS);
 
         blockWithItem(ModBlocks.IRON_SHEET_METAL);
         blockWithItem(ModBlocks.AIR_DUCT);
@@ -83,7 +91,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         plushie(ModBlocks.PLUSHIE_RAFA.get());
 
         box(ModBlocks.SMALL_BOX.get());
-//        simpleHorizontalModelBlock(ModBlocks.MEDIUM_BOX.get());
+        box(ModBlocks.MEDIUM_BOX.get());
 //        simpleHorizontalModelBlock(ModBlocks.BIG_BOX.get());
 
         telephone(ModBlocks.TELEPHONE.get());
@@ -96,14 +104,32 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         horizontalBlockGen(ModBlocks.SEWING_MACHINE);
         horizontalBlockGen(ModBlocks.GUARANA_ANTARTICA);
+        horizontalBlockGen(ModBlocks.DRINKING_FOUNTAIN);
+        horizontalBlockGen(ModBlocks.CUP_DISPENSER);
+        horizontalBlockGen(ModBlocks.STOP_SIGN);
+        horizontalBlockGen(ModBlocks.CONCRETE_BARRIER);
+
+        simpleBlock(ModBlocks.SIGN_POST.get(), models().getExistingFile(modLoc("block/sign_post")));
+        simpleBlock(ModBlocks.TRAFFIC_CONE.get(), models().getExistingFile(modLoc("block/traffic_cone")));
 
         simpleModelWithRenderType(ModBlocks.PLASTIC_TABLE.get(), "cutout");
 
         ModBlocks.PAINTED_PLANKS.values().forEach(block -> simpleBlockWithItem(block.get(), cubeAll(block.get())));
+        ModBlocks.PAINTED_PLANKS_STAIRS.forEach((color, block) -> {stairsBlock(block.get(), blockTexture(ModBlocks.PAINTED_PLANKS.get(color).get()));blockItem(block);});
+        ModBlocks.PAINTED_PLANKS_SLABS.forEach((color, block) -> {slabBlock(block.get(), blockTexture(ModBlocks.PAINTED_PLANKS.get(color).get()), blockTexture(ModBlocks.PAINTED_PLANKS.get(color).get()));blockItem(block);});
 
-//        blockItemWithItemTexture(ModBlocks.HEAVY_BUTTON);
-//        blockItemWithItemTexture(ModBlocks.GATE_BUTTON);
-//        blockItemWithItemTexture(ModBlocks.LIGHT_SWITCH);
+        computer(ModBlocks.COMPUTER.get());
+
+        doorBlockWithRenderType(ModBlocks.GRID_METAL_DOOR.get(), modLoc("block/grid_metal_door_bottom"), modLoc("block/grid_metal_door_top"), "cutout");
+        doorBlockWithRenderType(ModBlocks.WHITE_METAL_DOOR.get(), modLoc("block/white_metal_door_bottom"), modLoc("block/white_metal_door_top"), "cutout");
+        doorBlock(ModBlocks.YELLOW_METAL_DOOR.get(), modLoc("block/yellow_metal_door_bottom"), modLoc("block/yellow_metal_door_top"));
+
+        horizontalBlockGen(ModBlocks.FLOODLIGHT);
+        keycard_reader(ModBlocks.KEYCARD_READER.get());
+
+        horizontalFaceBlock(ModBlocks.DOUBLE_IRON_PIPES.get(), models().getExistingFile(modLoc("block/double_iron_pipes")));
+        horizontalFaceBlock(ModBlocks.FLOOD_LAMP.get(), models().getExistingFile(modLoc("block/flood_lamp")));
+
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {
@@ -114,14 +140,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("iden_decor:block/" + deferredBlock.getId().getPath()));
     }
 
-    private void blockItem(DeferredBlock<?> deferredBlock, String appendix) {
-        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("iden_decor:block/" + deferredBlock.getId().getPath() + appendix));
+    private void blockItemWithGuiLight(DeferredBlock<?> deferredBlock) {
+        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("iden_decor:block/" + deferredBlock.getId().getPath()));
     }
 
-    public void blockItemWithItemTexture(DeferredBlock<?> deferredBlock) {
-        itemModels().getBuilder(deferredBlock.getId().getPath())
-                .parent(new ModelFile.UncheckedModelFile("minecraft:item/generated"))
-                .texture("layer0", modLoc("item/" + deferredBlock.getId().getPath()));
+    private void blockItem(DeferredBlock<?> deferredBlock, String appendix) {
+        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("iden_decor:block/" + deferredBlock.getId().getPath() + appendix));
     }
 
     public void simpleBlockWithRenderType(DeferredBlock<?> deferredBlock, String renderType) {
@@ -182,6 +206,40 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(block, phonelessModel);
     }
 
+    private void computer(Block block) {
+        ModelFile computerModel = models().getExistingFile(modLoc("block/computer"));
+        ModelFile computerDiskModel = models().getExistingFile(modLoc("block/computer_with_disk"));
+
+        getVariantBuilder(block).forAllStates(state -> {
+            Direction facing = state.getValue(ComputerBlock.FACING);
+            boolean has_disk = state.getValue(ComputerBlock.HAS_DISK);
+
+            return ConfiguredModel.builder()
+                    .modelFile(has_disk?computerDiskModel:computerModel)
+                    .rotationY(((int) facing.toYRot() + 180) % 360)
+                    .build();
+        });
+
+        simpleBlockItem(block, computerModel);
+    }
+
+    private void keycard_reader(Block block) {
+        ModelFile readerModel = models().getExistingFile(modLoc("block/keycard_reader"));
+        ModelFile readerModelActivated = models().getExistingFile(modLoc("block/keycard_reader_activated"));
+
+        getVariantBuilder(block).forAllStates(state -> {
+            Direction facing = state.getValue(KeycardReaderBlock.FACING);
+            boolean activated = state.getValue(KeycardReaderBlock.ACTIVATED);
+
+            return ConfiguredModel.builder()
+                    .modelFile(activated?readerModelActivated:readerModel)
+                    .rotationY(((int) facing.toYRot() + 180) % 360)
+                    .build();
+        });
+
+        simpleBlockItem(block, readerModel);
+    }
+
     private void plushie(Block block) {
 
         ResourceLocation parent = ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/base/plushie");
@@ -235,24 +293,20 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void box(Block block) {
-        simpleBlockItem(block, models().getExistingFile(modLoc("block/" + getPath(block) + "/closed")));
+        ModelFile closedModel = models().getExistingFile(modLoc("block/" + getPath(block) + "_closed"));
+        ModelFile openedModel = models().getExistingFile(modLoc("block/" + getPath(block) + "_opened"));
 
-        getVariantBuilder(block)
-                .forAllStates(state -> {
-                    Direction facing = state.getValue(BoxBlock.FACING);
-                    Boolean opened = state.getValue(BoxBlock.OPENED);
+        getVariantBuilder(block).forAllStates(state -> {
+            Direction facing = state.getValue(BoxBlock.FACING);
+            Boolean opened = state.getValue(BoxBlock.OPENED);
 
-                    ResourceLocation parent = ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/" + getPath(block) + "/" + (opened?"opened":"closed"));
-                    ResourceLocation baseTexture = ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/" + getPath(block));
+            return ConfiguredModel.builder()
+                    .modelFile(opened?openedModel:closedModel)
+                    .rotationY(((int) facing.toYRot() + 180) % 360)
+                    .build();
+        });
 
-                    return ConfiguredModel.builder()
-                            .modelFile(models().getBuilder(getPath(block) + "_" + (opened?"opened":"closed"))
-                                    .parent(models().getExistingFile(parent))
-                                    .texture("all", baseTexture)
-                            )
-                            .rotationY(((int) facing.toYRot() + 180) % 360)
-                            .build();
-                });
+        simpleBlockItem(block, closedModel);
     }
 
     private void fluorescentLight(Block block) {

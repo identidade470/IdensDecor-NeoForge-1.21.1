@@ -1,13 +1,20 @@
 package net.identidade.iden_decor;
 
 import net.identidade.iden_decor.block.properties.ColorProperty;
+import net.identidade.iden_decor.blockentity.ModBlockEntities;
+import net.identidade.iden_decor.client.gui.ModMenus;
+import net.identidade.iden_decor.client.gui.custom.SewingMachineMenu;
+import net.identidade.iden_decor.client.gui.custom.SewingMachineScreen;
 import net.identidade.iden_decor.item.ModItems;
+import net.identidade.iden_decor.rendering.ComputerBlockRenderer;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.component.CustomData;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -15,6 +22,8 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.minecraft.resources.ResourceLocation;
@@ -40,5 +49,15 @@ public class IdenDecorModClient {
         // Some client setup code
         IdenDecorMod.LOGGER.info("HELLO FROM CLIENT SETUP");
         IdenDecorMod.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+    }
+
+    @SubscribeEvent
+    public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(ModBlockEntities.COMPUTER_BE.get(), ComputerBlockRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerScreens(RegisterMenuScreensEvent event) {
+        event.register(ModMenus.SEWING_MACHINE.get(), SewingMachineScreen::new);
     }
 }

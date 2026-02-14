@@ -4,9 +4,9 @@
 	"parent": "iden_decor:block/base/lever",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "iden_decor:block/heavy_lever/heavy_lever",
+		"0": "iden_decor:block/heavy_lever/base",
 		"1": "iden_decor:block/heavy_lever/colors/base",
-		"particle": "iden_decor:block/heavy_lever/heavy_lever"
+		"particle": "iden_decor:block/heavy_lever/base"
 	},
 	"elements": [
 		{

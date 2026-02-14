@@ -3,6 +3,7 @@ package net.identidade.iden_decor.block;
 import net.identidade.iden_decor.IdenDecorMod;
 import net.identidade.iden_decor.block.custom.*;
 import net.identidade.iden_decor.block.custom.RefrigeranteBlock;
+import net.identidade.iden_decor.block.custom.templates.SimpleHorizontalBlock;
 import net.identidade.iden_decor.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
@@ -86,6 +87,9 @@ public class ModBlocks {
     public static final DeferredBlock<Block> POWER_SWITCH = registerBlock("power_switch",
             () -> new LeverBlock(BlockBehaviour.Properties.of().strength(0.5F).noCollission()));
 
+    public static final DeferredBlock<Block> VALVE_SWITCH = registerBlock("valve_switch",
+            () -> new LeverBlock(BlockBehaviour.Properties.of().strength(0.5F).noCollission()));
+
     // Railings
     public static final DeferredBlock<Block> IRON_RAILING = registerBlock("iron_railing",
             () -> new RailingBlock(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.CHAIN).noOcclusion()));
@@ -124,8 +128,8 @@ public class ModBlocks {
     // Caixas
     public static final DeferredBlock<Block> SMALL_BOX = registerBlock("small_box",
             () -> new BoxBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion().strength(1.0F), Block.box(5, 0, 4, 11, 5, 12), Block.box(4, 0, 5, 12, 5, 11)));
-//    public static final DeferredBlock<Block> MEDIUM_BOX = registerBlock("medium_box",
-//            () -> new BoxBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion().strength(1.0F), Block.box(2.75, 0, 1.75, 13.25, 7, 14.25), Block.box(1.75, 0, 2.75, 14.25, 7, 13.25)));
+    public static final DeferredBlock<Block> MEDIUM_BOX = registerBlock("medium_box",
+            () -> new BoxBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion().strength(1.0F), Block.box(3, 0, 2, 13, 8, 14), Block.box(2, 0, 3, 14, 8, 13)));
 //    public static final DeferredBlock<Block> BIG_BOX = registerBlock("big_box",
 //            () -> new BoxBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion().strength(1.0F), Block.box(0,0,0,16,16,16), Block.box(0,0,0,16,16,16)));
 
@@ -137,7 +141,7 @@ public class ModBlocks {
 
     // Lights
     public static final DeferredBlock<Block> FLUORESCENT_LIGHT = registerBlock("fluorescent_light",
-            () -> new FluorescentLightBlock(BlockBehaviour.Properties.of().lightLevel(state -> 14)));
+            () -> new FluorescentLightBlock(BlockBehaviour.Properties.of().strength(2.0f).lightLevel(state -> 14)));
 
     // Tables
     public static final DeferredBlock<Block> PLASTIC_TABLE = registerBlock("plastic_table",
@@ -149,18 +153,77 @@ public class ModBlocks {
 
     // Other Furniture
     public static final DeferredBlock<Block> TELEPHONE = registerBlock("telephone",
-            () -> new TelephoneBlock(BlockBehaviour.Properties.of().noOcclusion()));
+            () -> new TelephoneBlock(BlockBehaviour.Properties.of().strength(2.0f).noOcclusion()));
 
     public static final DeferredBlock<Block> SEWING_MACHINE = registerBlock("sewing_machine",
             () -> new SewingMachineBlock(BlockBehaviour.Properties.of().strength(1.5f)));
 
+    public static final DeferredBlock<Block> COMPUTER = registerBlock("computer",
+            () -> new ComputerBlock(BlockBehaviour.Properties.of().strength(3.0f)));
+
+    public static final DeferredBlock<DoorBlock> GRID_METAL_DOOR = registerBlock("grid_metal_door",
+            () -> new DoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of().strength(5.0f).noOcclusion()));
+
+    public static final DeferredBlock<DoorBlock> YELLOW_METAL_DOOR = registerBlock("yellow_metal_door",
+            () -> new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.of().strength(5.0f)));
+
+    public static final DeferredBlock<DoorBlock> WHITE_METAL_DOOR = registerBlock("white_metal_door",
+            () -> new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.of().strength(5.0f).noOcclusion()));
+
+    public static final DeferredBlock<Block> FLOODLIGHT = registerBlock("floodlight",
+            () -> new FloodlightBlock(BlockBehaviour.Properties.of().noOcclusion().strength(1.0f).lightLevel(state -> 14)));
+
+    public static final DeferredBlock<Block> FLOOD_LAMP = registerBlock("flood_lamp",
+            () -> new FloodLampBlock(BlockBehaviour.Properties.of().noOcclusion().strength(1.0f).lightLevel(state -> 14)));
+
+    public static final DeferredBlock<Block> KEYCARD_READER = registerBlock("keycard_reader",
+            () -> new KeycardReaderBlock(BlockBehaviour.Properties.of().strength(5.0f)));
+
+    public static final DeferredBlock<Block> DOUBLE_IRON_PIPES = registerBlock("double_iron_pipes",
+            () -> new DoublePipeBlock(BlockBehaviour.Properties.of().strength(2.0f).noOcclusion().sound(SoundType.METAL)));
+
+    public static final DeferredBlock<Block> DRINKING_FOUNTAIN = registerBlock("drinking_fountain",
+            () -> new DrinkingFountainBlock(BlockBehaviour.Properties.of().strength(2.0f).noOcclusion().sound(SoundType.METAL)));
+
+    public static final DeferredBlock<Block> CUP_DISPENSER = registerBlock("cup_dispenser",
+            () -> new CupDispenserBlock(BlockBehaviour.Properties.of().strength(2.0f).noOcclusion()));
+
+    public static final DeferredBlock<Block> SIGN_POST = registerBlock("sign_post",
+            () -> new SignPostBlock(BlockBehaviour.Properties.of().strength(1.0f).sound(SoundType.METAL)));
+
+    public static final DeferredBlock<Block> STOP_SIGN = registerBlock("stop_sign",
+            () -> new RoadSignBlock(BlockBehaviour.Properties.of().strength(1.0f).sound(SoundType.METAL)));
+
+    public static final DeferredBlock<Block> TRAFFIC_CONE = registerBlock("traffic_cone",
+            () -> new TrafficConeBlock(BlockBehaviour.Properties.of().strength(1.0f).sound(SoundType.BAMBOO)));
+
+    public static final DeferredBlock<Block> CONCRETE_BARRIER = registerBlock("concrete_barrier",
+            () -> new ConcreteBarrierBlock(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.STONE).noOcclusion()));
+
+    public static final DeferredBlock<Block> CAUTION_BLOCK = registerBlock("caution_block",
+            () -> new Block(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.COPPER)));
+    public static final DeferredBlock<SlabBlock> CAUTION_BLOCK_SLAB = registerBlock("caution_block_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.COPPER)));
+    public static final DeferredBlock<StairBlock> CAUTION_BLOCK_STAIRS = registerBlock("caution_block_stairs",
+            () -> new StairBlock(CAUTION_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.COPPER)));
+
     // Planks
     public static final Map<DyeColor, Supplier<Block>> PAINTED_PLANKS = new HashMap<>();
+    public static final Map<DyeColor, DeferredBlock<StairBlock>> PAINTED_PLANKS_STAIRS = new HashMap<>();
+    public static final Map<DyeColor, DeferredBlock<SlabBlock>> PAINTED_PLANKS_SLABS = new HashMap<>();
     static {
         for (DyeColor color:DyeColor.values()) {
             PAINTED_PLANKS.put(color, registerBlock(
                     color.getSerializedName() + "_painted_planks",
                     () -> new Block(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.WOOD))
+            ));
+            PAINTED_PLANKS_STAIRS.put(color, registerBlock(
+                    color.getSerializedName() + "_painted_planks_stairs",
+                    () -> new StairBlock(PAINTED_PLANKS.get(color).get().defaultBlockState(), BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.WOOD))
+            ));
+            PAINTED_PLANKS_SLABS.put(color, registerBlock(
+                    color.getSerializedName() + "_painted_plank_slab",
+                    () -> new SlabBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.WOOD))
             ));
         }
     }

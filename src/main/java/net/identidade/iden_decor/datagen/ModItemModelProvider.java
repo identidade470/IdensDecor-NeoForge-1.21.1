@@ -1,9 +1,13 @@
 package net.identidade.iden_decor.datagen;
 
 import net.identidade.iden_decor.IdenDecorMod;
+import net.identidade.iden_decor.block.ModBlocks;
 import net.identidade.iden_decor.item.ModItems;
+import net.minecraft.client.model.Model;
+import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
@@ -22,13 +26,31 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.WATER_CUP.get());
         basicItem(ModItems.TELEPHONE_ITEM.get());
         basicItem(ModItems.RED_WRAP.get());
+        basicItem(ModItems.FLOPPY_DISK.get());
 
 //        ModItems.PAINT_BRUSHES.values().forEach(item -> basicItem(item.get()));
 //
 //        buttonItem(ModBlocks.BLOODY_BUTTON, ModBlocks.BLOODY_PLANKS);
 //        fenceItem(ModBlocks.BLOODY_FENCE, ModBlocks.BLOODY_PLANKS);
 //
-//        basicItem(ModBlocks.BLOODY_DOOR.asItem());
+        basicItem(ModBlocks.GRID_METAL_DOOR.asItem());
+        basicItem(ModBlocks.YELLOW_METAL_DOOR.asItem());
+        basicItem(ModBlocks.WHITE_METAL_DOOR.asItem());
+
+        basicItem(ModBlocks.DARK_WATER_DISPENSER.asItem());
+        basicItem(ModBlocks.LIGHT_WATER_DISPENSER.asItem());
+
+        basicItem(ModItems.KEYCARD.get());
+        basicItem(ModItems.GUARANA_CUP.get());
+
+        blockItemWithFrontGuiLight(ModBlocks.WATER_POSTER);
+        blockItemWithFrontGuiLight(ModBlocks.CCS_POSTER);
+        blockItemWithFrontGuiLight(ModBlocks.STOP_SIGN);
+    }
+
+    private void blockItemWithFrontGuiLight(DeferredBlock<?> block) {
+        this.withExistingParent(block.getId().getPath(), modLoc("block/" + block.getId().getPath()))
+                .guiLight(BlockModel.GuiLight.FRONT);
     }
 
 

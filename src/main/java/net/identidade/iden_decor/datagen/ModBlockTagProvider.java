@@ -49,6 +49,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.SMOOTH_STONE_TILES_STAIRS.get())
                 .add(ModBlocks.SMOOTH_STONE_TILES_SLAB.get())
 
+                .add(ModBlocks.CAUTION_BLOCK.get())
+                .add(ModBlocks.CAUTION_BLOCK_STAIRS.get())
+                .add(ModBlocks.CAUTION_BLOCK_SLAB.get())
+
                 .add(ModBlocks.WHITE_TILES.get())
                 .add(ModBlocks.WHITE_TILES_STAIRS.get())
                 .add(ModBlocks.WHITE_TILES_SLAB.get())
@@ -63,7 +67,20 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.METAL_BARREL.get())
                 .add(ModBlocks.BLUE_METAL_BARREL.get())
 
+                .add(ModBlocks.GRID_METAL_DOOR.get())
+                .add(ModBlocks.YELLOW_METAL_DOOR.get())
+                .add(ModBlocks.WHITE_METAL_DOOR.get())
+
+                .add(ModBlocks.DOUBLE_IRON_PIPES.get())
+
                 .add(ModBlocks.TELEPHONE.get())
+                .add(ModBlocks.COMPUTER.get())
+                .add(ModBlocks.DRINKING_FOUNTAIN.get())
+                .add(ModBlocks.SIGN_POST.get())
+                .add(ModBlocks.STOP_SIGN.get())
+                .add(ModBlocks.KEYCARD_READER.get())
+                .add(ModBlocks.CUP_DISPENSER.get())
+                .add(ModBlocks.CONCRETE_BARRIER.get())
                 .add(ModBlocks.FLUORESCENT_LIGHT.get());
 
         tag(ModTags.Blocks.RAILINGS)
@@ -76,6 +93,38 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         ModBlocks.PAINTED_PLANKS.values().forEach(block -> tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(block.get()));
+
+        ModBlocks.PAINTED_PLANKS_SLABS.values().forEach(block -> {
+            tag(BlockTags.MINEABLE_WITH_AXE).add(block.get());
+            tag(BlockTags.WOODEN_SLABS).add(block.get());
+            tag(BlockTags.SLABS).add(block.get());
+        });
+
+        ModBlocks.PAINTED_PLANKS_STAIRS.values().forEach(block -> {
+            tag(BlockTags.MINEABLE_WITH_AXE).add(block.get());
+            tag(BlockTags.WOODEN_STAIRS).add(block.get());
+            tag(BlockTags.STAIRS).add(block.get());
+        });
+
+        tag(BlockTags.SLABS)
+                .add(ModBlocks.CAUTION_BLOCK_SLAB.get())
+                .add(ModBlocks.SMOOTH_STONE_TILES_SLAB.get())
+                .add(ModBlocks.WHITE_BRICKS_SLAB.get())
+                .add(ModBlocks.WHITE_TILES_SLAB.get());
+
+        tag(BlockTags.STAIRS)
+                .add(ModBlocks.CAUTION_BLOCK_STAIRS.get())
+                .add(ModBlocks.WHITE_BRICKS_STAIRS.get())
+                .add(ModBlocks.SMOOTH_STONE_TILES_STAIRS.get())
+                .add(ModBlocks.WHITE_TILES_STAIRS.get());
+
+        tag(BlockTags.DOORS)
+                .add(ModBlocks.WHITE_METAL_DOOR.get())
+                .add(ModBlocks.YELLOW_METAL_DOOR.get())
+                .add(ModBlocks.GRID_METAL_DOOR.get());
+
+        tag(BlockTags.TRAPDOORS)
+                .add(ModBlocks.AIR_VENT.get());
 //
 //        tag(BlockTags.PLANKS)
 //                .add(ModBlocks.BLOODY_PLANKS.get());

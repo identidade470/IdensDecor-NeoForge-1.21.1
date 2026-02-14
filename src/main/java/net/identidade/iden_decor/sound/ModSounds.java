@@ -18,6 +18,9 @@ public class ModSounds {
     public static final Supplier<SoundEvent> PHONE_SLAM = registerSoundEvent("phone_slam");
     public static final Supplier<SoundEvent> PHONE_RING = registerSoundEvent("phone_ring");
     public static final Supplier<SoundEvent> TOY_USE = registerSoundEvent("toy_use");
+    public static final Supplier<SoundEvent> FLOPPY_DISK_INSERT = registerSoundEvent("floppy_disk_insert");
+    public static final Supplier<SoundEvent> GUARANA_SOUND = registerSoundEvent("guarana_sound");
+    public static final Supplier<SoundEvent> ELETRONIC_BEEP = registerSoundEvent("eletronic_beep");
 
     private static Supplier<SoundEvent> registerSoundEvent(String name) {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, name);

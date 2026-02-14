@@ -1,6 +1,8 @@
 package net.identidade.iden_decor;
 
 import net.identidade.iden_decor.block.ModBlocks;
+import net.identidade.iden_decor.blockentity.ModBlockEntities;
+import net.identidade.iden_decor.client.gui.ModMenus;
 import net.identidade.iden_decor.entity.ModEntities;
 import net.identidade.iden_decor.item.ModCreativeModeTab;
 import net.identidade.iden_decor.item.ModItems;
@@ -43,6 +45,9 @@ public class IdenDecorMod {
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
         ModSounds.register(modEventBus);
+
+        ModMenus.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 //        ModEntities.register(modEventBus);
 
         // Register the item to a creative tab
