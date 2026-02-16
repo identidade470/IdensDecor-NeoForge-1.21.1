@@ -72,6 +72,7 @@ public class ComputerBlock extends BaseEntityBlock {
         // inserir
         if (held.is(ModItems.FLOPPY_DISK.get()) && !computer.hasDisk()) {
             if (!level.isClientSide) {
+
                 computer.setDisk(held);
 
                 level.playSound(null, pos, ModSounds.FLOPPY_DISK_INSERT.get(), SoundSource.BLOCKS, 1, 1);

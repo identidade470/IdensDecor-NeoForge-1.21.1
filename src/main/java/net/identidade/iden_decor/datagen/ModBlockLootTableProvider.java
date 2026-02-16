@@ -85,6 +85,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.CONCRETE_BARRIER.get());
         dropSelf(ModBlocks.CAUTION_BLOCK.get());
         dropSelf(ModBlocks.CAUTION_BLOCK_STAIRS.get());
+        dropSelf(ModBlocks.GREEN_DIAMOND_WALLPAPER.get());
+        dropSelf(ModBlocks.BLUE_RUG.get());
+        dropSelf(ModBlocks.WALL_LAMP.get());
 
         ModBlocks.PAINTED_PLANKS.values().forEach(block -> dropSelf(block.get()));
         ModBlocks.PAINTED_PLANKS_STAIRS.values().forEach(block -> dropSelf(block.get()));

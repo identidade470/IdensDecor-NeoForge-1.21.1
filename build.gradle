@@ -120,6 +120,7 @@ dependencies {
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
      compileOnly "mezz.jei:jei-1.21.1-common-api:19.27.0.340"
      compileOnly "mezz.jei:jei-1.21.1-neoforge-api:19.27.0.340"
+
     // We add the full version to localRuntime, not runtimeOnly, so that we do not publish a dependency on it
      localRuntime "mezz.jei:jei-1.21.1-neoforge:19.27.0.340"
 

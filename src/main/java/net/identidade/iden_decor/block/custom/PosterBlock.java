@@ -36,7 +36,7 @@ public class PosterBlock extends Block {
 
     @Override
     protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        return level.getBlockState(pos.relative(((Direction)state.getValue(FACING)).getOpposite())).isSolid();
+        return !level.getBlockState(pos.relative(((Direction)state.getValue(FACING)).getOpposite())).isAir();
     }
 
     @Override

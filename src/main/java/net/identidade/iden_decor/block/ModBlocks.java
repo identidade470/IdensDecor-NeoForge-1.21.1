@@ -207,6 +207,15 @@ public class ModBlocks {
     public static final DeferredBlock<StairBlock> CAUTION_BLOCK_STAIRS = registerBlock("caution_block_stairs",
             () -> new StairBlock(CAUTION_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.COPPER)));
 
+    public static final DeferredBlock<Block> GREEN_DIAMOND_WALLPAPER = registerBlock("green_diamond_wallpaper",
+            () -> new Block(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.WOOD)));
+
+    public static final DeferredBlock<Block> BLUE_RUG = registerBlock("blue_rug",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOL)));
+
+    public static final DeferredBlock<Block> WALL_LAMP = registerBlock("wall_lamp",
+            () -> new WallLampBlock(BlockBehaviour.Properties.of().strength(1.5f).sound(SoundType.METAL).lightLevel(blockstate -> 10).noOcclusion()));
+
     // Planks
     public static final Map<DyeColor, Supplier<Block>> PAINTED_PLANKS = new HashMap<>();
     public static final Map<DyeColor, DeferredBlock<StairBlock>> PAINTED_PLANKS_STAIRS = new HashMap<>();

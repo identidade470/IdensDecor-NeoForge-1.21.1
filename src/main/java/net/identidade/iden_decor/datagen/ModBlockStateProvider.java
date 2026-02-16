@@ -130,6 +130,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         horizontalFaceBlock(ModBlocks.DOUBLE_IRON_PIPES.get(), models().getExistingFile(modLoc("block/double_iron_pipes")));
         horizontalFaceBlock(ModBlocks.FLOOD_LAMP.get(), models().getExistingFile(modLoc("block/flood_lamp")));
 
+        blockWithItem(ModBlocks.GREEN_DIAMOND_WALLPAPER);
+        blockWithItem(ModBlocks.BLUE_RUG);
+
+        horizontalBlockGen(ModBlocks.WALL_LAMP);
+        blockItem(ModBlocks.WALL_LAMP);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {
