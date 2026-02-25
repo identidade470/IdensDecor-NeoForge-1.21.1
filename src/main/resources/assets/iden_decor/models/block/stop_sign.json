@@ -2,13 +2,13 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"ambientocclusion": false,
-    "render_type": "cutout",
+	"render_type": "cutout",
 	"textures": {
 		"0": "iden_decor:block/sign_post_top",
 		"1": "iden_decor:block/sign_post_side",
-		"2": "iden_decor:block/stop_sign",
+		"2": "iden_decor:block/signs/red_sign",
 		"3": "iden_decor:block/sign_back",
-		"4": "iden_decor:block/stop_text",
+		"4": "iden_decor:block/signs_texts/stop_text",
 		"particle": "iden_decor:block/sign_post_top"
 	},
 	"elements": [

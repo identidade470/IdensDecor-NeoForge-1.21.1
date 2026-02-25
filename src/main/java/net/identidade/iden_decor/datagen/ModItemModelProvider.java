@@ -43,9 +43,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.KEYCARD.get());
         basicItem(ModItems.GUARANA_CUP.get());
 
+        fenceItem(ModBlocks.CAUTION_BLOCK_FENCE, ModBlocks.CAUTION_BLOCK);
+        wallItem(ModBlocks.CAUTION_BLOCK_WALL, ModBlocks.CAUTION_BLOCK);
+
         blockItemWithFrontGuiLight(ModBlocks.WATER_POSTER);
         blockItemWithFrontGuiLight(ModBlocks.CCS_POSTER);
         blockItemWithFrontGuiLight(ModBlocks.STOP_SIGN);
+        blockItemWithFrontGuiLight(ModBlocks.INTERSECTION_SIGN);
     }
 
     private void blockItemWithFrontGuiLight(DeferredBlock<?> block) {
@@ -61,15 +65,15 @@ public class ModItemModelProvider extends ItemModelProvider {
 //                        "block/" + baseBlock.getId().getPath()));
 //    }
 //
-//    public void fenceItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
-//        this.withExistingParent(block.getId().getPath(), mcLoc("block/fence_inventory"))
-//                .texture("texture",  ResourceLocation.fromNamespaceAndPath(Crimsomania.MOD_ID,
-//                        "block/" + baseBlock.getId().getPath()));
-//    }
-//
-//    public void wallItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
-//        this.withExistingParent(block.getId().getPath(), mcLoc("block/wall_inventory"))
-//                .texture("wall",  ResourceLocation.fromNamespaceAndPath(Crimsomania.MOD_ID,
-//                        "block/" + baseBlock.getId().getPath()));
-//    }
+    public void fenceItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("block/fence_inventory"))
+                .texture("texture",  ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID,
+                        "block/" + baseBlock.getId().getPath()));
+    }
+
+    public void wallItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("block/wall_inventory"))
+                .texture("wall",  ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID,
+                        "block/" + baseBlock.getId().getPath()));
+    }
 }

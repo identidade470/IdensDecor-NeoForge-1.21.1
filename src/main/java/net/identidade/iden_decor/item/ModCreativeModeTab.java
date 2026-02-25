@@ -60,6 +60,8 @@ public class ModCreativeModeTab {
                         output.accept(ModBlocks.CAUTION_BLOCK);
                         output.accept(ModBlocks.CAUTION_BLOCK_STAIRS);
                         output.accept(ModBlocks.CAUTION_BLOCK_SLAB);
+                        output.accept(ModBlocks.CAUTION_BLOCK_WALL);
+                        output.accept(ModBlocks.CAUTION_BLOCK_FENCE);
                         output.accept(ModBlocks.DOUBLE_IRON_PIPES);
                         output.accept(ModBlocks.IRON_SHEET_METAL);
                         output.accept(ModBlocks.AIR_DUCT);
@@ -82,6 +84,7 @@ public class ModCreativeModeTab {
                         output.accept(ModBlocks.CONCRETE_BARRIER);
                         output.accept(ModBlocks.SIGN_POST);
                         output.accept(ModBlocks.STOP_SIGN);
+                        output.accept(ModBlocks.INTERSECTION_SIGN);
                         output.accept(ModBlocks.HEAVY_BUTTON);
                         output.accept(ModBlocks.GATE_BUTTON);
                         output.accept(ModBlocks.HEAVY_LEVER);

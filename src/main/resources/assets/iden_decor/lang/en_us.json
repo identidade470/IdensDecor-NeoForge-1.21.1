@@ -132,6 +132,8 @@
   "block.iden_decor.caution_block": "Caution Block",
   "block.iden_decor.caution_block_stairs": "Caution Block Stairs",
   "block.iden_decor.caution_block_slab": "Caution Block Slab",
+  "block.iden_decor.caution_block_fence": "Caution Block Fence",
+  "block.iden_decor.caution_block_wall": "Caution Block Wall",
   "block.iden_decor.traffic_cone": "Traffic Cone",
   "block.iden_decor.double_iron_pipes": "Double Iron Pipes",
   "block.iden_decor.concrete_barrier": "Concrete Barrier",

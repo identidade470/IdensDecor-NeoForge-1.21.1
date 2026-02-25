@@ -106,6 +106,12 @@ public class ModBlockTagProvider extends BlockTagsProvider {
             tag(BlockTags.STAIRS).add(block.get());
         });
 
+        tag(BlockTags.FENCES)
+                .add(ModBlocks.CAUTION_BLOCK_FENCE.get());
+
+        tag(BlockTags.WALLS)
+                .add(ModBlocks.CAUTION_BLOCK_WALL.get());
+
         tag(BlockTags.SLABS)
                 .add(ModBlocks.CAUTION_BLOCK_SLAB.get())
                 .add(ModBlocks.SMOOTH_STONE_TILES_SLAB.get())

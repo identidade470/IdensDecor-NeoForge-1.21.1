@@ -107,6 +107,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         horizontalBlockGen(ModBlocks.DRINKING_FOUNTAIN);
         horizontalBlockGen(ModBlocks.CUP_DISPENSER);
         horizontalBlockGen(ModBlocks.STOP_SIGN);
+        horizontalBlockGen(ModBlocks.INTERSECTION_SIGN);
         horizontalBlockGen(ModBlocks.CONCRETE_BARRIER);
 
         simpleBlock(ModBlocks.SIGN_POST.get(), models().getExistingFile(modLoc("block/sign_post")));
@@ -123,6 +124,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         doorBlockWithRenderType(ModBlocks.GRID_METAL_DOOR.get(), modLoc("block/grid_metal_door_bottom"), modLoc("block/grid_metal_door_top"), "cutout");
         doorBlockWithRenderType(ModBlocks.WHITE_METAL_DOOR.get(), modLoc("block/white_metal_door_bottom"), modLoc("block/white_metal_door_top"), "cutout");
         doorBlock(ModBlocks.YELLOW_METAL_DOOR.get(), modLoc("block/yellow_metal_door_bottom"), modLoc("block/yellow_metal_door_top"));
+        fenceBlock(ModBlocks.CAUTION_BLOCK_FENCE.get(), blockTexture(ModBlocks.CAUTION_BLOCK.get()));
+        wallBlock(ModBlocks.CAUTION_BLOCK_WALL.get(), blockTexture(ModBlocks.CAUTION_BLOCK.get()));
+
+        blockItem(ModBlocks.CAUTION_BLOCK_FENCE);
+        blockItem(ModBlocks.CAUTION_BLOCK_WALL);
 
         horizontalBlockGen(ModBlocks.FLOODLIGHT);
         keycard_reader(ModBlocks.KEYCARD_READER.get());

@@ -194,6 +194,9 @@ public class ModBlocks {
     public static final DeferredBlock<Block> STOP_SIGN = registerBlock("stop_sign",
             () -> new RoadSignBlock(BlockBehaviour.Properties.of().strength(1.0f).sound(SoundType.METAL)));
 
+    public static final DeferredBlock<Block> INTERSECTION_SIGN = registerBlock("intersection_sign",
+            () -> new RoadSignBlock(BlockBehaviour.Properties.of().strength(1.0f).sound(SoundType.METAL)));
+
     public static final DeferredBlock<Block> TRAFFIC_CONE = registerBlock("traffic_cone",
             () -> new TrafficConeBlock(BlockBehaviour.Properties.of().strength(1.0f).sound(SoundType.BAMBOO)));
 
@@ -206,6 +209,10 @@ public class ModBlocks {
             () -> new SlabBlock(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.COPPER)));
     public static final DeferredBlock<StairBlock> CAUTION_BLOCK_STAIRS = registerBlock("caution_block_stairs",
             () -> new StairBlock(CAUTION_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.COPPER)));
+    public static final DeferredBlock<FenceBlock> CAUTION_BLOCK_FENCE = registerBlock("caution_block_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.COPPER)));
+    public static final DeferredBlock<WallBlock> CAUTION_BLOCK_WALL = registerBlock("caution_block_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.COPPER)));
 
     public static final DeferredBlock<Block> GREEN_DIAMOND_WALLPAPER = registerBlock("green_diamond_wallpaper",
             () -> new Block(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.WOOD)));

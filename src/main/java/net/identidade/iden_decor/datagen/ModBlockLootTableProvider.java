@@ -81,10 +81,13 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.CUP_DISPENSER.get());
         dropSelf(ModBlocks.SIGN_POST.get());
         dropSelf(ModBlocks.STOP_SIGN.get());
+        dropSelf(ModBlocks.INTERSECTION_SIGN.get());
         dropSelf(ModBlocks.TRAFFIC_CONE.get());
         dropSelf(ModBlocks.CONCRETE_BARRIER.get());
         dropSelf(ModBlocks.CAUTION_BLOCK.get());
         dropSelf(ModBlocks.CAUTION_BLOCK_STAIRS.get());
+        dropSelf(ModBlocks.CAUTION_BLOCK_FENCE.get());
+        dropSelf(ModBlocks.CAUTION_BLOCK_WALL.get());
         dropSelf(ModBlocks.GREEN_DIAMOND_WALLPAPER.get());
         dropSelf(ModBlocks.BLUE_RUG.get());
         dropSelf(ModBlocks.WALL_LAMP.get());
