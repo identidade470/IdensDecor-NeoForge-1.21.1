@@ -1,6 +1,7 @@
 {
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
+	"render_type": "cutout_mipped",
 	"texture_size": [64, 64],
 	"textures": {
 		"1": "iden_decor:block/computer",
@@ -111,9 +112,9 @@
 			}
 		},
 		{
-			"from": [5, 1.5, -2],
-			"to": [11, 1.5, 4],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 1.5, 1]},
+			"from": [5, 1.5, 0],
+			"to": [11, 1.5, 6],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 1.5, 3]},
 			"faces": {
 				"north": {"uv": [0, 0, 1.5, 0.25], "texture": "#2"},
 				"east": {"uv": [0, 0, 1.5, 0.25], "texture": "#2"},

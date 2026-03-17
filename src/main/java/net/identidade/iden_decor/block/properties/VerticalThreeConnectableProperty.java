@@ -4,10 +4,10 @@ import net.minecraft.util.StringRepresentable;
 
 import java.util.Locale;
 
-public enum ThreeConnectableProperty implements StringRepresentable {
-    LEFT,
+public enum VerticalThreeConnectableProperty implements StringRepresentable {
+    UPPER,
     CENTER,
-    RIGHT,
+    LOWER,
     SINGLE;
     ;
 

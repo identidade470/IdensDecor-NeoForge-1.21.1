@@ -1,0 +1,10 @@
+{
+  "type": "idens_decor:sewing_machine",
+  "ingredient": {
+    "item": "minecraft:white_wool"
+  },
+  "result": {
+    "id": "idens_decor:rafa_plushie",
+    "count": 1
+  }
+}

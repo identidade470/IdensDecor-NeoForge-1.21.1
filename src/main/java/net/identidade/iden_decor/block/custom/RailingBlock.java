@@ -2,7 +2,7 @@ package net.identidade.iden_decor.block.custom;
 
 import net.identidade.iden_decor.block.custom.templates.SimpleHorizontalBlock;
 import net.identidade.iden_decor.block.properties.ColorProperty;
-import net.identidade.iden_decor.block.properties.ThreeConnectableProperty;
+import net.identidade.iden_decor.block.properties.HorizontalThreeConnectableProperty;
 import net.identidade.iden_decor.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -27,13 +27,13 @@ import org.jetbrains.annotations.Nullable;
 
 public class RailingBlock extends SimpleHorizontalBlock {
 
-    public static final EnumProperty<ThreeConnectableProperty> PART = EnumProperty.create("part", ThreeConnectableProperty.class);
+    public static final EnumProperty<HorizontalThreeConnectableProperty> PART = EnumProperty.create("part", HorizontalThreeConnectableProperty.class);
     public static final EnumProperty<ColorProperty> COLOR = EnumProperty.create("color", ColorProperty.class);
 
     public RailingBlock(Properties properties) {
         super(properties);
         registerDefaultState(defaultBlockState()
-                .setValue(PART, ThreeConnectableProperty.SINGLE)
+                .setValue(PART, HorizontalThreeConnectableProperty.SINGLE)
                 .setValue(COLOR, ColorProperty.BASE));
     }
 
@@ -59,7 +59,7 @@ public class RailingBlock extends SimpleHorizontalBlock {
         return  ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
-    private ThreeConnectableProperty updatePart(LevelAccessor level, BlockPos pos, BlockState state, Direction facing) {
+    private HorizontalThreeConnectableProperty updatePart(LevelAccessor level, BlockPos pos, BlockState state, Direction facing) {
         Direction leftDir = facing.getCounterClockWise();
         Direction rightDir = facing.getClockWise();
 
@@ -69,18 +69,18 @@ public class RailingBlock extends SimpleHorizontalBlock {
         boolean left = (leftNeighbor.is(ModTags.Blocks.RAILINGS) && leftNeighbor.getValue(FACING) == facing);
         boolean right = (rightNeighbor.is(ModTags.Blocks.RAILINGS) && rightNeighbor.getValue(FACING) == facing);
 
-        if (left && right) return ThreeConnectableProperty.CENTER;
-        if (left) return ThreeConnectableProperty.RIGHT;
-        if (right) return ThreeConnectableProperty.LEFT;
+        if (left && right) return HorizontalThreeConnectableProperty.CENTER;
+        if (left) return HorizontalThreeConnectableProperty.RIGHT;
+        if (right) return HorizontalThreeConnectableProperty.LEFT;
 
-        return ThreeConnectableProperty.SINGLE;
+        return HorizontalThreeConnectableProperty.SINGLE;
     }
 
     @Override
     protected BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
 
         Direction facing = state.getValue(FACING);
-        ThreeConnectableProperty part = updatePart(level, pos, state, facing);
+        HorizontalThreeConnectableProperty part = updatePart(level, pos, state, facing);
 
         return state
                 .setValue(PART, part);
@@ -104,7 +104,7 @@ public class RailingBlock extends SimpleHorizontalBlock {
     public @Nullable BlockState getStateForPlacement(BlockPlaceContext context) {
 
         Direction facing = context.getHorizontalDirection().getOpposite();
-        ThreeConnectableProperty part = updatePart(context.getLevel(), context.getClickedPos(), defaultBlockState(), facing);
+        HorizontalThreeConnectableProperty part = updatePart(context.getLevel(), context.getClickedPos(), defaultBlockState(), facing);
 
         return this.defaultBlockState()
                 .setValue(FACING, facing)

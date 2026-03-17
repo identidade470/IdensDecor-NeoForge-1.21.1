@@ -31,6 +31,32 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 //                .add(ModBlocks.BLOODY_LOG.get())
 //                .add(ModBlocks.BLOODY_WOOD.get())
 //                .add(ModBlocks.BLOODY_PLANKS.get());
+        tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(ModBlocks.GREEN_DIAMOND_WALLPAPER.get())
+                .add(ModBlocks.RED_DIAMOND_WALLPAPER.get())
+                .add(ModBlocks.YELLOW_ARROW_WALLPAPER.get())
+                .add(ModBlocks.CARVED_SPRUCE_PLANKS.get())
+                .add(ModBlocks.BLUE_CLOUDS_WALLPAPER.get())
+                .add(ModBlocks.BLACK_CLOUDS_WALLPAPER.get())
+                .add(ModBlocks.BLACK_STARRY_WALLPAPER.get())
+
+                .add(ModBlocks.OAK_METAL_SHELF.get())
+                .add(ModBlocks.ACACIA_METAL_SHELF.get())
+                .add(ModBlocks.BIRCH_METAL_SHELF.get())
+                .add(ModBlocks.DARK_OAK_METAL_SHELF.get())
+                .add(ModBlocks.JUNGLE_METAL_SHELF.get())
+                .add(ModBlocks.CHERRY_METAL_SHELF.get())
+                .add(ModBlocks.SPRUCE_METAL_SHELF.get())
+                .add(ModBlocks.WARPED_METAL_SHELF.get())
+                .add(ModBlocks.CRIMSON_METAL_SHELF.get())
+                .add(ModBlocks.BAMBOO_METAL_SHELF.get())
+                .add(ModBlocks.MANGROVE_METAL_SHELF.get())
+                .add(ModBlocks.WHITE_WOODEN_PANEL_DOOR.get())
+                .add(ModBlocks.WOODEN_PANEL_DOOR.get())
+                .add(ModBlocks.WHITE_WOOD_RAILING.get())
+
+                .add(ModBlocks.WHITE_CUBIC_SHELF.get())
+        ;
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 // Furniture
                 .add(ModBlocks.DARK_WATER_DISPENSER.get())
@@ -81,7 +107,13 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.KEYCARD_READER.get())
                 .add(ModBlocks.CUP_DISPENSER.get())
                 .add(ModBlocks.CONCRETE_BARRIER.get())
-                .add(ModBlocks.FLUORESCENT_LIGHT.get());
+                .add(ModBlocks.FLUORESCENT_LIGHT_BLOCK.get())
+                .add(ModBlocks.WALL_CLOCK.get())
+                .add(ModBlocks.FLUORESCENT_LIGHT.get())
+                .add(ModBlocks.METAL_SHELF.get())
+
+                .add(ModBlocks.LONG_CONCRETE_VASE.get())
+        ;
 
         tag(ModTags.Blocks.RAILINGS)
                 .add(ModBlocks.GOLD_RAILING.get())
@@ -92,6 +124,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(block.get()));
 
         ModBlocks.PAINTED_PLANKS.values().forEach(block -> tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(block.get()));
+
+        ModBlocks.FRAMED_PLANKS.values().forEach(block -> tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(block.get()));
 
         ModBlocks.PAINTED_PLANKS_SLABS.values().forEach(block -> {
@@ -110,6 +145,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CAUTION_BLOCK_FENCE.get());
 
         tag(BlockTags.WALLS)
+                .add(ModBlocks.WHITE_WOOD_RAILING.get())
                 .add(ModBlocks.CAUTION_BLOCK_WALL.get());
 
         tag(BlockTags.SLABS)
@@ -127,7 +163,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.DOORS)
                 .add(ModBlocks.WHITE_METAL_DOOR.get())
                 .add(ModBlocks.YELLOW_METAL_DOOR.get())
-                .add(ModBlocks.GRID_METAL_DOOR.get());
+                .add(ModBlocks.GRID_METAL_DOOR.get())
+                .add(ModBlocks.WHITE_WOODEN_PANEL_DOOR.get())
+                .add(ModBlocks.WOODEN_PANEL_DOOR.get())
+        ;
 
         tag(BlockTags.TRAPDOORS)
                 .add(ModBlocks.AIR_VENT.get());

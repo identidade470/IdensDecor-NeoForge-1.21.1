@@ -4,18 +4,19 @@ import net.identidade.iden_decor.IdenDecorMod;
 import net.identidade.iden_decor.block.ModBlocks;
 import net.identidade.iden_decor.block.custom.*;
 import net.identidade.iden_decor.block.properties.ColorProperty;
-import net.identidade.iden_decor.block.properties.ThreeConnectableProperty;
-import net.minecraft.client.renderer.RenderType;
+import net.identidade.iden_decor.block.properties.HorizontalThreeConnectableProperty;
+import net.identidade.iden_decor.block.properties.VerticalThreeConnectableProperty;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CarpetBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.properties.AttachFace;
-import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
-import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
-import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
-import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.WallSide;
+import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
@@ -75,6 +76,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.TRAFFIC_CONE);
         blockItem(ModBlocks.CAUTION_BLOCK_SLAB);
         blockItem(ModBlocks.CAUTION_BLOCK_STAIRS);
+        blockItem(ModBlocks.CEILING_LAMP);
 
         blockWithItem(ModBlocks.IRON_SHEET_METAL);
         blockWithItem(ModBlocks.AIR_DUCT);
@@ -118,14 +120,20 @@ public class ModBlockStateProvider extends BlockStateProvider {
         ModBlocks.PAINTED_PLANKS.values().forEach(block -> simpleBlockWithItem(block.get(), cubeAll(block.get())));
         ModBlocks.PAINTED_PLANKS_STAIRS.forEach((color, block) -> {stairsBlock(block.get(), blockTexture(ModBlocks.PAINTED_PLANKS.get(color).get()));blockItem(block);});
         ModBlocks.PAINTED_PLANKS_SLABS.forEach((color, block) -> {slabBlock(block.get(), blockTexture(ModBlocks.PAINTED_PLANKS.get(color).get()), blockTexture(ModBlocks.PAINTED_PLANKS.get(color).get()));blockItem(block);});
+        ModBlocks.FRAMED_PLANKS.values().forEach(block -> connectedBlockWithItem(block.get()));
 
         computer(ModBlocks.COMPUTER.get());
 
         doorBlockWithRenderType(ModBlocks.GRID_METAL_DOOR.get(), modLoc("block/grid_metal_door_bottom"), modLoc("block/grid_metal_door_top"), "cutout");
         doorBlockWithRenderType(ModBlocks.WHITE_METAL_DOOR.get(), modLoc("block/white_metal_door_bottom"), modLoc("block/white_metal_door_top"), "cutout");
+        doorBlock(ModBlocks.WHITE_WOODEN_PANEL_DOOR.get(), modLoc("block/white_wooden_panel_door_bottom"), modLoc("block/white_wooden_panel_door_top"));
+        doorBlock(ModBlocks.WOODEN_PANEL_DOOR.get(), modLoc("block/wooden_panel_door_bottom"), modLoc("block/wooden_panel_door_top"));
         doorBlock(ModBlocks.YELLOW_METAL_DOOR.get(), modLoc("block/yellow_metal_door_bottom"), modLoc("block/yellow_metal_door_top"));
         fenceBlock(ModBlocks.CAUTION_BLOCK_FENCE.get(), blockTexture(ModBlocks.CAUTION_BLOCK.get()));
         wallBlock(ModBlocks.CAUTION_BLOCK_WALL.get(), blockTexture(ModBlocks.CAUTION_BLOCK.get()));
+
+        blockWithItem(ModBlocks.PUZZLE_WOOL);
+        carpetBlock(ModBlocks.PUZZLE_CARPET, "puzzle_wool");
 
         blockItem(ModBlocks.CAUTION_BLOCK_FENCE);
         blockItem(ModBlocks.CAUTION_BLOCK_WALL);
@@ -136,22 +144,66 @@ public class ModBlockStateProvider extends BlockStateProvider {
         horizontalFaceBlock(ModBlocks.DOUBLE_IRON_PIPES.get(), models().getExistingFile(modLoc("block/double_iron_pipes")));
         horizontalFaceBlock(ModBlocks.FLOOD_LAMP.get(), models().getExistingFile(modLoc("block/flood_lamp")));
 
-        blockWithItem(ModBlocks.GREEN_DIAMOND_WALLPAPER);
-        blockWithItem(ModBlocks.BLUE_RUG);
+        connectedBlockWithItem(ModBlocks.GREEN_DIAMOND_WALLPAPER.get());
+        connectedBlockWithItem(ModBlocks.RED_DIAMOND_WALLPAPER.get());
+        connectedBlockWithItem(ModBlocks.YELLOW_ARROW_WALLPAPER.get());
+        connectedBlockWithItem(ModBlocks.BLUE_CLOUDS_WALLPAPER.get());
+        connectedBlockWithItem(ModBlocks.BLACK_CLOUDS_WALLPAPER.get());
+        connectedBlockWithItem(ModBlocks.FLUORESCENT_LIGHT_BLOCK.get());
+        connectedBlockWithItem(ModBlocks.BLACK_STARRY_WALLPAPER.get());
+
+        horizontalBlockGen(ModBlocks.ROOF);
+        window(ModBlocks.WHITE_PANEL_WINDOW.get(), "panel_window");
+        window(ModBlocks.WHITE_HALF_WINDOW.get(), "half_window");
+        fence_railing(ModBlocks.WHITE_WOOD_RAILING.get());
+
+        simpleBlock(ModBlocks.CEILING_LAMP.get(), models().getExistingFile(modLoc("block/ceiling_lamp")));
+
+        shelfBlock(ModBlocks.OAK_METAL_SHELF.get(), "smooth_oak_planks");
+        shelfBlock(ModBlocks.SPRUCE_METAL_SHELF.get(), "smooth_spruce_planks");
+        shelfBlock(ModBlocks.ACACIA_METAL_SHELF.get(), "smooth_acacia_planks");
+        shelfBlock(ModBlocks.BIRCH_METAL_SHELF.get(), "smooth_birch_planks");
+        shelfBlock(ModBlocks.DARK_OAK_METAL_SHELF.get(), "smooth_dark_oak_planks");
+        shelfBlock(ModBlocks.JUNGLE_METAL_SHELF.get(), "smooth_jungle_planks");
+        shelfBlock(ModBlocks.CHERRY_METAL_SHELF.get(), "smooth_cherry_planks");
+        shelfBlock(ModBlocks.WARPED_METAL_SHELF.get(), "smooth_warped_planks");
+        shelfBlock(ModBlocks.CRIMSON_METAL_SHELF.get(), "smooth_crimson_planks");
+        shelfBlock(ModBlocks.BAMBOO_METAL_SHELF.get(), "smooth_bamboo_planks");
+        shelfBlock(ModBlocks.MANGROVE_METAL_SHELF.get(), "smooth_mangrove_planks");
+        shelfBlock(ModBlocks.METAL_SHELF.get(), "steel_grate");
 
         horizontalBlockGen(ModBlocks.WALL_LAMP);
-        blockItem(ModBlocks.WALL_LAMP);
+        horizontalBlockGen(ModBlocks.WALL_CLOCK);
+
+        horizontalBlockWithExistingParent(ModBlocks.CALENDAR);
+        horizontalBlockWithExistingParent(ModBlocks.HANGING_MOON_LIGHT);
+        horizontalBlockWithExistingParent(ModBlocks.HANGING_CLOUD);
+        horizontalBlockWithExistingParent(ModBlocks.WHITE_CUBIC_SHELF, "cubic_shelf");
+
+        blockWithExistingParent(ModBlocks.LONG_CONCRETE_VASE);
+
+        axisBlock(ModBlocks.CARVED_SPRUCE_PLANKS.get(), modLoc("block/carved_spruce_planks"), mcLoc("block/spruce_planks"));
+
+        blockItem(ModBlocks.LONG_CONCRETE_VASE);
+        blockItem(ModBlocks.CARVED_SPRUCE_PLANKS);
+
+        blockWithItem(ModBlocks.BLUE_RUG);
+
+        curtainBlock(ModBlocks.RED_CURTAIN.get());
+
+    }
+
+    private void connectedBlockWithItem(Block block) {
+        simpleBlock(block, new ModelFile.UncheckedModelFile(modLoc("block/" + getPath(block))));
+        simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" + getPath(block))));
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {
         simpleBlockWithItem(deferredBlock.get(), cubeAll(deferredBlock.get()));
     }
 
-    private void blockItem(DeferredBlock<?> deferredBlock) {
-        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("iden_decor:block/" + deferredBlock.getId().getPath()));
-    }
 
-    private void blockItemWithGuiLight(DeferredBlock<?> deferredBlock) {
+    private void blockItem(DeferredBlock<?> deferredBlock) {
         simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("iden_decor:block/" + deferredBlock.getId().getPath()));
     }
 
@@ -159,17 +211,36 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("iden_decor:block/" + deferredBlock.getId().getPath() + appendix));
     }
 
+
+    private void blockWithExistingParent(DeferredBlock<?> deferredBlock) {
+        simpleBlock(deferredBlock.get(), models().getExistingFile(modLoc("block/" + getPath(deferredBlock.get()))));
+    }
+
+    private void horizontalBlockWithExistingParent(DeferredBlock<?> deferredBlock) {
+        horizontalBlock(deferredBlock.get(), models().getExistingFile(modLoc("block/" + getPath(deferredBlock.get()))));
+    }
+
+    private void horizontalBlockWithExistingParent(DeferredBlock<?> deferredBlock, String appendix) {
+        horizontalBlock(deferredBlock.get(), models().getExistingFile(modLoc("block/" + appendix)));
+    }
+
     public void simpleBlockWithRenderType(DeferredBlock<?> deferredBlock, String renderType) {
         simpleBlock(deferredBlock.get(), ((BlockModelBuilder) cubeAll(deferredBlock.get())).renderType(renderType));
     }
 
-    private void horizontalBlockGen(DeferredBlock<Block> deferredBlock){
+    private void horizontalBlockGen(DeferredBlock<?> deferredBlock){
 
         Block block = deferredBlock.get();
         ModelFile model = models().getExistingFile(modLoc("block/"+getPath(block)));
 
         blockItem(deferredBlock);
         horizontalBlock(block, model);
+    }
+
+    private void carpetBlock(DeferredBlock<CarpetBlock> block, String texture) {
+        simpleBlock(block.get(), models().withExistingParent(getPath(block.get()), mcLoc("block/carpet"))
+                .texture("wool", modLoc("block/"+texture)));
+        blockItem(block);
     }
 
     private void simpleModelWithRenderType(Block block, String renderType) {
@@ -182,6 +253,85 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .texture("0", baseTexture)
                 .texture("particle", baseTexture)
                 .renderType(renderType));
+    }
+
+    private void curtainBlock(Block block) {
+        ResourceLocation baseTexture = ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/" + getPath(block));
+
+        ModelFile closedModel = models().getExistingFile(ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/base/curtain"));
+        ModelFile openedModel = models().getExistingFile(ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/base/curtain_opened"));
+
+        getVariantBuilder(block).forAllStates(state -> {
+           Direction facing = state.getValue(CurtainBlock.FACING);
+            Boolean opened = state.getValue(CurtainBlock.OPENED);
+
+            return ConfiguredModel.builder()
+                    .modelFile(models().getBuilder(getPath(block) + (opened?"_opened":""))
+                            .parent(opened?openedModel:closedModel)
+                            .texture("0", baseTexture))
+                    .rotationY((int)(facing.toYRot() + 180) % 360)
+                    .build();
+        });
+
+        simpleBlockItem(block, new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/" + getPath(block))));
+    }
+
+    private void shelfBlock(Block block, String baseTexture) {
+        ResourceLocation woodTexture = ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/"+baseTexture);
+        ResourceLocation metalTexture = ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/metal_shelf");
+
+        ModelFile leftModel = models().getExistingFile(ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/metal_shelf/left"));
+
+        ModelFile rightModel = models().getExistingFile(ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/metal_shelf/right"));
+
+        ModelFile singleModel = models().getExistingFile(ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/metal_shelf/single"));
+
+        ModelFile centerModel = models().getExistingFile(ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/metal_shelf/center"));
+
+        getVariantBuilder(block).forAllStates(state -> {
+
+            Direction facing = state.getValue(ShelfBlock.FACING);
+            HorizontalThreeConnectableProperty part = state.getValue(ShelfBlock.PART);
+
+            return ConfiguredModel.builder()
+                    .modelFile(models().getBuilder(getPath(block) + "_" + part.getSerializedName())
+                            .parent(switch (part) {
+                                case LEFT -> leftModel;
+                                case RIGHT -> rightModel;
+                                case CENTER -> centerModel;
+                                default -> singleModel;
+                            })
+                            .renderType("cutout")
+                            .texture("0", metalTexture)
+                            .texture("1", woodTexture)
+                            .texture("particle", woodTexture))
+                    .rotationY(((int) facing.toYRot() + 180) % 360)
+                    .build();
+        });
+
+        simpleBlockItem(block, models().getExistingFile(modLoc("block/" + getPath(block) + "_single")));
+    }
+
+    private void fence_railing(WallBlock block) {
+        ResourceLocation baseTexture = ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/" + getPath(block));
+        ModelFile sideModel = models().withExistingParent(getPath(block) + "_side", ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/fence_railing/side"))
+                .texture("0", baseTexture)
+                .renderType("cutout");
+        ModelFile postModel = models().withExistingParent(getPath(block) + "_post", ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/fence_railing/post"))
+                .texture("0", baseTexture);
+        ModelFile centerModel = models().withExistingParent(getPath(block) + "_center", ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/fence_railing/center"))
+                .texture("0", baseTexture)
+                .renderType("cutout");
+
+        MultiPartBlockStateBuilder builder = getMultipartBuilder(block);
+        builder.part().modelFile(postModel).addModel().condition(WallBlock.UP, true).end();
+        WALL_PROPS.entrySet().stream().filter((e) -> e.getKey().getAxis().isHorizontal()).forEach(e -> {
+            builder.part().modelFile(sideModel).rotationY((int) (e.getKey().toYRot() + 180) % 360).addModel().condition(e.getValue(), WallSide.LOW);
+            builder.part().modelFile(sideModel).rotationY((int) (e.getKey().toYRot() + 180) % 360).addModel().condition(e.getValue(), WallSide.TALL);
+        });
+
+//        wallBlock(block, postModel, sideModel, centerModel);
+//        simpleBlockItem(block, models().getExistingFile(modLoc("block/"+getPath(block)+"_center")));
     }
 
     private void metal_barrel(Block block) {
@@ -266,11 +416,42 @@ public class ModBlockStateProvider extends BlockStateProvider {
        simpleBlockItem(block, model);
     }
 
+
+    private void window(Block block, String folder) {
+        ModelFile singlePart = models().getExistingFile(modLoc("block/"+folder+"/single"));
+        ModelFile upperPart = models().getExistingFile(modLoc("block/"+folder+"/upper"));
+        ModelFile lowerPart = models().getExistingFile(modLoc("block/"+folder+"/lower"));
+        ModelFile centerPart = models().getExistingFile(modLoc("block/"+folder+"/center"));
+
+        getVariantBuilder(block).forAllStates(state -> {
+            VerticalThreeConnectableProperty part = state.getValue(WindowBlock.PART);
+            Direction facing = state.getValue(WindowBlock.FACING);
+
+            String partName = part.name().toLowerCase();
+
+            return ConfiguredModel.builder()
+                    .modelFile(models().getBuilder(getPath(block) + "_" + partName)
+                            .parent(switch (part) {
+                                case UPPER -> upperPart;
+                                case LOWER -> lowerPart;
+                                case CENTER -> centerPart;
+                                default -> singlePart;
+                            })
+                            .renderType("cutout")
+                            .texture("0", modLoc("block/" + getPath(block)))
+                            .texture("particle", modLoc("block/" + getPath(block))))
+                    .rotationY(((int) facing.toYRot() + 180) % 360)
+                    .build();
+        });
+
+        simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" + getPath(block) + "_single")));
+    }
+
     private void paintableRailing(Block block, String particleTexture) {
 
         Map<String, ModelFile> modelsByPartAndColor = new HashMap<>();
 
-        for (ThreeConnectableProperty part: ThreeConnectableProperty.values()) {
+        for (HorizontalThreeConnectableProperty part: HorizontalThreeConnectableProperty.values()) {
             String partName = part.name().toLowerCase();
 
             for (ColorProperty color: ColorProperty.values()) {
@@ -290,7 +471,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         getVariantBuilder(block)
                 .forAllStates(state -> {
                     Direction facing = state.getValue(RailingBlock.FACING);
-                    ThreeConnectableProperty part = state.getValue(RailingBlock.PART);
+                    HorizontalThreeConnectableProperty part = state.getValue(RailingBlock.PART);
                     ColorProperty color = state.getValue(RailingBlock.COLOR);
 
                     String key = part.name().toLowerCase() + "_" + color.getSerializedName();
@@ -326,7 +507,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .forAllStates(state -> {
                     Direction facing = state.getValue(FluorescentLightBlock.FACING);
                     AttachFace face = state.getValue(FluorescentLightBlock.FACE);
-                    ThreeConnectableProperty part = state.getValue(FluorescentLightBlock.PART);
+                    HorizontalThreeConnectableProperty part = state.getValue(FluorescentLightBlock.PART);
 
                     ResourceLocation parent = ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/fluorescent_light/" + part.getSerializedName());
                     ResourceLocation baseTexture = ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/fluorescent_light");

@@ -1,21 +1,14 @@
 package net.identidade.iden_decor;
 
-import net.identidade.iden_decor.block.properties.ColorProperty;
 import net.identidade.iden_decor.blockentity.ModBlockEntities;
+import net.identidade.iden_decor.blockentity.model.WallClockBlockModel;
+import net.identidade.iden_decor.blockentity.renderer.CubicShelfBlockRenderer;
+import net.identidade.iden_decor.blockentity.renderer.VaseBlockRenderer;
+import net.identidade.iden_decor.blockentity.renderer.WallClockBlockRenderer;
 import net.identidade.iden_decor.client.gui.ModMenus;
-import net.identidade.iden_decor.client.gui.custom.SewingMachineMenu;
 import net.identidade.iden_decor.client.gui.custom.SewingMachineScreen;
-import net.identidade.iden_decor.item.ModItems;
-import net.identidade.iden_decor.rendering.ComputerBlockRenderer;
+import net.identidade.iden_decor.blockentity.renderer.ComputerBlockRenderer;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.core.component.DataComponents;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.inventory.MenuType;
-import net.minecraft.world.item.component.CustomData;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -26,9 +19,6 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
-import net.minecraft.resources.ResourceLocation;
-
-import java.util.Locale;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
 @Mod(value = IdenDecorMod.MOD_ID, dist = Dist.CLIENT)
@@ -54,6 +44,14 @@ public class IdenDecorModClient {
     @SubscribeEvent
     public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(ModBlockEntities.COMPUTER_BE.get(), ComputerBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.WALL_CLOCK_BE.get(), WallClockBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.VASE_BE.get(), VaseBlockRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.CUBIC_SHELF_BE.get(), CubicShelfBlockRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(WallClockBlockModel.LAYER_LOCATION, WallClockBlockModel::createBodyLayer);
     }
 
     @SubscribeEvent

@@ -43,7 +43,42 @@ public class ModCreativeModeTab {
                     .title(Component.translatable("creativetab.iden_decor.base"))
                     .displayItems(((itemDisplayParameters, output) -> {
 
-//                        ModItems.PAINT_BRUSHES.values().forEach(item -> output.accept(item.get()));
+                        output.accept(ModBlocks.WALL_LAMP);
+                        output.accept(ModBlocks.CEILING_LAMP);
+                        output.accept(ModBlocks.WHITE_HALF_WINDOW);
+                        output.accept(ModBlocks.WHITE_PANEL_WINDOW);
+                        output.accept(ModBlocks.WHITE_WOOD_RAILING);
+                        output.accept(ModBlocks.GREEN_DIAMOND_WALLPAPER);
+                        output.accept(ModBlocks.RED_DIAMOND_WALLPAPER);
+                        output.accept(ModBlocks.YELLOW_ARROW_WALLPAPER);
+                        output.accept(ModBlocks.BLUE_CLOUDS_WALLPAPER);
+                        output.accept(ModBlocks.BLACK_STARRY_WALLPAPER);
+                        output.accept(ModBlocks.FLUORESCENT_LIGHT_BLOCK);
+                        output.accept(ModBlocks.CARVED_SPRUCE_PLANKS);
+                        output.accept(ModBlocks.WALL_CLOCK);
+                        output.accept(ModBlocks.HANGING_CLOUD);
+                        output.accept(ModBlocks.HANGING_MOON_LIGHT);
+                        output.accept(ModBlocks.PUZZLE_WOOL);
+                        output.accept(ModBlocks.PUZZLE_CARPET);
+
+                        output.accept(ModBlocks.OAK_METAL_SHELF);
+                        output.accept(ModBlocks.ACACIA_METAL_SHELF);
+                        output.accept(ModBlocks.BIRCH_METAL_SHELF);
+                        output.accept(ModBlocks.SPRUCE_METAL_SHELF);
+                        output.accept(ModBlocks.JUNGLE_METAL_SHELF);
+                        output.accept(ModBlocks.DARK_OAK_METAL_SHELF);
+                        output.accept(ModBlocks.CHERRY_METAL_SHELF);
+                        output.accept(ModBlocks.CRIMSON_METAL_SHELF);
+                        output.accept(ModBlocks.WARPED_METAL_SHELF);
+                        output.accept(ModBlocks.BAMBOO_METAL_SHELF);
+                        output.accept(ModBlocks.MANGROVE_METAL_SHELF);
+                        output.accept(ModBlocks.METAL_SHELF);
+
+                        output.accept(ModBlocks.CALENDAR);
+                        output.accept(ModBlocks.WHITE_WOODEN_PANEL_DOOR);
+                        output.accept(ModBlocks.WOODEN_PANEL_DOOR);
+                        output.accept(ModBlocks.LONG_CONCRETE_VASE);
+                        output.accept(ModBlocks.WHITE_CUBIC_SHELF);
 
                         output.accept(ModBlocks.METAL_BARREL);
                         output.accept(ModBlocks.BLUE_METAL_BARREL);
@@ -117,6 +152,7 @@ public class ModCreativeModeTab {
                         output.accept(ModItems.RED_WRAP);
 
                         COLOR_ORDER.forEach(color -> {
+                            output.accept(ModBlocks.FRAMED_PLANKS.get(color).get());
                             output.accept(ModBlocks.PAINTED_PLANKS.get(color).get());
                             output.accept(ModBlocks.PAINTED_PLANKS_STAIRS.get(color).get());
                             output.accept(ModBlocks.PAINTED_PLANKS_SLABS.get(color).get());

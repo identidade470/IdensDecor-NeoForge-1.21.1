@@ -3,14 +3,11 @@ package net.identidade.iden_decor.datagen;
 import net.identidade.iden_decor.IdenDecorMod;
 import net.identidade.iden_decor.block.ModBlocks;
 import net.identidade.iden_decor.item.ModItems;
-import net.minecraft.client.model.Model;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
-import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
@@ -36,6 +33,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModBlocks.GRID_METAL_DOOR.asItem());
         basicItem(ModBlocks.YELLOW_METAL_DOOR.asItem());
         basicItem(ModBlocks.WHITE_METAL_DOOR.asItem());
+        basicItem(ModBlocks.WHITE_WOODEN_PANEL_DOOR.asItem());
+        basicItem(ModBlocks.WOODEN_PANEL_DOOR.asItem());
+        basicItem(ModBlocks.HANGING_CLOUD.asItem());
+        basicItem(ModBlocks.HANGING_MOON_LIGHT.asItem());
+
+        basicItem(ModBlocks.CALENDAR.asItem());
 
         basicItem(ModBlocks.DARK_WATER_DISPENSER.asItem());
         basicItem(ModBlocks.LIGHT_WATER_DISPENSER.asItem());
@@ -43,6 +46,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.KEYCARD.get());
         basicItem(ModItems.GUARANA_CUP.get());
 
+        fenceRailingBlock(ModBlocks.WHITE_WOOD_RAILING);
         fenceItem(ModBlocks.CAUTION_BLOCK_FENCE, ModBlocks.CAUTION_BLOCK);
         wallItem(ModBlocks.CAUTION_BLOCK_WALL, ModBlocks.CAUTION_BLOCK);
 
@@ -65,6 +69,13 @@ public class ModItemModelProvider extends ItemModelProvider {
 //                        "block/" + baseBlock.getId().getPath()));
 //    }
 //
+
+    public void fenceRailingBlock(DeferredBlock<?> block) {
+        this.withExistingParent(block.getId().getPath(), modLoc("block/fence_railing/inventory"))
+                .texture("0", ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID,
+                        "block/" + block.getId().getPath()));
+    }
+
     public void fenceItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
         this.withExistingParent(block.getId().getPath(), mcLoc("block/fence_inventory"))
                 .texture("texture",  ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID,
@@ -75,5 +86,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         this.withExistingParent(block.getId().getPath(), mcLoc("block/wall_inventory"))
                 .texture("wall",  ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID,
                         "block/" + baseBlock.getId().getPath()));
+    }
+
+    public void wallItem(DeferredBlock<?> block, String textureName) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("block/wall_inventory"))
+                .texture("wall",  ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID,
+                        "block/" + textureName));
     }
 }

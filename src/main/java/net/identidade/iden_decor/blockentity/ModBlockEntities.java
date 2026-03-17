@@ -2,6 +2,7 @@ package net.identidade.iden_decor.blockentity;
 
 import net.identidade.iden_decor.IdenDecorMod;
 import net.identidade.iden_decor.block.ModBlocks;
+import net.identidade.iden_decor.block.custom.WallClockBlock;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
@@ -23,6 +24,18 @@ public class ModBlockEntities {
     public static final Supplier<BlockEntityType<KeycardReaderBlockEntity>> KEYCARD_READER_BE =
             BLOCK_ENTITIES.register("keycard_reader_be", () -> BlockEntityType.Builder.of(
                     KeycardReaderBlockEntity::new, ModBlocks.KEYCARD_READER.get()).build(null));
+
+    public static final Supplier<BlockEntityType<WallClockBlockEntity>> WALL_CLOCK_BE =
+            BLOCK_ENTITIES.register("wall_clock_be", () -> BlockEntityType.Builder.of(
+                    WallClockBlockEntity::new, ModBlocks.WALL_CLOCK.get()).build(null));
+
+    public static final Supplier<BlockEntityType<VaseBlockEntity>> VASE_BE =
+            BLOCK_ENTITIES.register("vase_be", () -> BlockEntityType.Builder.of(
+                    VaseBlockEntity::new, ModBlocks.LONG_CONCRETE_VASE.get()).build(null));
+
+    public static final Supplier<BlockEntityType<CubicShelfBlockEntity>> CUBIC_SHELF_BE =
+            BLOCK_ENTITIES.register("cubic_shelf_be", () -> BlockEntityType.Builder.of(
+                    CubicShelfBlockEntity::new, ModBlocks.WHITE_CUBIC_SHELF.get()).build(null));
 
     public static void register(IEventBus eventBus){
         BLOCK_ENTITIES.register(eventBus);

@@ -10,6 +10,7 @@ import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 
@@ -25,6 +26,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(RecipeOutput recipeOutput) {
 
         // Painted Planks
+        ModBlocks.FRAMED_PLANKS.forEach((color, block) -> ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, block.get(), 8)
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', ModBlocks.PAINTED_PLANKS.get(color).get())
+                .define('B', Items.STICK)
+                .unlockedBy("has_planks", has(ItemTags.PLANKS)).save(recipeOutput));
+
         ModBlocks.PAINTED_PLANKS.forEach((color, block) -> ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, block.get(), 8)
                 .pattern("BBB")
                 .pattern("BAB")
@@ -105,6 +114,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         stairBuilder(ModBlocks.CAUTION_BLOCK_STAIRS.get(), Ingredient.of(ModBlocks.CAUTION_BLOCK)).group("caution_blocks")
                         .unlockedBy("has_caution_block", has(ModBlocks.CAUTION_BLOCK.get())).save(recipeOutput);
         slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CAUTION_BLOCK_SLAB.get(), ModBlocks.CAUTION_BLOCK.get());
+        wall(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CAUTION_BLOCK_WALL.get(), ModBlocks.CAUTION_BLOCK.get());
+                fenceBuilder(ModBlocks.CAUTION_BLOCK_FENCE.get(), Ingredient.of(ModBlocks.CAUTION_BLOCK)).group("caution_blocks")
+                .unlockedBy("has_bloody_planks", has(ModBlocks.CAUTION_BLOCK)).save(recipeOutput);
 
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.AIR_DUCT.get(), Blocks.IRON_BLOCK, 32);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.AIR_DUCT.get(), ModBlocks.IRON_SHEET_METAL.get());
@@ -127,6 +139,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DOUBLE_IRON_PIPES.get(), Items.IRON_INGOT, 2);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SIGN_POST.get(), Items.IRON_INGOT, 2);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.STOP_SIGN.get(), Items.IRON_INGOT);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.INTERSECTION_SIGN.get(), Items.IRON_INGOT);
 
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COPPER_RAILING.get(), Items.COPPER_INGOT, 4);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLD_RAILING.get(), Items.GOLD_INGOT, 4);

@@ -1,4 +1,4 @@
-package net.identidade.iden_decor.rendering;
+package net.identidade.iden_decor.blockentity.renderer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;

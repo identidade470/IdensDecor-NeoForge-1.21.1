@@ -88,12 +88,47 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.CAUTION_BLOCK_STAIRS.get());
         dropSelf(ModBlocks.CAUTION_BLOCK_FENCE.get());
         dropSelf(ModBlocks.CAUTION_BLOCK_WALL.get());
-        dropSelf(ModBlocks.GREEN_DIAMOND_WALLPAPER.get());
         dropSelf(ModBlocks.BLUE_RUG.get());
         dropSelf(ModBlocks.WALL_LAMP.get());
+        dropSelf(ModBlocks.CEILING_LAMP.get());
+        dropSelf(ModBlocks.ROOF.get());
+        dropSelf(ModBlocks.WHITE_PANEL_WINDOW.get());
+        dropSelf(ModBlocks.WHITE_HALF_WINDOW.get());
+        dropSelf(ModBlocks.WHITE_WOOD_RAILING.get());
+        dropSelf(ModBlocks.GREEN_DIAMOND_WALLPAPER.get());
+        dropSelf(ModBlocks.RED_DIAMOND_WALLPAPER.get());
+        dropSelf(ModBlocks.YELLOW_ARROW_WALLPAPER.get());
+        dropSelf(ModBlocks.BLUE_CLOUDS_WALLPAPER.get());
+        dropSelf(ModBlocks.BLACK_CLOUDS_WALLPAPER.get());
+        dropSelf(ModBlocks.BLACK_STARRY_WALLPAPER.get());
+        dropSelf(ModBlocks.FLUORESCENT_LIGHT_BLOCK.get());
+        dropSelf(ModBlocks.CARVED_SPRUCE_PLANKS.get());
+        dropSelf(ModBlocks.WALL_CLOCK.get());
+        dropSelf(ModBlocks.PUZZLE_CARPET.get());
+        dropSelf(ModBlocks.PUZZLE_WOOL.get());
+
+        dropSelf(ModBlocks.OAK_METAL_SHELF.get());
+        dropSelf(ModBlocks.ACACIA_METAL_SHELF.get());
+        dropSelf(ModBlocks.BIRCH_METAL_SHELF.get());
+        dropSelf(ModBlocks.SPRUCE_METAL_SHELF.get());
+        dropSelf(ModBlocks.JUNGLE_METAL_SHELF.get());
+        dropSelf(ModBlocks.CHERRY_METAL_SHELF.get());
+        dropSelf(ModBlocks.DARK_OAK_METAL_SHELF.get());
+        dropSelf(ModBlocks.WARPED_METAL_SHELF.get());
+        dropSelf(ModBlocks.CRIMSON_METAL_SHELF.get());
+        dropSelf(ModBlocks.BAMBOO_METAL_SHELF.get());
+        dropSelf(ModBlocks.MANGROVE_METAL_SHELF.get());
+        dropSelf(ModBlocks.METAL_SHELF.get());
+        dropSelf(ModBlocks.CALENDAR.get());
+        dropSelf(ModBlocks.HANGING_CLOUD.get());
+        dropSelf(ModBlocks.HANGING_MOON_LIGHT.get());
+        dropSelf(ModBlocks.LONG_CONCRETE_VASE.get());
+        dropSelf(ModBlocks.RED_CURTAIN.get());
+        dropSelf(ModBlocks.WHITE_CUBIC_SHELF.get());
 
         ModBlocks.PAINTED_PLANKS.values().forEach(block -> dropSelf(block.get()));
         ModBlocks.PAINTED_PLANKS_STAIRS.values().forEach(block -> dropSelf(block.get()));
+        ModBlocks.FRAMED_PLANKS.values().forEach(block -> dropSelf(block.get()));
 
         add(ModBlocks.WHITE_TILES_SLAB.get(), block -> createSlabItemTable(ModBlocks.WHITE_TILES_SLAB.get()));
         add(ModBlocks.WHITE_BRICKS_SLAB.get(), block -> createSlabItemTable(ModBlocks.WHITE_BRICKS_SLAB.get()));
@@ -110,6 +145,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createDoorTable(ModBlocks.YELLOW_METAL_DOOR.get()));
         add(ModBlocks.WHITE_METAL_DOOR.get(),
                 block -> createDoorTable(ModBlocks.WHITE_METAL_DOOR.get()));
+        add(ModBlocks.WHITE_WOODEN_PANEL_DOOR.get(),
+                block -> createDoorTable(ModBlocks.WHITE_WOODEN_PANEL_DOOR.get()));
+        add(ModBlocks.WOODEN_PANEL_DOOR.get(),
+                block -> createDoorTable(ModBlocks.WHITE_WOODEN_PANEL_DOOR.get()));
 
 //
 //        dropOther(ModBlocks.FLESH_PLANT.get(), ModItems.RAW_FLESH_PLANT.get());

@@ -6,6 +6,7 @@ import net.identidade.iden_decor.client.gui.ModMenus;
 import net.identidade.iden_decor.entity.ModEntities;
 import net.identidade.iden_decor.item.ModCreativeModeTab;
 import net.identidade.iden_decor.item.ModItems;
+import net.identidade.iden_decor.recipe.ModRecipes;
 import net.identidade.iden_decor.sound.ModSounds;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
@@ -48,6 +49,8 @@ public class IdenDecorMod {
 
         ModMenus.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+
+        ModRecipes.register(modEventBus);
 //        ModEntities.register(modEventBus);
 
         // Register the item to a creative tab

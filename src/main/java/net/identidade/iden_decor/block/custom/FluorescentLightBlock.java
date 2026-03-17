@@ -1,9 +1,7 @@
 package net.identidade.iden_decor.block.custom;
 
-import net.identidade.iden_decor.block.custom.templates.SimpleHorizontalBlock;
 import net.identidade.iden_decor.block.custom.templates.SimpleMutiDectionalBlock;
-import net.identidade.iden_decor.block.properties.ThreeConnectableProperty;
-import net.identidade.iden_decor.block.properties.TwoConnectableProperty;
+import net.identidade.iden_decor.block.properties.HorizontalThreeConnectableProperty;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -21,11 +19,11 @@ import org.jetbrains.annotations.Nullable;
 
 public class FluorescentLightBlock extends SimpleMutiDectionalBlock {
 
-    public static final EnumProperty<ThreeConnectableProperty> PART = EnumProperty.create("part", ThreeConnectableProperty.class);
+    public static final EnumProperty<HorizontalThreeConnectableProperty> PART = EnumProperty.create("part", HorizontalThreeConnectableProperty.class);
 
     public FluorescentLightBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(defaultBlockState().setValue(FACING,Direction.NORTH).setValue(FACE,AttachFace.FLOOR).setValue(PART, ThreeConnectableProperty.SINGLE));
+        this.registerDefaultState(defaultBlockState().setValue(FACING,Direction.NORTH).setValue(FACE,AttachFace.FLOOR).setValue(PART, HorizontalThreeConnectableProperty.SINGLE));
     }
 
     @Override
@@ -63,7 +61,7 @@ public class FluorescentLightBlock extends SimpleMutiDectionalBlock {
         }
     }
 
-    private ThreeConnectableProperty updatePart(LevelAccessor level, BlockPos pos, BlockState state) {
+    private HorizontalThreeConnectableProperty updatePart(LevelAccessor level, BlockPos pos, BlockState state) {
         Direction facing = state.getValue(FACING);
         AttachFace face = state.getValue(FACE);
 
@@ -98,14 +96,14 @@ public class FluorescentLightBlock extends SimpleMutiDectionalBlock {
 //            }
 //        }
 
-        if (left && right) return ThreeConnectableProperty.CENTER;
-        if (left) return ThreeConnectableProperty.RIGHT;
-        if (right) return ThreeConnectableProperty.LEFT;
+        if (left && right) return HorizontalThreeConnectableProperty.CENTER;
+        if (left) return HorizontalThreeConnectableProperty.RIGHT;
+        if (right) return HorizontalThreeConnectableProperty.LEFT;
 
 
 
 
-        return ThreeConnectableProperty.SINGLE;
+        return HorizontalThreeConnectableProperty.SINGLE;
     }
 
     @Override
@@ -122,7 +120,7 @@ public class FluorescentLightBlock extends SimpleMutiDectionalBlock {
             return null;
         }
 
-        ThreeConnectableProperty part = updatePart(context.getLevel(), context.getClickedPos(), state);
+        HorizontalThreeConnectableProperty part = updatePart(context.getLevel(), context.getClickedPos(), state);
 
         return state.setValue(PART, part);
     }

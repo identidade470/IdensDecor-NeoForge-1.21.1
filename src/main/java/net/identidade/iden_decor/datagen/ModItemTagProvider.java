@@ -2,6 +2,7 @@ package net.identidade.iden_decor.datagen;
 
 import net.identidade.iden_decor.IdenDecorMod;
 import net.identidade.iden_decor.block.ModBlocks;
+import net.identidade.iden_decor.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -33,5 +34,9 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         ModBlocks.PAINTED_PLANKS.values().forEach(block -> tag(ItemTags.PLANKS)
                 .add(block.get().asItem()));
+
+        tag(ModTags.Items.URBAN)
+                .add(ModBlocks.CEILING_LAMP.asItem())
+                .add(ModBlocks.ROOF.asItem());
     }
 }
