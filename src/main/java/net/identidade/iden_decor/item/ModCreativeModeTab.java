@@ -52,6 +52,7 @@ public class ModCreativeModeTab {
                         output.accept(ModBlocks.RED_DIAMOND_WALLPAPER);
                         output.accept(ModBlocks.YELLOW_ARROW_WALLPAPER);
                         output.accept(ModBlocks.BLUE_CLOUDS_WALLPAPER);
+                        output.accept(ModBlocks.BLACK_CLOUDS_WALLPAPER);
                         output.accept(ModBlocks.BLACK_STARRY_WALLPAPER);
                         output.accept(ModBlocks.FLUORESCENT_LIGHT_BLOCK);
                         output.accept(ModBlocks.CARVED_SPRUCE_PLANKS);
@@ -77,7 +78,6 @@ public class ModCreativeModeTab {
                         output.accept(ModBlocks.WHITE_WOODEN_PANEL_DOOR);
                         output.accept(ModBlocks.WOODEN_PANEL_DOOR);
                         output.accept(ModBlocks.LONG_CONCRETE_VASE);
-                        output.accept(ModBlocks.WHITE_CUBIC_SHELF);
 
                         output.accept(ModBlocks.METAL_BARREL);
                         output.accept(ModBlocks.BLUE_METAL_BARREL);
