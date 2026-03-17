@@ -55,7 +55,6 @@ public class ModCreativeModeTab {
                         output.accept(ModBlocks.BLACK_STARRY_WALLPAPER);
                         output.accept(ModBlocks.FLUORESCENT_LIGHT_BLOCK);
                         output.accept(ModBlocks.CARVED_SPRUCE_PLANKS);
-                        output.accept(ModBlocks.WALL_CLOCK);
                         output.accept(ModBlocks.HANGING_CLOUD);
                         output.accept(ModBlocks.HANGING_MOON_LIGHT);
                         output.accept(ModBlocks.PUZZLE_WOOL);
