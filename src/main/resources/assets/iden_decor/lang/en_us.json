@@ -182,9 +182,12 @@
   "block.iden_decor.puzzle_wool": "Puzzle Wool",
   "block.iden_decor.puzzle_carpet": "Puzzle Carpet",
   "block.iden_decor.calendar": "Calendar",
+  "tooltip.iden_decor.calendar": "Show current world day",
   "block.iden_decor.white_wooden_panel_door": "White Wooden Panel Door",
   "block.iden_decor.wooden_panel_door": "Wooden Panel Door",
   "block.iden_decor.long_concrete_vase": "Long Concrete Vase",
+  "tooltip.iden_decor.long_concrete_vase": "Can store basically any block",
+
   "block.iden_decor.oak_metal_shelf": "Oak Metal Shelf",
   "block.iden_decor.dark_oak_metal_shelf": "Dark Oak Metal Shelf",
   "block.iden_decor.acacia_metal_shelf": "Acacia Metal Shelf",
