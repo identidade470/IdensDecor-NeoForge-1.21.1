@@ -6,12 +6,15 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 
 import java.awt.*;
@@ -255,6 +258,104 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.LIGHT_SWITCH.get(), Blocks.LEVER);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.VALVE_SWITCH.get(), Blocks.LEVER);
 
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.DECORATIONS, ModBlocks.HANGING_CLOUD.get(), Blocks.CHAIN);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.DECORATIONS, ModBlocks.HANGING_MOON_LIGHT.get(), Blocks.CHAIN);
+
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.WOODEN_PANEL_DOOR.get(), Blocks.SPRUCE_DOOR);
+
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLACK_CLOUDS_WALLPAPER, Blocks.STRIPPED_SPRUCE_LOG, 4);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLACK_STARRY_WALLPAPER, Blocks.STRIPPED_SPRUCE_LOG, 4);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GREEN_DIAMOND_WALLPAPER, Blocks.STRIPPED_SPRUCE_LOG, 4);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_CLOUDS_WALLPAPER, Blocks.STRIPPED_SPRUCE_LOG, 4);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_DIAMOND_WALLPAPER, Blocks.STRIPPED_SPRUCE_LOG, 4);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.YELLOW_ARROW_WALLPAPER, Blocks.STRIPPED_SPRUCE_LOG, 4);
+
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.WALL_LAMP, Blocks.REDSTONE_LAMP);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.CEILING_LAMP, Blocks.REDSTONE_LAMP);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, ModBlocks.WHITE_WOODEN_PANEL_DOOR.get())
+                .requires(Tags.Items.DYES_WHITE)
+                .requires(ModBlocks.WOODEN_PANEL_DOOR.asItem())
+                .unlockedBy("has_door", has(ItemTags.DOORS))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.FLUORESCENT_LIGHT_BLOCK.get())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', Items.IRON_NUGGET)
+                .define('B', Blocks.REDSTONE_LAMP.asItem())
+                .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.CALENDAR.get())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', Items.PAPER)
+                .define('B', Items.CLOCK)
+                .unlockedBy("has_paper", has(Items.PAPER))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.CARVED_SPRUCE_PLANKS.get(), 4)
+                .pattern("AA")
+                .pattern("AA")
+                .define('A', Blocks.SPRUCE_PLANKS)
+                .unlockedBy("has_spruce_planks", has(Blocks.SPRUCE_PLANKS.asItem()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.LONG_CONCRETE_VASE.get(), 5)
+                .pattern("A A")
+                .pattern("ABA")
+                .pattern(" A ")
+                .define('A', Blocks.WHITE_CONCRETE)
+                .define('B', Blocks.DIRT)
+                .unlockedBy("has_concrete", has(Blocks.WHITE_CONCRETE))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PUZZLE_WOOL.get(), 4)
+                .pattern("AB")
+                .pattern("CD")
+                .define('A', Blocks.ORANGE_WOOL)
+                .define('B', Blocks.LIGHT_BLUE_WOOL)
+                .define('C', Blocks.YELLOW_WOOL)
+                .define('D', Blocks.RED_WOOL)
+                .unlockedBy("has_wool", has(ItemTags.WOOL))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PUZZLE_CARPET.get(), 3)
+                .pattern("AA")
+                .define('A', ModBlocks.PUZZLE_WOOL.get())
+                .unlockedBy("has_wool", has(ItemTags.WOOL))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.WHITE_HALF_WINDOW.get(), 4)
+                .pattern("AAA")
+                .pattern("BBB")
+                .pattern("AAA")
+                .define('A', ModBlocks.PAINTED_PLANKS.get(DyeColor.WHITE).get())
+                .define('B', Items.STICK)
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.WHITE_PANEL_WINDOW.get(), 4)
+                .pattern("ABA")
+                .pattern("BBB")
+                .pattern("ABA")
+                .define('A', ModBlocks.PAINTED_PLANKS.get(DyeColor.WHITE).get())
+                .define('B', Items.STICK)
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.WHITE_WOOD_RAILING.get(), 3)
+                .pattern("   ")
+                .pattern("ABA")
+                .pattern("ABA")
+                .define('A', ModBlocks.PAINTED_PLANKS.get(DyeColor.WHITE).get())
+                .define('B', Items.STICK)
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+
         // Telephone
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.TELEPHONE_ITEM.get())
                 .pattern("AAA")
@@ -379,6 +480,104 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('A', Items.IRON_INGOT)
                 .define('B', ModItems.KEYCARD)
                 .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
+                .save(recipeOutput);
+
+        // Metal shelves
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.OAK_METAL_SHELF.asItem())
+                .pattern("A A")
+                .pattern("ABA")
+                .pattern("A A")
+                .define('A', Items.IRON_NUGGET)
+                .define('B', Blocks.OAK_PLANKS.asItem())
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.DARK_OAK_METAL_SHELF.asItem())
+                .pattern("A A")
+                .pattern("ABA")
+                .pattern("A A")
+                .define('A', Items.IRON_NUGGET)
+                .define('B', Blocks.DARK_OAK_PLANKS.asItem())
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.BAMBOO_METAL_SHELF.asItem())
+                .pattern("A A")
+                .pattern("ABA")
+                .pattern("A A")
+                .define('A', Items.IRON_NUGGET)
+                .define('B', Blocks.BAMBOO_PLANKS.asItem())
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.CHERRY_METAL_SHELF.asItem())
+                .pattern("A A")
+                .pattern("ABA")
+                .pattern("A A")
+                .define('A', Items.IRON_NUGGET)
+                .define('B', Blocks.CHERRY_PLANKS.asItem())
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.WARPED_METAL_SHELF.asItem())
+                .pattern("A A")
+                .pattern("ABA")
+                .pattern("A A")
+                .define('A', Items.IRON_NUGGET)
+                .define('B', Blocks.WARPED_PLANKS.asItem())
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.CRIMSON_METAL_SHELF.asItem())
+                .pattern("A A")
+                .pattern("ABA")
+                .pattern("A A")
+                .define('A', Items.IRON_NUGGET)
+                .define('B', Blocks.CRIMSON_PLANKS.asItem())
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.ACACIA_METAL_SHELF.asItem())
+                .pattern("A A")
+                .pattern("ABA")
+                .pattern("A A")
+                .define('A', Items.IRON_NUGGET)
+                .define('B', Blocks.ACACIA_PLANKS.asItem())
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.JUNGLE_METAL_SHELF.asItem())
+                .pattern("A A")
+                .pattern("ABA")
+                .pattern("A A")
+                .define('A', Items.IRON_NUGGET)
+                .define('B', Blocks.JUNGLE_PLANKS.asItem())
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.MANGROVE_METAL_SHELF.asItem())
+                .pattern("A A")
+                .pattern("ABA")
+                .pattern("A A")
+                .define('A', Items.IRON_NUGGET)
+                .define('B', Blocks.MANGROVE_PLANKS.asItem())
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.SPRUCE_METAL_SHELF.asItem())
+                .pattern("A A")
+                .pattern("ABA")
+                .pattern("A A")
+                .define('A', Items.IRON_NUGGET)
+                .define('B', Blocks.SPRUCE_PLANKS.asItem())
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.METAL_SHELF.asItem())
+                .pattern("A A")
+                .pattern("ABA")
+                .pattern("A A")
+                .define('A', Items.IRON_NUGGET)
+                .define('B', Items.IRON_INGOT)
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.BIRCH_METAL_SHELF.asItem())
+                .pattern("A A")
+                .pattern("ABA")
+                .pattern("A A")
+                .define('A', Items.IRON_NUGGET)
+                .define('B', Blocks.BIRCH_PLANKS.asItem())
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
                 .save(recipeOutput);
 
 
