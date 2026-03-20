@@ -1,0 +1,7 @@
+{
+    "parent": "iden_decor:block/panel_window/single",
+	"textures": {
+		"0": "iden_decor:block/white_panel_window",
+		"particle": "iden_decor:block/white_panel_window"
+	}
+}

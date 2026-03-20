@@ -1,0 +1,24 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "red_curtain",
+	"textures": {
+		"0": "iden_decor:block/red_curtain",
+		"particle": "iden_decor:block/red_curtain"
+	},
+	"elements": [
+		{
+			"from": [8, 0, 15],
+			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 14]},
+			"faces": {
+				"north": {"uv": [0, 8, 4, 16], "texture": "#0"},
+				"east": {"uv": [0, 8, 0.5, 16], "texture": "#0"},
+				"south": {"uv": [0, 8, 4, 16], "texture": "#0"},
+				"west": {"uv": [3.5, 8, 4, 16], "texture": "#0"},
+				"up": {"uv": [0, 8, 4, 8.5], "texture": "#0"},
+				"down": {"uv": [0, 15.5, 4, 16], "texture": "#0"}
+			}
+		}
+	]
+}

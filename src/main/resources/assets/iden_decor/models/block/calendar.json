@@ -1,0 +1,24 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:cube_all",
+	"textures": {
+		"0": "iden_decor:block/calendar",
+		"particle": "iden_decor:block/calendar"
+	},
+	"elements": [
+		{
+			"from": [2, 2, 15],
+			"to": [14, 14, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 14]},
+			"faces": {
+				"north": {"uv": [2, 2, 14, 14], "texture": "#0"},
+				"east": {"uv": [2, 2, 3, 14], "texture": "#0"},
+				"south": {"uv": [2, 2, 14, 14], "texture": "#0"},
+				"west": {"uv": [2, 2, 3, 14], "texture": "#0"},
+				"up": {"uv": [2, 2, 14, 3], "texture": "#0"},
+				"down": {"uv": [2, 13, 14, 14], "texture": "#0"}
+			}
+		}
+	]
+}

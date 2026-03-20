@@ -1,0 +1,65 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/cube_all",
+	"elements": [
+		{
+			"from": [15.99, 9, 3],
+			"to": [15.99, 12, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16.5, 8, 0.5]},
+			"faces": {
+				"east": {"uv": [3, 0, 13, 3], "texture": "#0"},
+				"west": {"uv": [3, 0, 13, 3], "texture": "#0"}
+			}
+		},
+		{
+			"from": [13, 0, 15.99],
+			"to": [16, 16, 15.99],
+			"rotation": {"angle": 0, "axis": "y", "origin": [14.5, 8, 16.5]},
+			"faces": {
+				"north": {"uv": [0, 0, 3, 16], "texture": "#0"},
+				"south": {"uv": [0, 0, 3, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [15.99, 0, 0],
+			"to": [15.99, 16, 3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16.5, 8, 0.5]},
+			"faces": {
+				"east": {"uv": [0, 0, 3, 16], "texture": "#0"},
+				"west": {"uv": [0, 0, 3, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [15.99, 0, 13],
+			"to": [15.99, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16.5, 8, 14.5]},
+			"faces": {
+				"east": {"uv": [0, 0, 3, 16], "texture": "#0"},
+				"west": {"uv": [0, 0, 3, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [13, 0, 0.01],
+			"to": [16, 16, 0.01],
+			"rotation": {"angle": 0, "axis": "y", "origin": [14.5, 8, 0.5]},
+			"faces": {
+				"north": {"uv": [0, 0, 3, 16], "texture": "#0"},
+				"south": {"uv": [0, 0, 3, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 3, 0.25],
+			"to": [15.75, 5, 15.75],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 3, 7]},
+			"faces": {
+				"north": {"uv": [0, 14, 16, 16], "texture": "#1"},
+				"east": {"uv": [0, 14, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 14, 16, 16], "texture": "#1"},
+				"west": {"uv": [0, 14, 16, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#1"}
+			}
+		}
+	]
+}
