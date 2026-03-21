@@ -153,6 +153,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         connectedBlockWithItem(ModBlocks.BLACK_STARRY_WALLPAPER.get());
         connectedBlockWithItem(ModBlocks.RED_GOLDEN_CARPET_BLOCK.get());
         connectedBlockWithItem(ModBlocks.RED_GOLDEN_CARPET.get());
+        connectedBlockWithItem(ModBlocks.GREEN_ARROW_CARPET_BLOCK.get());
+        connectedBlockWithItem(ModBlocks.GREEN_ARROW_CARPET.get());
 
         horizontalBlockGen(ModBlocks.ROOF);
         window(ModBlocks.WHITE_PANEL_WINDOW.get(), "panel_window");

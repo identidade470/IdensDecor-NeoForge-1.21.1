@@ -109,6 +109,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.PUZZLE_WOOL.get());
         dropSelf(ModBlocks.RED_GOLDEN_CARPET.get());
         dropSelf(ModBlocks.RED_GOLDEN_CARPET_BLOCK.get());
+        dropSelf(ModBlocks.GREEN_ARROW_CARPET.get());
+        dropSelf(ModBlocks.GREEN_ARROW_CARPET_BLOCK.get());
 
         dropSelf(ModBlocks.OAK_METAL_SHELF.get());
         dropSelf(ModBlocks.ACACIA_METAL_SHELF.get());

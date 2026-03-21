@@ -350,6 +350,12 @@ public class ModBlocks {
     public static final DeferredBlock<CarpetBlock> RED_GOLDEN_CARPET = registerBlock("red_golden_carpet",
             () -> new CarpetBlock(BlockBehaviour.Properties.of().strength(1.0f).sound(SoundType.WOOL).ignitedByLava()));
 
+    public static final DeferredBlock<Block> GREEN_ARROW_CARPET_BLOCK = registerBlock("green_arrow_carpet_block",
+            () -> new Block(BlockBehaviour.Properties.of().strength(1.0f).sound(SoundType.WOOL).ignitedByLava()));
+
+    public static final DeferredBlock<CarpetBlock> GREEN_ARROW_CARPET = registerBlock("green_arrow_carpet",
+            () -> new CarpetBlock(BlockBehaviour.Properties.of().strength(1.0f).sound(SoundType.WOOL).ignitedByLava()));
+
     // Planks
     public static final Map<DyeColor, Supplier<Block>> PAINTED_PLANKS = new HashMap<>();
     public static final Map<DyeColor, DeferredBlock<StairBlock>> PAINTED_PLANKS_STAIRS = new HashMap<>();
