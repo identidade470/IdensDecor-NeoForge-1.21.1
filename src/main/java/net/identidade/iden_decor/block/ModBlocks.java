@@ -327,10 +327,13 @@ public class ModBlocks {
 
     // Windows
     public static final DeferredBlock<Block> WHITE_PANEL_WINDOW = registerBlock("white_panel_window",
-            () -> new WindowBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.STONE)));
+            () -> new WindowBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.STONE), false));
 
     public static final DeferredBlock<Block> WHITE_HALF_WINDOW = registerBlock("white_half_window",
-            () -> new WindowBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.STONE)));
+            () -> new WindowBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.STONE), false));
+
+    public static final DeferredBlock<Block> WHITE_LATTICE_WINDOW = registerBlock("white_lattice_window",
+            () -> new WindowBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.STONE), true));
 
     public static final DeferredBlock<Block> WALL_CLOCK = registerBlock("wall_clock",
             () -> new WallClockBlock(BlockBehaviour.Properties.of().strength(1.0f).sound(SoundType.METAL).noOcclusion()));

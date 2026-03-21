@@ -155,6 +155,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         horizontalBlockGen(ModBlocks.ROOF);
         window(ModBlocks.WHITE_PANEL_WINDOW.get(), "panel_window");
         window(ModBlocks.WHITE_HALF_WINDOW.get(), "half_window");
+        window(ModBlocks.WHITE_LATTICE_WINDOW.get(), "lattice_window");
         fence_railing(ModBlocks.WHITE_WOOD_RAILING.get());
 
         simpleBlock(ModBlocks.CEILING_LAMP.get(), models().getExistingFile(modLoc("block/ceiling_lamp")));

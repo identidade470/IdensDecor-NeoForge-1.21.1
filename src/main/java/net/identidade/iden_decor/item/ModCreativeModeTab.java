@@ -47,6 +47,7 @@ public class ModCreativeModeTab {
                         output.accept(ModBlocks.CEILING_LAMP);
                         output.accept(ModBlocks.WHITE_HALF_WINDOW);
                         output.accept(ModBlocks.WHITE_PANEL_WINDOW);
+                        output.accept(ModBlocks.WHITE_LATTICE_WINDOW);
                         output.accept(ModBlocks.WHITE_WOOD_RAILING);
                         output.accept(ModBlocks.GREEN_DIAMOND_WALLPAPER);
                         output.accept(ModBlocks.RED_DIAMOND_WALLPAPER);

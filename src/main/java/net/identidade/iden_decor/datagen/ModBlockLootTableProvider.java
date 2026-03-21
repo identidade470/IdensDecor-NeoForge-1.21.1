@@ -94,6 +94,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.ROOF.get());
         dropSelf(ModBlocks.WHITE_PANEL_WINDOW.get());
         dropSelf(ModBlocks.WHITE_HALF_WINDOW.get());
+        dropSelf(ModBlocks.WHITE_LATTICE_WINDOW.get());
         dropSelf(ModBlocks.WHITE_WOOD_RAILING.get());
         dropSelf(ModBlocks.GREEN_DIAMOND_WALLPAPER.get());
         dropSelf(ModBlocks.RED_DIAMOND_WALLPAPER.get());

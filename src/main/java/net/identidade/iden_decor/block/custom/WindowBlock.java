@@ -20,9 +20,13 @@ public class WindowBlock extends SimpleHorizontalBlock {
 
     public static final EnumProperty<VerticalThreeConnectableProperty> PART = EnumProperty.create("part", VerticalThreeConnectableProperty.class);
 
-    public WindowBlock(Properties properties) {
+    private final Boolean fourBlock;
+
+    public WindowBlock(Properties properties, Boolean fourBlock) {
         super(properties);
         super.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH).setValue(PART, VerticalThreeConnectableProperty.SINGLE));
+
+        this.fourBlock = fourBlock;
     }
 
     @Override
@@ -70,9 +74,16 @@ public class WindowBlock extends SimpleHorizontalBlock {
         boolean upper = part == VerticalThreeConnectableProperty.UPPER;
         boolean lower = part == VerticalThreeConnectableProperty.LOWER;
 
-        return switch (state.getValue(FACING)) {
-            case EAST, WEST -> Block.box(7, 0, 0, 9, 16, 16);
-            default -> Block.box(0, 0, 7, 16, 16, 9);
-        };
+        if (this.fourBlock) {
+            return switch (state.getValue(FACING)) {
+                case EAST, WEST -> Block.box(6, 0, 0, 10, 16, 16);
+                default -> Block.box(0, 0, 6, 16, 16, 10);
+            };
+        } else {
+            return switch (state.getValue(FACING)) {
+                case EAST, WEST -> Block.box(7, 0, 0, 9, 16, 16);
+                default -> Block.box(0, 0, 7, 16, 16, 9);
+            };
+        }
     }
 }
