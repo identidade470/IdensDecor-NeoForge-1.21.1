@@ -28,6 +28,9 @@ public class ModFusionModelProvider extends FusionModelProvider {
         simpleConnectedBlock(ModBlocks.BLACK_CLOUDS_WALLPAPER.get());
         simpleConnectedBlock(ModBlocks.FLUORESCENT_LIGHT_BLOCK.get());
         simpleConnectedBlock(ModBlocks.BLACK_STARRY_WALLPAPER.get());
+        simpleConnectedBlock(ModBlocks.RED_GOLDEN_CARPET_BLOCK.get());
+
+        carpetConnectedBlock(ModBlocks.RED_GOLDEN_CARPET.get(), ModBlocks.RED_GOLDEN_CARPET_BLOCK.get());
 
         ModBlocks.FRAMED_PLANKS.values().forEach(block -> simpleConnectedBlock(block.get()));
     }
@@ -41,6 +44,17 @@ public class ModFusionModelProvider extends FusionModelProvider {
 
         var modelInstance = ModelInstance.of(DefaultModelTypes.CONNECTING, modelData);
         this.addModel(ResourceLocation.fromNamespaceAndPath("iden_decor", "block/"+getPath(block)), modelInstance);
+    }
+
+    private void carpetConnectedBlock(Block block, Block wool) {
+        var modelData = ConnectingModelDataBuilder.builder()
+                .parent(ResourceLocation.fromNamespaceAndPath("minecraft", "block/carpet"))
+                .texture("wool", ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/"+getPath(wool)))
+                .defaultConnections(DefaultConnectionPredicates.isSameBlock())
+                .build();
+
+        var modelInstance = ModelInstance.of(DefaultModelTypes.CONNECTING, modelData);
+        this.addModel(ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/"+getPath(block)), modelInstance);
     }
 
     private static String getPath(Block block) {

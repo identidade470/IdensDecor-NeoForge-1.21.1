@@ -61,6 +61,8 @@ public class ModCreativeModeTab {
                         output.accept(ModBlocks.HANGING_MOON_LIGHT);
                         output.accept(ModBlocks.PUZZLE_WOOL);
                         output.accept(ModBlocks.PUZZLE_CARPET);
+                        output.accept(ModBlocks.RED_GOLDEN_CARPET_BLOCK);
+                        output.accept(ModBlocks.RED_GOLDEN_CARPET);
 
                         output.accept(ModBlocks.OAK_METAL_SHELF);
                         output.accept(ModBlocks.ACACIA_METAL_SHELF);

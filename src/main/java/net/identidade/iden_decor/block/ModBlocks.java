@@ -344,6 +344,12 @@ public class ModBlocks {
     public static final DeferredBlock<CubicShelfBlock> WHITE_CUBIC_SHELF = registerBlock("white_cubic_shelf",
             () -> new CubicShelfBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOD).noOcclusion()));
 
+    public static final DeferredBlock<Block> RED_GOLDEN_CARPET_BLOCK = registerBlock("red_golden_carpet_block",
+            () -> new Block(BlockBehaviour.Properties.of().strength(1.0f).sound(SoundType.WOOL).ignitedByLava()));
+
+    public static final DeferredBlock<CarpetBlock> RED_GOLDEN_CARPET = registerBlock("red_golden_carpet",
+            () -> new CarpetBlock(BlockBehaviour.Properties.of().strength(1.0f).sound(SoundType.WOOL).ignitedByLava()));
+
     // Planks
     public static final Map<DyeColor, Supplier<Block>> PAINTED_PLANKS = new HashMap<>();
     public static final Map<DyeColor, DeferredBlock<StairBlock>> PAINTED_PLANKS_STAIRS = new HashMap<>();

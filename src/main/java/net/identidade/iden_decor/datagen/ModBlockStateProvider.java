@@ -151,11 +151,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
         connectedBlockWithItem(ModBlocks.BLACK_CLOUDS_WALLPAPER.get());
         connectedBlockWithItem(ModBlocks.FLUORESCENT_LIGHT_BLOCK.get());
         connectedBlockWithItem(ModBlocks.BLACK_STARRY_WALLPAPER.get());
+        connectedBlockWithItem(ModBlocks.RED_GOLDEN_CARPET_BLOCK.get());
+        connectedBlockWithItem(ModBlocks.RED_GOLDEN_CARPET.get());
 
         horizontalBlockGen(ModBlocks.ROOF);
         window(ModBlocks.WHITE_PANEL_WINDOW.get(), "panel_window");
         window(ModBlocks.WHITE_HALF_WINDOW.get(), "half_window");
         window(ModBlocks.WHITE_LATTICE_WINDOW.get(), "lattice_window");
+
+
         fence_railing(ModBlocks.WHITE_WOOD_RAILING.get());
 
         simpleBlock(ModBlocks.CEILING_LAMP.get(), models().getExistingFile(modLoc("block/ceiling_lamp")));
@@ -198,6 +202,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(block, new ModelFile.UncheckedModelFile(modLoc("block/" + getPath(block))));
         simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" + getPath(block))));
     }
+
+//    private void connectedCarpetWithItem(Block block) {
+//        simpleBlock(block, new Mode);
+//    }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {
         simpleBlockWithItem(deferredBlock.get(), cubeAll(deferredBlock.get()));
