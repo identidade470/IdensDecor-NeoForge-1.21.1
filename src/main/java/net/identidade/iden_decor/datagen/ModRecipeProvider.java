@@ -11,6 +11,7 @@ import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.StonecutterRecipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -329,6 +330,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_wool", has(ItemTags.WOOL))
                 .save(recipeOutput);
 
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GREEN_ARROW_CARPET_BLOCK.get(), Blocks.GREEN_WOOL, 1);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_GOLDEN_CARPET_BLOCK.get(), Blocks.RED_WOOL, 1);
+        carpet(recipeOutput, ModBlocks.GREEN_ARROW_CARPET.get(), ModBlocks.GREEN_ARROW_CARPET_BLOCK.get());
+        carpet(recipeOutput, ModBlocks.RED_GOLDEN_CARPET.get(), ModBlocks.RED_GOLDEN_CARPET_BLOCK.get());
+
+
+
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.WHITE_HALF_WINDOW.get(), 4)
                 .pattern("AAA")
                 .pattern("BBB")
@@ -341,6 +349,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.WHITE_PANEL_WINDOW.get(), 4)
                 .pattern("ABA")
                 .pattern("BBB")
+                .pattern("ABA")
+                .define('A', ModBlocks.PAINTED_PLANKS.get(DyeColor.WHITE).get())
+                .define('B', Items.STICK)
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.WHITE_LATTICE_WINDOW.get(), 4)
+                .pattern("ABA")
+                .pattern("B B")
                 .pattern("ABA")
                 .define('A', ModBlocks.PAINTED_PLANKS.get(DyeColor.WHITE).get())
                 .define('B', Items.STICK)
