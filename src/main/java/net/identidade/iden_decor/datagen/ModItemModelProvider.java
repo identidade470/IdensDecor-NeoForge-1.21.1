@@ -37,6 +37,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModBlocks.WOODEN_PANEL_DOOR.asItem());
         basicItem(ModBlocks.HANGING_CLOUD.asItem());
         basicItem(ModBlocks.HANGING_MOON_LIGHT.asItem());
+        basicItem(ModBlocks.HANGING_SUN_LIGHT.asItem());
 
         basicItem(ModBlocks.CALENDAR.asItem());
 

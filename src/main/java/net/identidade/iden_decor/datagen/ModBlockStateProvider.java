@@ -160,6 +160,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         window(ModBlocks.WHITE_PANEL_WINDOW.get(), "panel_window");
         window(ModBlocks.WHITE_HALF_WINDOW.get(), "half_window");
         window(ModBlocks.WHITE_LATTICE_WINDOW.get(), "lattice_window");
+        window(ModBlocks.BLACK_PANEL_WINDOW.get(), "panel_window");
+        window(ModBlocks.BLACK_HALF_WINDOW.get(), "half_window");
+        window(ModBlocks.BLACK_LATTICE_WINDOW.get(), "lattice_window");
 
 
         fence_railing(ModBlocks.WHITE_WOOD_RAILING.get());
@@ -184,6 +187,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         horizontalBlockWithExistingParent(ModBlocks.CALENDAR);
         horizontalBlockWithExistingParent(ModBlocks.HANGING_MOON_LIGHT);
+        horizontalBlockWithExistingParent(ModBlocks.HANGING_SUN_LIGHT);
         horizontalBlockWithExistingParent(ModBlocks.HANGING_CLOUD);
         horizontalBlockWithExistingParent(ModBlocks.WHITE_CUBIC_SHELF, "cubic_shelf");
 
@@ -327,12 +331,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         ResourceLocation baseTexture = ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/" + getPath(block));
         ModelFile sideModel = models().withExistingParent(getPath(block) + "_side", ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/fence_railing/side"))
                 .texture("0", baseTexture)
-                .renderType("cutout");
+                .renderType("cutout").texture("particle", baseTexture);
         ModelFile postModel = models().withExistingParent(getPath(block) + "_post", ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/fence_railing/post"))
-                .texture("0", baseTexture);
-        ModelFile centerModel = models().withExistingParent(getPath(block) + "_center", ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/fence_railing/center"))
-                .texture("0", baseTexture)
-                .renderType("cutout");
+                .texture("0", baseTexture).texture("particle", baseTexture);
+//        ModelFile centerModel = models().withExistingParent(getPath(block) + "_center", ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/fence_railing/center"))
+//                .texture("0", baseTexture)
+//                .renderType("cutout");
 
         MultiPartBlockStateBuilder builder = getMultipartBuilder(block);
         builder.part().modelFile(postModel).addModel().condition(WallBlock.UP, true).end();

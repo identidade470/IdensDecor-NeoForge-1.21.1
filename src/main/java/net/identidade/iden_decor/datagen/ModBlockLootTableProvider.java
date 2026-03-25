@@ -95,6 +95,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.WHITE_PANEL_WINDOW.get());
         dropSelf(ModBlocks.WHITE_HALF_WINDOW.get());
         dropSelf(ModBlocks.WHITE_LATTICE_WINDOW.get());
+        dropSelf(ModBlocks.BLACK_PANEL_WINDOW.get());
+        dropSelf(ModBlocks.BLACK_HALF_WINDOW.get());
+        dropSelf(ModBlocks.BLACK_LATTICE_WINDOW.get());
         dropSelf(ModBlocks.WHITE_WOOD_RAILING.get());
         dropSelf(ModBlocks.GREEN_DIAMOND_WALLPAPER.get());
         dropSelf(ModBlocks.RED_DIAMOND_WALLPAPER.get());
@@ -127,6 +130,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.CALENDAR.get());
         dropSelf(ModBlocks.HANGING_CLOUD.get());
         dropSelf(ModBlocks.HANGING_MOON_LIGHT.get());
+        dropSelf(ModBlocks.HANGING_SUN_LIGHT.get());
         dropSelf(ModBlocks.LONG_CONCRETE_VASE.get());
         dropSelf(ModBlocks.RED_CURTAIN.get());
         dropSelf(ModBlocks.WHITE_CUBIC_SHELF.get());

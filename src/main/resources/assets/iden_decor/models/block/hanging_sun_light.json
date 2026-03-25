@@ -3,17 +3,17 @@
 	"credit": "Made with Blockbench",
 	"render_type": "cutout",
 	"textures": {
-		"0": "iden_decor:block/hanging_cloud",
-		"particle": "iden_decor:block/hanging_cloud"
+		"0": "iden_decor:block/hanging_sun_light",
+		"particle": "iden_decor:block/hanging_sun_light"
 	},
 	"elements": [
 		{
-			"from": [1, 5, 8],
-			"to": [15, 14, 8],
-			"rotation": {"angle": 0, "axis": "y", "origin": [7, -2, 7]},
+			"from": [3, 4, 8],
+			"to": [13, 14, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6.5, -2, 7]},
 			"faces": {
-				"north": {"uv": [0, 0, 14, 9], "texture": "#0"},
-				"south": {"uv": [14, 0, 0, 9], "texture": "#0"}
+				"north": {"uv": [0, 0, 10, 10], "texture": "#0"},
+				"south": {"uv": [10, 0, 0, 10], "texture": "#0"}
 			}
 		},
 		{
@@ -21,7 +21,7 @@
 			"to": [9, 15, 8],
 			"rotation": {"angle": -45, "axis": "y", "origin": [8, 14, 8]},
 			"faces": {
-				"north": {"uv": [2, 14, 4, 16], "texture": "#0"},
+				"north": {"uv": [3, 14, 5, 16], "texture": "#0"},
 				"south": {"uv": [2, 14, 4, 16], "texture": "#0"}
 			}
 		},

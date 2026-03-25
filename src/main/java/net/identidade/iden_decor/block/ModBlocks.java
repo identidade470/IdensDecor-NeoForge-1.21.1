@@ -250,8 +250,8 @@ public class ModBlocks {
                 @Override
                 protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
                     return switch (state.getValue(FACING)) {
-                        case EAST, WEST -> Block.box(7, 6, 1, 9, 16, 16);
-                        default -> Block.box(0, 6, 7, 15, 16, 9);
+                        case EAST, WEST -> Block.box(7.5, 5, 1, 8.5, 14, 15);
+                        default -> Block.box(1, 5, 7.5, 15, 14, 8.5);
                     };
                 }
             });
@@ -260,8 +260,18 @@ public class ModBlocks {
                 @Override
                 protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
                     return switch (state.getValue(FACING)) {
-                        case EAST, WEST -> Block.box(7, 6, 1, 9, 16, 16);
-                        default -> Block.box(0, 6, 7, 15, 16, 9);
+                        case EAST, WEST -> Block.box(7.5, 5, 3.5, 8.5, 14, 12.5);
+                        default -> Block.box(3.5, 5, 7.5, 12.5, 14, 8.5);
+                    };
+                }
+            });
+    public static final DeferredBlock<Block> HANGING_SUN_LIGHT = registerBlock("hanging_sun_light",
+            () -> new SimpleHorizontalBlock(BlockBehaviour.Properties.of().strength(1.0f).sound(SoundType.CHAIN).lightLevel(state -> 8)) {
+                @Override
+                protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+                    return switch (state.getValue(FACING)) {
+                        case EAST, WEST ->  Block.box(7.5, 4, 3, 8.5, 14, 13);
+                        default -> Block.box(3, 4, 7.5, 13, 14, 8.5);
                     };
                 }
             });
@@ -292,7 +302,7 @@ public class ModBlocks {
             () -> new CeilingLampBlock(BlockBehaviour.Properties.of().strength(1.5f).sound(SoundType.METAL).lightLevel(blockstate -> 10)));
 
     public static final DeferredBlock<WallBlock> WHITE_WOOD_RAILING = registerBlock("white_wood_railing",
-            () -> new WallBlock(BlockBehaviour.Properties.of().strength(3.0f)));
+            () -> new WoodRailingBlock(BlockBehaviour.Properties.of().strength(3.0f)));
 
     public static final DeferredBlock<RotatedPillarBlock> CARVED_SPRUCE_PLANKS = registerBlock("carved_spruce_planks",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.WOOD)));
@@ -333,6 +343,16 @@ public class ModBlocks {
             () -> new WindowBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.STONE), false));
 
     public static final DeferredBlock<Block> WHITE_LATTICE_WINDOW = registerBlock("white_lattice_window",
+            () -> new WindowBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.STONE), true));
+
+
+    public static final DeferredBlock<Block> BLACK_PANEL_WINDOW = registerBlock("black_panel_window",
+            () -> new WindowBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.STONE), false));
+
+    public static final DeferredBlock<Block> BLACK_HALF_WINDOW = registerBlock("black_half_window",
+            () -> new WindowBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.STONE), false));
+
+    public static final DeferredBlock<Block> BLACK_LATTICE_WINDOW = registerBlock("black_lattice_window",
             () -> new WindowBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.STONE), true));
 
     public static final DeferredBlock<Block> WALL_CLOCK = registerBlock("wall_clock",
