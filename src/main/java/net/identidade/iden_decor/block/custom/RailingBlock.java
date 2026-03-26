@@ -38,6 +38,16 @@ public class RailingBlock extends SimpleHorizontalBlock {
     }
 
     @Override
+    protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return switch (state.getValue(FACING)) {
+            case EAST -> Block.box(14, 0, 0, 16, 24, 16);
+            case SOUTH -> Block.box(0, 0, 0, 16, 24, 2);
+            case WEST -> Block.box(0, 0, 0, 2, 24, 16);
+            default -> Block.box(0, 0, 14, 16, 24, 16);
+        };
+    }
+
+    @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
 
             if (stack.is(Tags.Items.DYES)) {
