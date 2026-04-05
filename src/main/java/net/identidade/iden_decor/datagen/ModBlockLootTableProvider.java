@@ -1,11 +1,13 @@
 package net.identidade.iden_decor.datagen;
 
 import net.identidade.iden_decor.block.ModBlocks;
+import net.identidade.iden_decor.block.custom.CribBlock;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BedPart;
 
 import java.util.Set;
 
@@ -81,6 +83,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.CUP_DISPENSER.get());
         dropSelf(ModBlocks.SIGN_POST.get());
         dropSelf(ModBlocks.STOP_SIGN.get());
+        dropSelf(ModBlocks.DO_NOT_ENTER_SIGN.get());
+        dropSelf(ModBlocks.NO_TURN_LEFT_SIGN.get());
+        dropSelf(ModBlocks.NO_U_TURN_LEFT_SIGN.get());
         dropSelf(ModBlocks.INTERSECTION_SIGN.get());
         dropSelf(ModBlocks.TRAFFIC_CONE.get());
         dropSelf(ModBlocks.CONCRETE_BARRIER.get());
@@ -134,6 +139,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.LONG_CONCRETE_VASE.get());
         dropSelf(ModBlocks.RED_CURTAIN.get());
         dropSelf(ModBlocks.WHITE_CUBIC_SHELF.get());
+
+        add(ModBlocks.WOODEN_CRIB.get(), block ->
+                createSinglePropConditionTable(block, CribBlock.PART, BedPart.HEAD));
 
         ModBlocks.PAINTED_PLANKS.values().forEach(block -> dropSelf(block.get()));
         ModBlocks.PAINTED_PLANKS_STAIRS.values().forEach(block -> dropSelf(block.get()));

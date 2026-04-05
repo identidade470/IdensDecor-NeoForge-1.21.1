@@ -208,6 +208,15 @@ public class ModBlocks {
     public static final DeferredBlock<Block> STOP_SIGN = registerBlock("stop_sign",
             () -> new RoadSignBlock(BlockBehaviour.Properties.of().strength(1.0f).sound(SoundType.METAL)));
 
+    public static final DeferredBlock<Block> DO_NOT_ENTER_SIGN = registerBlock("do_not_enter_sign",
+            () -> new RoadSignBlock(BlockBehaviour.Properties.of().strength(1.0f).sound(SoundType.METAL)));
+
+    public static final DeferredBlock<Block> NO_TURN_LEFT_SIGN = registerBlock("no_turn_left_sign",
+            () -> new RoadSignBlock(BlockBehaviour.Properties.of().strength(1.0f).sound(SoundType.METAL)));
+
+    public static final DeferredBlock<Block> NO_U_TURN_LEFT_SIGN = registerBlock("no_u_turn_left_sign",
+            () -> new RoadSignBlock(BlockBehaviour.Properties.of().strength(1.0f).sound(SoundType.METAL)));
+
     public static final DeferredBlock<Block> INTERSECTION_SIGN = registerBlock("intersection_sign",
             () -> new RoadSignBlock(BlockBehaviour.Properties.of().strength(1.0f).sound(SoundType.METAL)));
 
@@ -375,6 +384,9 @@ public class ModBlocks {
 
     public static final DeferredBlock<CarpetBlock> GREEN_ARROW_CARPET = registerBlock("green_arrow_carpet",
             () -> new CarpetBlock(BlockBehaviour.Properties.of().strength(1.0f).sound(SoundType.WOOL).ignitedByLava()));
+
+    public static final DeferredBlock<Block> WOODEN_CRIB = registerBlock("wooden_crib",
+            () -> new CribBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOD)));
 
     // Planks
     public static final Map<DyeColor, Supplier<Block>> PAINTED_PLANKS = new HashMap<>();

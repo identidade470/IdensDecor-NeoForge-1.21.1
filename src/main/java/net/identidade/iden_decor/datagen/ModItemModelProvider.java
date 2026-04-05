@@ -54,7 +54,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItemWithFrontGuiLight(ModBlocks.WATER_POSTER);
         blockItemWithFrontGuiLight(ModBlocks.CCS_POSTER);
         blockItemWithFrontGuiLight(ModBlocks.STOP_SIGN);
+        blockItemWithFrontGuiLight(ModBlocks.NO_TURN_LEFT_SIGN);
+        blockItemWithFrontGuiLight(ModBlocks.NO_U_TURN_LEFT_SIGN);
+        blockItemWithFrontGuiLight(ModBlocks.DO_NOT_ENTER_SIGN);
         blockItemWithFrontGuiLight(ModBlocks.INTERSECTION_SIGN);
+
+//        simpleBlockItem(ModBlocks.WOODEN_CRIB.get());
     }
 
     private void blockItemWithFrontGuiLight(DeferredBlock<?> block) {
@@ -62,7 +67,11 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .guiLight(BlockModel.GuiLight.FRONT);
     }
 
-
+    private void blockWithBedTemplate(DeferredBlock<?> block) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("item/template_bed"))
+                .texture("0", ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID,
+                        "block/" + block.getId().getPath()));
+    }
 
 //    public void buttonItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
 //        this.withExistingParent(block.getId().getPath(), mcLoc("block/button_inventory"))

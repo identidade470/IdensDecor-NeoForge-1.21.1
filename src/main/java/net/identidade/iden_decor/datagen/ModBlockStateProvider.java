@@ -110,6 +110,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         horizontalBlockGen(ModBlocks.CUP_DISPENSER);
         horizontalBlockGen(ModBlocks.STOP_SIGN);
         horizontalBlockGen(ModBlocks.INTERSECTION_SIGN);
+        horizontalBlockGen(ModBlocks.DO_NOT_ENTER_SIGN);
+        horizontalBlockGen(ModBlocks.NO_U_TURN_LEFT_SIGN);
+        horizontalBlockGen(ModBlocks.NO_TURN_LEFT_SIGN);
         horizontalBlockGen(ModBlocks.CONCRETE_BARRIER);
 
         simpleBlock(ModBlocks.SIGN_POST.get(), models().getExistingFile(modLoc("block/sign_post")));

@@ -298,12 +298,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_paper", has(Items.PAPER))
                 .save(recipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.CARVED_SPRUCE_PLANKS.get(), 4)
-                .pattern("AA")
-                .pattern("AA")
-                .define('A', Blocks.SPRUCE_PLANKS)
-                .unlockedBy("has_spruce_planks", has(Blocks.SPRUCE_PLANKS.asItem()))
-                .save(recipeOutput);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CARVED_SPRUCE_PLANKS.get(), Blocks.SPRUCE_PLANKS);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.LONG_CONCRETE_VASE.get(), 5)
                 .pattern("A A")

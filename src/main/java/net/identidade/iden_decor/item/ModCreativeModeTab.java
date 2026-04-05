@@ -58,11 +58,11 @@ public class ModCreativeModeTab {
                         output.accept(ModBlocks.BLUE_CLOUDS_WALLPAPER);
                         output.accept(ModBlocks.BLACK_CLOUDS_WALLPAPER);
                         output.accept(ModBlocks.BLACK_STARRY_WALLPAPER);
-                        output.accept(ModBlocks.FLUORESCENT_LIGHT_BLOCK);
                         output.accept(ModBlocks.CARVED_SPRUCE_PLANKS);
                         output.accept(ModBlocks.HANGING_CLOUD);
                         output.accept(ModBlocks.HANGING_MOON_LIGHT);
                         output.accept(ModBlocks.HANGING_SUN_LIGHT);
+                        output.accept(ModBlocks.WOODEN_CRIB);
                         output.accept(ModBlocks.PUZZLE_WOOL);
                         output.accept(ModBlocks.PUZZLE_CARPET);
                         output.accept(ModBlocks.RED_GOLDEN_CARPET_BLOCK);
@@ -127,6 +127,9 @@ public class ModCreativeModeTab {
                         output.accept(ModBlocks.CONCRETE_BARRIER);
                         output.accept(ModBlocks.SIGN_POST);
                         output.accept(ModBlocks.STOP_SIGN);
+                        output.accept(ModBlocks.DO_NOT_ENTER_SIGN);
+                        output.accept(ModBlocks.NO_TURN_LEFT_SIGN);
+                        output.accept(ModBlocks.NO_U_TURN_LEFT_SIGN);
                         output.accept(ModBlocks.INTERSECTION_SIGN);
                         output.accept(ModBlocks.HEAVY_BUTTON);
                         output.accept(ModBlocks.GATE_BUTTON);
@@ -147,6 +150,7 @@ public class ModCreativeModeTab {
                         output.accept(ModBlocks.PLUSHIE_RED);
                         output.accept(ModBlocks.PLUSHIE_RAFA);
                         output.accept(ModBlocks.FLUORESCENT_LIGHT);
+                        output.accept(ModBlocks.FLUORESCENT_LIGHT_BLOCK);
                         output.accept(ModBlocks.FLOODLIGHT);
                         output.accept(ModBlocks.FLOOD_LAMP);
                         output.accept(ModBlocks.KEYCARD_READER);

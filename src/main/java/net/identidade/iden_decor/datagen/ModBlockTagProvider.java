@@ -20,18 +20,6 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-//        tag(ModTags.Blocks.BLOODY_LOGS)
-//                .add(ModBlocks.STRIPPED_BLOODY_WOOD.get())
-//                .add(ModBlocks.STRIPPED_BLOODY_LOG.get())
-//                .add(ModBlocks.BLOODY_WOOD.get())
-//                .add(ModBlocks.BLOODY_LOG.get());
-//
-//        tag(BlockTags.MINEABLE_WITH_AXE)
-//                .add(ModBlocks.STRIPPED_BLOODY_WOOD.get())
-//                .add(ModBlocks.STRIPPED_BLOODY_LOG.get())
-//                .add(ModBlocks.BLOODY_LOG.get())
-//                .add(ModBlocks.BLOODY_WOOD.get())
-//                .add(ModBlocks.BLOODY_PLANKS.get());
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.GREEN_DIAMOND_WALLPAPER.get())
                 .add(ModBlocks.RED_DIAMOND_WALLPAPER.get())
@@ -40,6 +28,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.BLUE_CLOUDS_WALLPAPER.get())
                 .add(ModBlocks.BLACK_CLOUDS_WALLPAPER.get())
                 .add(ModBlocks.BLACK_STARRY_WALLPAPER.get())
+
+                .add(ModBlocks.WOODEN_CRIB.get())
 
                 .add(ModBlocks.OAK_METAL_SHELF.get())
                 .add(ModBlocks.ACACIA_METAL_SHELF.get())
