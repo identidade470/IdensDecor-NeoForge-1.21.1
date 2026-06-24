@@ -1,0 +1,23 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/block",
+	"textures": {
+		"particle": "block/#0"
+	},
+	"elements": [
+		{
+			"from": [0, -12, 7],
+			"to": [16, 4, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -12, 7]},
+			"color": 3,
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#missing"},
+				"east": {"uv": [0, 0, 2, 16], "texture": "#missing"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#missing"},
+				"west": {"uv": [14, 0, 16, 16], "texture": "#missing"},
+				"up": {"uv": [0, 0, 16, 2], "texture": "#missing"}
+			}
+		}
+	]
+}

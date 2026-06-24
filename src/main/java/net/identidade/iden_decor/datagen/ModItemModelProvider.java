@@ -34,12 +34,18 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModBlocks.YELLOW_METAL_DOOR.asItem());
         basicItem(ModBlocks.WHITE_METAL_DOOR.asItem());
         basicItem(ModBlocks.WHITE_WOODEN_PANEL_DOOR.asItem());
+        basicItem(ModBlocks.BLACK_WOODEN_PANEL_DOOR.asItem());
         basicItem(ModBlocks.WOODEN_PANEL_DOOR.asItem());
+        basicItem(ModBlocks.CORE_DOOR.asItem());
         basicItem(ModBlocks.HANGING_CLOUD.asItem());
         basicItem(ModBlocks.HANGING_MOON_LIGHT.asItem());
         basicItem(ModBlocks.HANGING_SUN_LIGHT.asItem());
 
+        basicItem(ModItems.CORE_BATTERY.get());
+
         basicItem(ModBlocks.CALENDAR.asItem());
+        basicItem(ModBlocks.WALL_NOTES.asItem());
+        basicItem(ModBlocks.WALL_CABLE.asItem());
 
         basicItem(ModBlocks.DARK_WATER_DISPENSER.asItem());
         basicItem(ModBlocks.LIGHT_WATER_DISPENSER.asItem());
@@ -48,6 +54,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.GUARANA_CUP.get());
 
         fenceRailingBlock(ModBlocks.WHITE_WOOD_RAILING);
+        fenceRailingBlock(ModBlocks.BLACK_WOOD_RAILING);
         fenceItem(ModBlocks.CAUTION_BLOCK_FENCE, ModBlocks.CAUTION_BLOCK);
         wallItem(ModBlocks.CAUTION_BLOCK_WALL, ModBlocks.CAUTION_BLOCK);
 

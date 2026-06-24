@@ -35,6 +35,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
         ModBlocks.PAINTED_PLANKS.values().forEach(block -> tag(ItemTags.PLANKS)
                 .add(block.get().asItem()));
 
+
+
         tag(ModTags.Items.URBAN)
                 .add(ModBlocks.CEILING_LAMP.asItem())
                 .add(ModBlocks.ROOF.asItem());

@@ -13,8 +13,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CarpetBlock;
 import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.AttachFace;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.WallSide;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -22,6 +23,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -52,6 +54,17 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.CAUTION_BLOCK);
         stairsBlock(ModBlocks.CAUTION_BLOCK_STAIRS.get(), blockTexture(ModBlocks.CAUTION_BLOCK.get()));
         slabBlock(ModBlocks.CAUTION_BLOCK_SLAB.get(), blockTexture(ModBlocks.CAUTION_BLOCK.get()), blockTexture(ModBlocks.CAUTION_BLOCK.get()));
+
+        blockWithItem(ModBlocks.CORE_TILES);
+        blockWithItem(ModBlocks.CORE_PLATES);
+        blockWithItem(ModBlocks.CORE_PILLAR_JUNCTION, modLoc("block/core_pillar_end"));
+        axisBlock(ModBlocks.CORE_PILLAR.get(), modLoc("block/core_pillar_side"), modLoc("block/core_pillar_end"));
+        blockItem(ModBlocks.CORE_PILLAR);
+        controlPanel(ModBlocks.CORE_CONTROL_PANEL.get(), "block/control_panel/core_default/");
+        leverControlPanel(ModBlocks.CORE_LEVER_CONTROL_PANEL.get(), "block/control_panel/core_lever/");
+        buttonControlPanel(ModBlocks.CORE_BUTTON_CONTROL_PANEL.get(), "block/control_panel/core_button/");
+        controlPanelScreen(ModBlocks.CORE_CONTROL_PANEL_SCREEN.get(), "core_control_panel", "block/core_plates");
+        battery_cell(ModBlocks.BATTERY_CELL.get());
 
         trapdoorBlockWithRenderType(ModBlocks.AIR_VENT.get(), ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/air_vent"), true, "cutout");
 
@@ -129,7 +142,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         doorBlockWithRenderType(ModBlocks.GRID_METAL_DOOR.get(), modLoc("block/grid_metal_door_bottom"), modLoc("block/grid_metal_door_top"), "cutout");
         doorBlockWithRenderType(ModBlocks.WHITE_METAL_DOOR.get(), modLoc("block/white_metal_door_bottom"), modLoc("block/white_metal_door_top"), "cutout");
+        doorBlock(ModBlocks.CORE_DOOR.get(), modLoc("block/core_door_bottom"), modLoc("block/core_door_top"));
         doorBlock(ModBlocks.WHITE_WOODEN_PANEL_DOOR.get(), modLoc("block/white_wooden_panel_door_bottom"), modLoc("block/white_wooden_panel_door_top"));
+        doorBlock(ModBlocks.BLACK_WOODEN_PANEL_DOOR.get(), modLoc("block/black_wooden_panel_door_bottom"), modLoc("block/black_wooden_panel_door_top"));
         doorBlock(ModBlocks.WOODEN_PANEL_DOOR.get(), modLoc("block/wooden_panel_door_bottom"), modLoc("block/wooden_panel_door_top"));
         doorBlock(ModBlocks.YELLOW_METAL_DOOR.get(), modLoc("block/yellow_metal_door_bottom"), modLoc("block/yellow_metal_door_top"));
         fenceBlock(ModBlocks.CAUTION_BLOCK_FENCE.get(), blockTexture(ModBlocks.CAUTION_BLOCK.get()));
@@ -150,6 +165,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         connectedBlockWithItem(ModBlocks.GREEN_DIAMOND_WALLPAPER.get());
         connectedBlockWithItem(ModBlocks.RED_DIAMOND_WALLPAPER.get());
         connectedBlockWithItem(ModBlocks.YELLOW_ARROW_WALLPAPER.get());
+        connectedBlockWithItem(ModBlocks.CYAN_ARROW_WALLPAPER.get());
         connectedBlockWithItem(ModBlocks.BLUE_CLOUDS_WALLPAPER.get());
         connectedBlockWithItem(ModBlocks.BLACK_CLOUDS_WALLPAPER.get());
         connectedBlockWithItem(ModBlocks.FLUORESCENT_LIGHT_BLOCK.get());
@@ -167,8 +183,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         window(ModBlocks.BLACK_HALF_WINDOW.get(), "half_window");
         window(ModBlocks.BLACK_LATTICE_WINDOW.get(), "lattice_window");
 
-
         fence_railing(ModBlocks.WHITE_WOOD_RAILING.get());
+        fence_railing(ModBlocks.BLACK_WOOD_RAILING.get());
 
         simpleBlock(ModBlocks.CEILING_LAMP.get(), models().getExistingFile(modLoc("block/ceiling_lamp")));
 
@@ -189,6 +205,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         horizontalBlockGen(ModBlocks.WALL_CLOCK);
 
         horizontalBlockWithExistingParent(ModBlocks.CALENDAR);
+
         horizontalBlockWithExistingParent(ModBlocks.HANGING_MOON_LIGHT);
         horizontalBlockWithExistingParent(ModBlocks.HANGING_SUN_LIGHT);
         horizontalBlockWithExistingParent(ModBlocks.HANGING_CLOUD);
@@ -205,6 +222,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         curtainBlock(ModBlocks.RED_CURTAIN.get());
 
+        wallProp(ModBlocks.WALL_NOTES.get());
+        wallProp(ModBlocks.WALL_CABLE.get());
     }
 
     private void connectedBlockWithItem(Block block) {
@@ -218,6 +237,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {
         simpleBlockWithItem(deferredBlock.get(), cubeAll(deferredBlock.get()));
+    }
+
+    private void blockWithItem(DeferredBlock<?> deferredBlock, ResourceLocation texture) {
+        simpleBlockWithItem(deferredBlock.get(), models().cubeAll(getPath(deferredBlock.get()), texture));
     }
 
 
@@ -293,6 +316,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         simpleBlockItem(block, new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/" + getPath(block))));
     }
+
+    private void wallProp(Block block) {
+        horizontalFaceBlock(block, models().withExistingParent(getPath(block), modLoc("block/wall_prop"))
+                .texture("0", modLoc("block/" + getPath(block)))
+                .texture("particle", modLoc("block/" + getPath(block)))
+                .renderType("cutout"));
+    }
+
+
 
     private void shelfBlock(Block block, String baseTexture) {
         ResourceLocation woodTexture = ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/"+baseTexture);
@@ -434,7 +466,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
        simpleBlockItem(block, model);
     }
 
-
     private void window(Block block, String folder) {
         ModelFile singlePart = models().getExistingFile(modLoc("block/"+folder+"/single"));
         ModelFile upperPart = models().getExistingFile(modLoc("block/"+folder+"/upper"));
@@ -517,6 +548,113 @@ public class ModBlockStateProvider extends BlockStateProvider {
         });
 
         simpleBlockItem(block, closedModel);
+    }
+
+    private void battery_cell(Block block) {
+        ResourceLocation texture = modLoc(getPath(block));
+
+        ModelFile model = models().getExistingFile(modLoc("block/" + getPath(block)));
+        ModelFile filledModel = models().getExistingFile(modLoc("block/" + getPath(block) + "_filled"));
+
+        getVariantBuilder(block)
+                .forAllStates(state -> {
+                   Direction facing = state.getValue(BatteryCellBlock.FACING);
+                   Boolean filled = state.getValue(BatteryCellBlock.BATTERY);
+
+                   return ConfiguredModel.builder()
+                           .modelFile(filled?filledModel:model)
+                           .rotationY(((int) facing.toYRot() + 180) % 360)
+                           .build();
+                });
+
+        simpleBlockItem(block, model);
+
+    }
+
+    private void controlPanelInternal(
+            Block block,
+            String path,
+            Function<BlockState, ResourceLocation> lowerModelSupplier
+    ) {
+        simpleBlockItem(block, models().getExistingFile(modLoc(path + "lower_single")));
+
+        getVariantBuilder(block).forAllStates(state -> {
+            Direction facing = state.getValue(ControlPanelBlock.FACING);
+
+            return ConfiguredModel.builder()
+                    .modelFile(models().getExistingFile(lowerModelSupplier.apply(state)))
+                    .rotationY(((int) facing.toYRot() + 180) % 360)
+                    .build();
+        });
+    }
+
+    private void controlPanelScreen(Block block, String textureName, String particle) {
+        getVariantBuilder(block).forAllStates(state -> {
+            Direction facing = state.getValue(ControlPanelScreenBlock.FACING);
+            HorizontalThreeConnectableProperty part = state.getValue(ControlPanelScreenBlock.PART);
+
+            ResourceLocation parent = modLoc("block/control_panel/upper/" + part.getSerializedName());
+
+            return ConfiguredModel.builder()
+                    .modelFile(models().withExistingParent(
+                            getPath(block) + "_" + part.getSerializedName(), parent)
+                            .texture("0", modLoc("block/" + textureName + (part == HorizontalThreeConnectableProperty.SINGLE ? "" : "_connected")))
+                            .texture("particle", particle))
+                    .rotationY(((int) facing.toYRot() + 180) % 360)
+                    .build();
+        });
+
+        simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" + getPath(block) + "_single")));
+    }
+
+    private void controlPanel(Block block, String path) {
+        controlPanelInternal(
+                block,
+                path,
+                state -> {
+                    HorizontalThreeConnectableProperty part =
+                            state.getValue(ControlPanelBlock.PART);
+
+                    return modLoc(path + "lower_" + part.getSerializedName());
+                }
+        );
+    }
+
+    private void buttonControlPanel(Block block, String path) {
+        controlPanelInternal(
+                block,
+                path,
+                state -> {
+                    HorizontalThreeConnectableProperty part =
+                            state.getValue(ControlPanelBlock.PART);
+
+                    boolean powered =
+                            state.getValue(ButtonControlPanelBlock.POWERED);
+
+                    return modLoc(
+                            path + "lower_" + part.getSerializedName()
+                                    + (powered ? "_powered" : "")
+                    );
+                }
+        );
+    }
+    private void leverControlPanel(Block block, String path) {
+        controlPanelInternal(
+                block,
+                path,
+                state -> {
+                    HorizontalThreeConnectableProperty part =
+                            state.getValue(ControlPanelBlock.PART);
+
+                    boolean powered =
+                            state.getValue(LeverControlPanelBlock.POWERED);
+
+                    return modLoc(
+                            path + "lower_" + part.getSerializedName()
+                                    + (powered ? "_powered" : "")
+                    );
+                }
+        );
     }
 
     private void fluorescentLight(Block block) {

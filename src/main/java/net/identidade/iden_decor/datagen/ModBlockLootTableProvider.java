@@ -104,9 +104,11 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.BLACK_HALF_WINDOW.get());
         dropSelf(ModBlocks.BLACK_LATTICE_WINDOW.get());
         dropSelf(ModBlocks.WHITE_WOOD_RAILING.get());
+        dropSelf(ModBlocks.BLACK_WOOD_RAILING.get());
         dropSelf(ModBlocks.GREEN_DIAMOND_WALLPAPER.get());
         dropSelf(ModBlocks.RED_DIAMOND_WALLPAPER.get());
         dropSelf(ModBlocks.YELLOW_ARROW_WALLPAPER.get());
+        dropSelf(ModBlocks.CYAN_ARROW_WALLPAPER.get());
         dropSelf(ModBlocks.BLUE_CLOUDS_WALLPAPER.get());
         dropSelf(ModBlocks.BLACK_CLOUDS_WALLPAPER.get());
         dropSelf(ModBlocks.BLACK_STARRY_WALLPAPER.get());
@@ -140,6 +142,19 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.RED_CURTAIN.get());
         dropSelf(ModBlocks.WHITE_CUBIC_SHELF.get());
 
+        dropSelf(ModBlocks.WALL_NOTES.get());
+        dropSelf(ModBlocks.WALL_CABLE.get());
+        dropSelf(ModBlocks.CORE_PILLAR.get());
+        dropSelf(ModBlocks.CORE_PILLAR_JUNCTION.get());
+        dropSelf(ModBlocks.CORE_TILES.get());
+        dropSelf(ModBlocks.CORE_PLATES.get());
+        dropSelf(ModBlocks.CORE_DOOR.get());
+        dropSelf(ModBlocks.CORE_CONTROL_PANEL.get());
+        dropSelf(ModBlocks.CORE_BUTTON_CONTROL_PANEL.get());
+        dropSelf(ModBlocks.CORE_LEVER_CONTROL_PANEL.get());
+        dropSelf(ModBlocks.CORE_CONTROL_PANEL_SCREEN.get());
+        dropSelf(ModBlocks.BATTERY_CELL.get());
+
         add(ModBlocks.WOODEN_CRIB.get(), block ->
                 createSinglePropConditionTable(block, CribBlock.PART, BedPart.HEAD));
 
@@ -164,6 +179,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createDoorTable(ModBlocks.WHITE_METAL_DOOR.get()));
         add(ModBlocks.WHITE_WOODEN_PANEL_DOOR.get(),
                 block -> createDoorTable(ModBlocks.WHITE_WOODEN_PANEL_DOOR.get()));
+        add(ModBlocks.BLACK_WOODEN_PANEL_DOOR.get(),
+                block -> createDoorTable(ModBlocks.BLACK_WOODEN_PANEL_DOOR.get()));
         add(ModBlocks.WOODEN_PANEL_DOOR.get(),
                 block -> createDoorTable(ModBlocks.WHITE_WOODEN_PANEL_DOOR.get()));
 

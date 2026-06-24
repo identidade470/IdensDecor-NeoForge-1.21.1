@@ -35,6 +35,9 @@ public class ModItems {
     public static final DeferredItem<Item> KEYCARD = ITEMS.register("keycard",
             () -> new Item(new Item.Properties().stacksTo(1)));
 
+    public static final DeferredItem<Item> CORE_BATTERY = ITEMS.register("core_battery",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+
 //    public static final Map<DyeColor, Supplier<PaintBrushItem>> PAINT_BRUSHES = new HashMap<>();
 //    static {
 //        for (DyeColor color:DyeColor.values()) {

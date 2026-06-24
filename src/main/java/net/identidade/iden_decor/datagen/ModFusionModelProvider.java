@@ -24,6 +24,7 @@ public class ModFusionModelProvider extends FusionModelProvider {
         simpleConnectedBlock(ModBlocks.GREEN_DIAMOND_WALLPAPER.get());
         simpleConnectedBlock(ModBlocks.RED_DIAMOND_WALLPAPER.get());
         simpleConnectedBlock(ModBlocks.YELLOW_ARROW_WALLPAPER.get());
+        simpleConnectedBlock(ModBlocks.CYAN_ARROW_WALLPAPER.get());
         simpleConnectedBlock(ModBlocks.BLUE_CLOUDS_WALLPAPER.get());
         simpleConnectedBlock(ModBlocks.BLACK_CLOUDS_WALLPAPER.get());
         simpleConnectedBlock(ModBlocks.FLUORESCENT_LIGHT_BLOCK.get());

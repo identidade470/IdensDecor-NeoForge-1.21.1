@@ -155,8 +155,11 @@
   "block.iden_decor.double_iron_pipes": "Double Iron Pipes",
   "block.iden_decor.concrete_barrier": "Concrete Barrier",
   "block.iden_decor.sign_post": "Sign Post",
-  "block.iden_decor.stop_sign": "Stop Sign",
-  "block.iden_decor.intersection_sign": "Intersection Sign",
+  "block.iden_decor.stop_sign": "Traffic Sign",
+  "block.iden_decor.do_not_enter_sign": "Traffic Sign",
+  "block.iden_decor.no_turn_left_sign": "Traffic Sign",
+  "block.iden_decor.no_u_turn_sign": "Traffic Sign",
+  "block.iden_decor.intersection_sign": "Traffic Sign",
   "block.iden_decor.valve_switch": "Valve Switch",
   "block.iden_decor.cup_dispenser": "Cup Dispenser",
   "block.iden_decor.flood_lamp": "Flood Lamp",
@@ -176,6 +179,7 @@
   "block.iden_decor.green_diamond_wallpaper": "Green Diamond Wallpaper",
   "block.iden_decor.red_diamond_wallpaper": "Red Diamond Wallpaper",
   "block.iden_decor.yellow_arrow_wallpaper": "Yellow Arrow Wallpaper",
+  "block.iden_decor.cyan_arrow_wallpaper": "Cyan Arrow Wallpaper",
   "block.iden_decor.blue_clouds_wallpaper": "Blue Clouds Wallpaper",
   "block.iden_decor.black_starry_wallpaper": "Black Starry Wallpaper",
   "block.iden_decor.black_clouds_wallpaper": "Black Clouds Wallpaper",
@@ -211,6 +215,14 @@
   "block.iden_decor.metal_shelf": "Metal Shelf",
   "block.iden_decor.mangrove_metal_shelf": "Mangrove Metal Shelf",
 
+  "block.iden_decor.core_pillar": "Core Pillar",
+  "block.iden_decor.core_pillar_junction": "Core Pillar Junction",
+  "block.iden_decor.core_tiles": "Core Tiles",
+  "block.iden_decor.core_plates": "Core Plates",
+  "block.iden_decor.core_door": "Core Door",
+
+  "block.iden_decor.wall_notes": "Wall Notes",
+
   "tooltip.iden_decor.shift_down": "ℹ SHIFT ℹ",
   "tooltip.iden_decor.shift_up": "ℹ SHIFT ℹ",
 
@@ -223,6 +235,13 @@
   "iden_decor.messages.keycard_assign": "Assigned [ %s ] to Keycard Reader",
 
   "creativetab.iden_decor.base": "§f⚫",
+  "itemGroup.iden_decor.scifi_blocks": "Sci-Fi",
+  "itemGroup.iden_decor.urban_blocks": "Urban",
+  "itemGroup.iden_decor.colored_wood": "Colored Wood",
+  "itemGroup.iden_decor.daycare_blocks": "Daycare",
+  "itemGroup.iden_decor.facility_blocks": "Facility",
+  "itemGroup.iden_decor.hotel_blocks": "Hotel",
+  "itemGroup.iden_decor.levers_and_buttons": "Levers & Buttons",
 
   "examplemod.configuration.title": "Example Mod Configs",
   "examplemod.configuration.section.examplemod.common.toml": "Example Mod Configs",

@@ -8,6 +8,7 @@ import net.identidade.iden_decor.item.ModCreativeModeTab;
 import net.identidade.iden_decor.item.ModItems;
 import net.identidade.iden_decor.recipe.ModRecipes;
 import net.identidade.iden_decor.sound.ModSounds;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
@@ -58,6 +59,11 @@ public class IdenDecorMod {
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+    }
+
+    // atalho ao ResourceLocation.fromNamespaceAndPath(MOD_ID)
+    public static final ResourceLocation rl(String path) {
+        return ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, path);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {

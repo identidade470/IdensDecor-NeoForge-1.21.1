@@ -111,6 +111,11 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.IRON_RAILING.get())
                 .add(ModBlocks.COPPER_RAILING.get());
 
+        tag(ModTags.Blocks.CONTROL_PANELS)
+                .add(ModBlocks.CORE_BUTTON_CONTROL_PANEL.get())
+                .add(ModBlocks.CORE_LEVER_CONTROL_PANEL.get())
+                .add(ModBlocks.CORE_CONTROL_PANEL.get());
+
         ModBlocks.PAINTED_PLANKS.values().forEach(block -> tag(BlockTags.PLANKS)
                 .add(block.get()));
 
@@ -137,6 +142,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.WALLS)
                 .add(ModBlocks.WHITE_WOOD_RAILING.get())
+                .add(ModBlocks.BLACK_WOOD_RAILING.get())
                 .add(ModBlocks.CAUTION_BLOCK_WALL.get());
 
         tag(BlockTags.SLABS)
@@ -156,6 +162,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.YELLOW_METAL_DOOR.get())
                 .add(ModBlocks.GRID_METAL_DOOR.get())
                 .add(ModBlocks.WHITE_WOODEN_PANEL_DOOR.get())
+                .add(ModBlocks.BLACK_WOODEN_PANEL_DOOR.get())
                 .add(ModBlocks.WOODEN_PANEL_DOOR.get())
         ;
 
