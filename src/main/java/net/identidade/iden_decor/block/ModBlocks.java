@@ -378,6 +378,16 @@ public class ModBlocks {
     public static final DeferredBlock<BatteryCellBlock> BATTERY_CELL = registerBlock("battery_cell",
             () -> new BatteryCellBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL)));
 
+    public static final DeferredBlock<MedalBlock> GOLDEN_MEDAL = registerBlock("golden_medal",
+            () -> new MedalBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL)));
+    public static final DeferredBlock<MedalBlock> SILVER_MEDAL = registerBlock("silver_medal",
+            () -> new MedalBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL)));
+    public static final DeferredBlock<MedalBlock> COPPER_MEDAL = registerBlock("copper_medal",
+            () -> new MedalBlock(BlockBehaviour.Properties.of().sound(SoundType.COPPER)));
+
+    public static final DeferredBlock<WallPipeBlock> COPPER_WALL_PIPE = registerBlock("copper_wall_pipe",
+            () -> new WallPipeBlock(BlockBehaviour.Properties.of().sound(SoundType.COPPER)));
+
     // Windows
     public static final DeferredBlock<Block> WHITE_PANEL_WINDOW = registerBlock("white_panel_window",
             () -> new WindowBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.STONE), false));

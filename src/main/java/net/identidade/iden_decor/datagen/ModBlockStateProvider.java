@@ -224,6 +224,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         wallProp(ModBlocks.WALL_NOTES.get());
         wallProp(ModBlocks.WALL_CABLE.get());
+
+        medalBlock(ModBlocks.GOLDEN_MEDAL.get());
+        medalBlock(ModBlocks.SILVER_MEDAL.get());
+        medalBlock(ModBlocks.COPPER_MEDAL.get());
     }
 
     private void connectedBlockWithItem(Block block) {
@@ -571,11 +575,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     }
 
-    private void controlPanelInternal(
-            Block block,
-            String path,
-            Function<BlockState, ResourceLocation> lowerModelSupplier
-    ) {
+    private void controlPanelInternal(Block block, String path, Function<BlockState, ResourceLocation> lowerModelSupplier) {
         simpleBlockItem(block, models().getExistingFile(modLoc(path + "lower_single")));
 
         getVariantBuilder(block).forAllStates(state -> {
@@ -655,6 +655,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
                     );
                 }
         );
+    }
+
+    private void medalBlock(Block block) {
+        horizontalFaceBlock(block, models().withExistingParent(getPath(block), modLoc("block/base/medal"))
+                .texture("0", modLoc("block/" + getPath(block)))
+                .texture("particle", modLoc("block/" + getPath(block)))
+                .renderType("cutout"));
+        simpleBlockItem(block, new ModelFile.UncheckedModelFile(modLoc("block/" + getPath(block))));
     }
 
     private void fluorescentLight(Block block) {

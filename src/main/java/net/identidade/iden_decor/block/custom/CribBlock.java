@@ -43,13 +43,18 @@ public class CribBlock extends Block {
 
     @Override
     public @Nullable BlockState getStateForPlacement(BlockPlaceContext context) {
+
         Direction facing = context.getHorizontalDirection();
         BlockPos pos = context.getClickedPos();
-        BlockPos rleativePos = pos.relative(facing);
+        BlockPos relativePos = pos.relative(facing);
 
         Level level = context.getLevel();
 
-        return level.getBlockState(pos).canBeReplaced(context) && level.getWorldBorder().isWithinBounds(pos) ? this.defaultBlockState().setValue(FACING, facing) : null;
+        if (level.getBlockState(relativePos).canBeReplaced(context)) {
+            return level.getBlockState(pos).canBeReplaced(context) && level.getWorldBorder().isWithinBounds(pos) ? this.defaultBlockState().setValue(FACING, facing) : null;
+        }
+
+        return null;
     }
 
     @Override

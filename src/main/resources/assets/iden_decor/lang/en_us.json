@@ -158,7 +158,7 @@
   "block.iden_decor.stop_sign": "Traffic Sign",
   "block.iden_decor.do_not_enter_sign": "Traffic Sign",
   "block.iden_decor.no_turn_left_sign": "Traffic Sign",
-  "block.iden_decor.no_u_turn_sign": "Traffic Sign",
+  "block.iden_decor.no_u_turn_left_sign": "Traffic Sign",
   "block.iden_decor.intersection_sign": "Traffic Sign",
   "block.iden_decor.valve_switch": "Valve Switch",
   "block.iden_decor.cup_dispenser": "Cup Dispenser",
@@ -220,6 +220,20 @@
   "block.iden_decor.core_tiles": "Core Tiles",
   "block.iden_decor.core_plates": "Core Plates",
   "block.iden_decor.core_door": "Core Door",
+  "block.iden_decor.core_control_panel": "Core Control Panel",
+  "block.iden_decor.core_lever_control_panel": "Core Lever Control Panel",
+  "block.iden_decor.core_button_control_panel": "Core Button Control Panel",
+  "block.iden_decor.core_control_panel_screen": "Core Control Panel Screen",
+  "block.iden_decor.battery_cell": "Battery Cell",
+  "item.iden_decor.core_battery": "Battery",
+  "block.iden_decor.wall_cable": "Wall Cable",
+
+  "block.iden_decor.black_wood_railing": "Black Wood Railing",
+  "block.iden_decor.black_wooden_panel_door": "Black Wooden Panel Door",
+
+  "block.iden_decor.golden_medal": "Golden Medal",
+  "block.iden_decor.silver_medal": "Silver Medal",
+  "block.iden_decor.copper_medal": "Copper Medal",
 
   "block.iden_decor.wall_notes": "Wall Notes",
 
@@ -242,6 +256,7 @@
   "itemGroup.iden_decor.facility_blocks": "Facility",
   "itemGroup.iden_decor.hotel_blocks": "Hotel",
   "itemGroup.iden_decor.levers_and_buttons": "Levers & Buttons",
+  "itemGroup.iden_decor.misc_blocks": "Misc",
 
   "examplemod.configuration.title": "Example Mod Configs",
   "examplemod.configuration.section.examplemod.common.toml": "Example Mod Configs",

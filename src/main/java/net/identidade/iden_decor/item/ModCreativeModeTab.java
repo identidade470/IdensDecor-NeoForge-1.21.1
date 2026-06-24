@@ -50,6 +50,20 @@ public class ModCreativeModeTab {
     static void addItems() {
         FancyTabSections.addSection(IdenDecorMod.rl("base"),
                 new SectionTextured(
+                        IdenDecorMod.rl("misc_blocks"),
+                        Component.translatable("itemGroup.iden_decor.misc_blocks"),
+                        IdenDecorMod.rl("textures/gui/fancy_tab_section/misc_blocks.png"),
+                        0xFFFFFFFF,
+
+                        ConglomerateOfItems.create()
+                                .add(ModBlocks.GOLDEN_MEDAL)
+                                .add(ModBlocks.SILVER_MEDAL)
+                                .add(ModBlocks.COPPER_MEDAL)
+                ));
+
+
+        FancyTabSections.addSection(IdenDecorMod.rl("base"),
+                new SectionTextured(
                         IdenDecorMod.rl("scifi_blocks"),
                         Component.translatable("itemGroup.iden_decor.scifi_blocks"),
                         IdenDecorMod.rl("textures/gui/fancy_tab_section/scifi_blocks.png"),
@@ -68,6 +82,7 @@ public class ModCreativeModeTab {
                                 .add(ModBlocks.BATTERY_CELL)
                                 .add(ModItems.CORE_BATTERY)
                                 .add(ModBlocks.WALL_CABLE)
+                                .add(ModBlocks.COPPER_WALL_PIPE)
                 ));
 
         FancyTabSections.addSection(IdenDecorMod.rl("base"),
@@ -230,7 +245,7 @@ public class ModCreativeModeTab {
                                 .add(ModBlocks.HANGING_MOON_LIGHT)
                                 .add(ModBlocks.HANGING_CLOUD)
                                 .add(ModBlocks.PLUSHIE_IDEN)
-                                .add(ModBlocks.PLUSHIE_DINO)
+                                .add(ModBlocks.PLUSHIE_DOLI)
                                 .add(ModBlocks.PLUSHIE_RED)
                                 .add(ModBlocks.PLUSHIE_DINO)
                                 .add(ModBlocks.PLUSHIE_RAFA)

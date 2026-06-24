@@ -2,8 +2,8 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "iden_decor:block/clock",
-		"particle": "iden_decor:block/clock"
+		"0": "iden_decor:block/wall_clock_old",
+		"particle": "iden_decor:block/wall_clock_old"
 	},
 	"elements": [
 		{

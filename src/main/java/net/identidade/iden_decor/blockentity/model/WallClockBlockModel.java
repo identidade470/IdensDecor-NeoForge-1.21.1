@@ -28,9 +28,21 @@ public class WallClockBlockModel<T extends Entity> extends EntityModel<T> {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
 
-        PartDefinition hour_pin = partdefinition.addOrReplaceChild("hour_pin", CubeListBuilder.create().texOffs(12, 19).addBox(-15.5F, -9.0F, 2.0F, 4.0F, 1.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(11.5F, 24.5F, 4.75F));
+        PartDefinition hour_pin = partdefinition.addOrReplaceChild(
+                "hour_pin",
+                CubeListBuilder.create()
+                        .texOffs(8, 19)
+                        .addBox(-0.5F, -3.8F, 2.0F, 1.0F, 4.0F, 0.0F),
+                PartPose.offset(0f, 16f, 4.5f)
+        );
 
-        PartDefinition minute_pin = partdefinition.addOrReplaceChild("minute_pin", CubeListBuilder.create().texOffs(12, 20).addBox(-12.0F, -12.5F, 1.75F, 1.0F, 5.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(11.5F, 24.5F, 4.75F));
+        PartDefinition minute_pin = partdefinition.addOrReplaceChild(
+                "minute_pin",
+                CubeListBuilder.create()
+                        .texOffs(12, 20)
+                        .addBox(-0.5F, -3F, 1.75F, 1.0F, 6.0F, 0.0F),
+                PartPose.offset(0f, 16f, 5f)
+        );
 
         PartDefinition base = partdefinition.addOrReplaceChild("base", CubeListBuilder.create().texOffs(0, 0).addBox(-17.5F, -14.5F, 2.25F, 12.0F, 12.0F, 1.0F, new CubeDeformation(0.0F))
                 .texOffs(18, 13).addBox(-17.5F, -14.5F, 1.25F, 2.0F, 12.0F, 1.0F, new CubeDeformation(0.0F))

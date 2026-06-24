@@ -154,6 +154,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.CORE_LEVER_CONTROL_PANEL.get());
         dropSelf(ModBlocks.CORE_CONTROL_PANEL_SCREEN.get());
         dropSelf(ModBlocks.BATTERY_CELL.get());
+        dropSelf(ModBlocks.COPPER_WALL_PIPE.get());
 
         add(ModBlocks.WOODEN_CRIB.get(), block ->
                 createSinglePropConditionTable(block, CribBlock.PART, BedPart.HEAD));
@@ -166,6 +167,11 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(ModBlocks.WHITE_BRICKS_SLAB.get(), block -> createSlabItemTable(ModBlocks.WHITE_BRICKS_SLAB.get()));
         add(ModBlocks.SMOOTH_STONE_TILES_SLAB.get(), block -> createSlabItemTable(ModBlocks.SMOOTH_STONE_TILES_SLAB.get()));
         add(ModBlocks.CAUTION_BLOCK_SLAB.get(), block -> createSlabItemTable(ModBlocks.CAUTION_BLOCK_SLAB.get()));
+
+        dropSelf(ModBlocks.GOLDEN_MEDAL.get());
+        dropSelf(ModBlocks.SILVER_MEDAL.get());
+        dropSelf(ModBlocks.COPPER_MEDAL.get());
+
 
         ModBlocks.PAINTED_PLANKS_SLABS.values().forEach(block -> {
             add(block.get(), block1 -> createSlabItemTable(block.get()));
