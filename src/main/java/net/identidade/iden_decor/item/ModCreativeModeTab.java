@@ -124,8 +124,11 @@ public class ModCreativeModeTab {
                                 .add(ModBlocks.WATER_POSTER)
 
                                 .add(ModBlocks.IRON_RAILING)
+                                .add(ModBlocks.IRON_LATTICE)
                                 .add(ModBlocks.GOLD_RAILING)
+                                .add(ModBlocks.GOLDEN_LATTICE)
                                 .add(ModBlocks.COPPER_RAILING)
+                                .add(ModBlocks.COPPER_LATTICE)
 
                                 .add(ModBlocks.DOUBLE_IRON_PIPES)
 

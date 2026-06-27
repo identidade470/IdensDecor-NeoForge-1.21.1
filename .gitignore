@@ -24,3 +24,6 @@ runs
 run-data
 
 repo
+/src/generated/resources/assets/iden_decor/blockstates/
+/src/generated/resources/assets/iden_decor/models/
+/src/generated/

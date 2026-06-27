@@ -234,6 +234,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         wheelBlock(ModBlocks.WHEEL_TIRE.get());
 
         leverBlock(ModBlocks.BLAST_LEVER.get());
+        paneBlockWithRenderType(ModBlocks.IRON_LATTICE.get(), modLoc("block/iron_lattice"), modLoc("block/iron_lattice"), "cutout");
+        paneBlockWithRenderType(ModBlocks.GOLDEN_LATTICE.get(), modLoc("block/golden_lattice"), modLoc("block/golden_lattice"), "cutout");
+        paneBlockWithRenderType(ModBlocks.COPPER_LATTICE.get(), modLoc("block/copper_lattice"), modLoc("block/copper_lattice"), "cutout");
+
     }
 
     private void connectedBlockWithItem(Block block) {

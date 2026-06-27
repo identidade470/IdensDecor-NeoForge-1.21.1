@@ -67,6 +67,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItemWithFrontGuiLight(ModBlocks.DO_NOT_ENTER_SIGN);
         blockItemWithFrontGuiLight(ModBlocks.INTERSECTION_SIGN);
 
+        basicItem(ModBlocks.IRON_LATTICE.asItem());
+        basicItem(ModBlocks.GOLDEN_LATTICE.asItem());
+        basicItem(ModBlocks.COPPER_LATTICE.asItem());
 //        simpleBlockItem(ModBlocks.WOODEN_CRIB.get());
     }
 

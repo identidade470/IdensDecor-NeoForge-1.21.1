@@ -158,6 +158,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.WHEEL.get());
         dropSelf(ModBlocks.WHEEL_TIRE.get());
         dropSelf(ModBlocks.BLAST_LEVER.get());
+        dropSelf(ModBlocks.IRON_LATTICE.get());
+        dropSelf(ModBlocks.GOLDEN_LATTICE.get());
+        dropSelf(ModBlocks.COPPER_LATTICE.get());
 
         add(ModBlocks.WOODEN_CRIB.get(), block ->
                 createSinglePropConditionTable(block, CribBlock.PART, BedPart.HEAD));
