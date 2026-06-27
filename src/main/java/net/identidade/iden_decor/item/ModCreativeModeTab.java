@@ -59,6 +59,8 @@ public class ModCreativeModeTab {
                                 .add(ModBlocks.GOLDEN_MEDAL)
                                 .add(ModBlocks.SILVER_MEDAL)
                                 .add(ModBlocks.COPPER_MEDAL)
+                                .add(ModBlocks.WHEEL)
+                                .add(ModBlocks.WHEEL_TIRE)
                 ));
 
 
@@ -82,7 +84,6 @@ public class ModCreativeModeTab {
                                 .add(ModBlocks.BATTERY_CELL)
                                 .add(ModItems.CORE_BATTERY)
                                 .add(ModBlocks.WALL_CABLE)
-                                .add(ModBlocks.COPPER_WALL_PIPE)
                 ));
 
         FancyTabSections.addSection(IdenDecorMod.rl("base"),
@@ -136,6 +137,7 @@ public class ModCreativeModeTab {
                                 .add(ModBlocks.AIR_DUCT)
                                 .add(ModBlocks.AIR_VENT)
                                 .add(ModBlocks.IRON_SHEET_METAL)
+                                .add(ModBlocks.CAUTION_FLOOR)
                                 .add(ModBlocks.CAUTION_BLOCK)
                                 .add(ModBlocks.CAUTION_BLOCK_STAIRS)
                                 .add(ModBlocks.CAUTION_BLOCK_SLAB)
@@ -165,6 +167,8 @@ public class ModCreativeModeTab {
 
 
         ConglomerateOfItems urban = ConglomerateOfItems.create()
+                .add(ModBlocks.WALL_CLOCK)
+                .add(ModBlocks.SEWING_MACHINE)
                 .add(ModBlocks.MEDIUM_BOX)
                 .add(ModBlocks.SMALL_BOX)
                 .add(ModBlocks.PLASTIC_TABLE)
@@ -266,6 +270,7 @@ public class ModCreativeModeTab {
                                 .add(ModBlocks.LIGHT_SWITCH)
                                 .add(ModBlocks.GATE_BUTTON)
                                 .add(ModBlocks.HEAVY_BUTTON)
+                                .add(ModBlocks.BLAST_LEVER)
                 ));
 
         ConglomerateOfItems coloredPlanks = ConglomerateOfItems.create();

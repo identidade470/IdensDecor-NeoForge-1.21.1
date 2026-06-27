@@ -27,6 +27,6 @@ public class SimpleHorizontalBlock extends Block {
     @Override
     public @Nullable BlockState getStateForPlacement(BlockPlaceContext context) {
         return this.defaultBlockState()
-                .setValue(FACING, context.getHorizontalDirection().getOpposite());
+                .setValue(FACING, context.getClickedFace());
     }
 }

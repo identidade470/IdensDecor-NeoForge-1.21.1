@@ -154,7 +154,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.CORE_LEVER_CONTROL_PANEL.get());
         dropSelf(ModBlocks.CORE_CONTROL_PANEL_SCREEN.get());
         dropSelf(ModBlocks.BATTERY_CELL.get());
-        dropSelf(ModBlocks.COPPER_WALL_PIPE.get());
+        dropSelf(ModBlocks.CAUTION_FLOOR.get());
+        dropSelf(ModBlocks.WHEEL.get());
+        dropSelf(ModBlocks.WHEEL_TIRE.get());
 
         add(ModBlocks.WOODEN_CRIB.get(), block ->
                 createSinglePropConditionTable(block, CribBlock.PART, BedPart.HEAD));

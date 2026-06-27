@@ -7,6 +7,7 @@ import net.identidade.iden_decor.block.custom.templates.SimpleHorizontalBlock;
 import net.identidade.iden_decor.block.custom.templates.SimpleMultidirectionalBlock;
 import net.identidade.iden_decor.item.ModItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
@@ -14,6 +15,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -239,6 +241,8 @@ public class ModBlocks {
             () -> new FenceBlock(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.COPPER)));
     public static final DeferredBlock<WallBlock> CAUTION_BLOCK_WALL = registerBlock("caution_block_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.COPPER)));
+    public static final DeferredBlock<Block> CAUTION_FLOOR = registerBlock("caution_floor",
+            () -> new Block(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.STONE)));
 
     public static final DeferredBlock<Block> GREEN_DIAMOND_WALLPAPER = registerBlock("green_diamond_wallpaper",
             () -> new Block(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.WOOD)));
@@ -385,9 +389,6 @@ public class ModBlocks {
     public static final DeferredBlock<MedalBlock> COPPER_MEDAL = registerBlock("copper_medal",
             () -> new MedalBlock(BlockBehaviour.Properties.of().sound(SoundType.COPPER)));
 
-    public static final DeferredBlock<WallPipeBlock> COPPER_WALL_PIPE = registerBlock("copper_wall_pipe",
-            () -> new WallPipeBlock(BlockBehaviour.Properties.of().sound(SoundType.COPPER)));
-
     // Windows
     public static final DeferredBlock<Block> WHITE_PANEL_WINDOW = registerBlock("white_panel_window",
             () -> new WindowBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.STONE), false));
@@ -431,6 +432,30 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> WOODEN_CRIB = registerBlock("wooden_crib",
             () -> new CribBlock(BlockBehaviour.Properties.of().strength(2.0f).sound(SoundType.WOOD)));
+
+    public static final DeferredBlock<Block> WHEEL = registerBlock("wheel",
+            () -> new SimpleMultidirectionalBlock(BlockBehaviour.Properties.of(), false) {
+                @Override
+                protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+                    Direction facing = state.getValue(FACING);
+                    AttachFace face = state.getValue(FACE);
+
+                    return switch (face) {
+                        case WALL -> switch (facing) {
+                            case WEST -> Block.box(10, 1, 1, 16, 15, 15);
+                            case SOUTH -> Block.box(1, 1, 0, 15, 15, 6);
+                            case EAST -> Block.box(0, 1, 1, 6, 15, 15);
+                            default -> Block.box(1, 1, 10, 15, 15, 16);
+                        };
+                        case CEILING -> Block.box(1, 10, 1, 15, 16, 15);
+                        default -> Block.box(1, 0, 1, 15, 6, 15);
+                    };
+                }
+            });
+    public static final DeferredBlock<WheelTireBlock> WHEEL_TIRE = registerBlock("wheel_tire",
+            () -> new WheelTireBlock(BlockBehaviour.Properties.of()));
+    public static final DeferredBlock<LeverBlock> BLAST_LEVER = registerBlock("blast_lever",
+            () -> new LeverBlock(BlockBehaviour.Properties.of()));
 
     // Planks
     public static final Map<DyeColor, DeferredBlock<Block>> PAINTED_PLANKS = new HashMap<>();

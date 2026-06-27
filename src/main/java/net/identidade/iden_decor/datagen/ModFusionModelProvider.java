@@ -31,6 +31,7 @@ public class ModFusionModelProvider extends FusionModelProvider {
         simpleConnectedBlock(ModBlocks.BLACK_STARRY_WALLPAPER.get());
         simpleConnectedBlock(ModBlocks.RED_GOLDEN_CARPET_BLOCK.get());
         simpleConnectedBlock(ModBlocks.GREEN_ARROW_CARPET_BLOCK.get());
+        simpleConnectedBlock(ModBlocks.CAUTION_FLOOR.get());
 
         carpetConnectedBlock(ModBlocks.RED_GOLDEN_CARPET.get(), ModBlocks.RED_GOLDEN_CARPET_BLOCK.get());
         carpetConnectedBlock(ModBlocks.GREEN_ARROW_CARPET.get(), ModBlocks.GREEN_ARROW_CARPET_BLOCK.get());

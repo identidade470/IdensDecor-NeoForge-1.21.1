@@ -4,6 +4,8 @@ import net.identidade.iden_decor.block.custom.templates.SimpleMultidirectionalBl
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.AttachFace;
@@ -31,5 +33,10 @@ public class WallProp extends SimpleMultidirectionalBlock {
                 default -> Block.box(0, 0, 15, 16, 16, 16);
             };
         };
+    }
+
+    private boolean canAttach(BlockGetter blockReader, BlockPos pos, Direction direction) {
+           BlockState state = blockReader.getBlockState(pos);
+           return state.isFaceSturdy(blockReader, pos, direction);
     }
 }

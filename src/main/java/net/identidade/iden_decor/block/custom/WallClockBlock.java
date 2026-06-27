@@ -1,6 +1,7 @@
 package net.identidade.iden_decor.block.custom;
 
 import net.identidade.iden_decor.block.custom.templates.SimpleHorizontalBlock;
+import net.identidade.iden_decor.block.custom.templates.SimpleWallHorizontalBlock;
 import net.identidade.iden_decor.blockentity.WallClockBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -15,7 +16,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class WallClockBlock extends SimpleHorizontalBlock implements EntityBlock {
+public class WallClockBlock extends SimpleWallHorizontalBlock implements EntityBlock {
     public WallClockBlock(Properties properties) {
         super(properties);
     }

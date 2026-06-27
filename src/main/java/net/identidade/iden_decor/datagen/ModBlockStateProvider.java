@@ -12,6 +12,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CarpetBlock;
+import net.minecraft.world.level.block.LeverBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.AttachFace;
@@ -174,6 +175,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         connectedBlockWithItem(ModBlocks.RED_GOLDEN_CARPET.get());
         connectedBlockWithItem(ModBlocks.GREEN_ARROW_CARPET_BLOCK.get());
         connectedBlockWithItem(ModBlocks.GREEN_ARROW_CARPET.get());
+        connectedBlockWithItem(ModBlocks.CAUTION_FLOOR.get());
 
         horizontalBlockGen(ModBlocks.ROOF);
         window(ModBlocks.WHITE_PANEL_WINDOW.get(), "panel_window");
@@ -228,6 +230,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         medalBlock(ModBlocks.GOLDEN_MEDAL.get());
         medalBlock(ModBlocks.SILVER_MEDAL.get());
         medalBlock(ModBlocks.COPPER_MEDAL.get());
+
+        wheelBlock(ModBlocks.WHEEL.get());
+        wheelBlock(ModBlocks.WHEEL_TIRE.get());
+
+        blockItem(ModBlocks.BLAST_LEVER);
     }
 
     private void connectedBlockWithItem(Block block) {
@@ -657,6 +664,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
         );
     }
 
+    private void wheelBlock(Block block) {
+        ModelFile model = models().getExistingFile(modLoc("block/" + getPath(block)));
+
+        horizontalFaceBlock(block, model);
+        simpleBlockItem(block, model);
+    }
+
     private void medalBlock(Block block) {
         horizontalFaceBlock(block, models().withExistingParent(getPath(block), modLoc("block/base/medal"))
                 .texture("0", modLoc("block/" + getPath(block)))
@@ -690,6 +704,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
                             .rotationY(((int) facing.toYRot() + 180) % 360)
                             .rotationX(rotX)
                             .build();
+                });
+    }
+
+    private void blastLever(Block block) {
+        getVariantBuilder(block)
+                .forAllStates(state -> {
+                    Direction facing = state.getValue(LeverBlock.FACING);
+                    AttachFace face = state.getValue(LeverBlock.FACE);
+                    Boolean powered = state.getValue(LeverBlock.POWERED);
                 });
     }
 
