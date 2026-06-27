@@ -16,7 +16,6 @@ import net.minecraft.world.level.block.LeverBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.AttachFace;
-import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.WallSide;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -234,7 +233,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         wheelBlock(ModBlocks.WHEEL.get());
         wheelBlock(ModBlocks.WHEEL_TIRE.get());
 
-        blockItem(ModBlocks.BLAST_LEVER);
+        leverBlock(ModBlocks.BLAST_LEVER.get());
     }
 
     private void connectedBlockWithItem(Block block) {
@@ -707,13 +706,31 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 });
     }
 
-    private void blastLever(Block block) {
+    private void leverBlock(Block block) {
+
+        ModelFile offModel = models().getExistingFile(modLoc("block/" + getPath(block)));
+        ModelFile onModel = models().getExistingFile(modLoc("block/" + getPath(block) + "_on"));
+
         getVariantBuilder(block)
                 .forAllStates(state -> {
                     Direction facing = state.getValue(LeverBlock.FACING);
                     AttachFace face = state.getValue(LeverBlock.FACE);
                     Boolean powered = state.getValue(LeverBlock.POWERED);
+
+                    int rotX = switch (face) {
+                        case FLOOR -> 0;
+                        case WALL -> 90;
+                        case CEILING -> 180;
+                    };
+
+                    return ConfiguredModel.builder()
+                            .modelFile(powered?onModel:offModel)
+                            .rotationX(rotX)
+                            .rotationY(((int) facing.toYRot() + 180) % 360)
+                            .build();
                 });
+
+        simpleBlockItem(block, offModel);
     }
 
     private void heavyLever(Block block) {

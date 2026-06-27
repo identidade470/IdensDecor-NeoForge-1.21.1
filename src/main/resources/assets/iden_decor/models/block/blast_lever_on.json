@@ -59,7 +59,7 @@
 		{
 			"from": [7, 2, 7],
 			"to": [9, 13, 9],
-			"rotation": {"angle": 45, "axis": "x", "origin": [8, 2, 8]},
+			"rotation": {"angle": -45, "axis": "x", "origin": [8, 2, 8]},
 			"faces": {
 				"north": {"uv": [0, 1, 1, 6.5], "texture": "#0"},
 				"east": {"uv": [0, 1, 1, 6.5], "texture": "#0"},
@@ -71,28 +71,11 @@
 		{
 			"from": [6, 10, 6],
 			"to": [10, 10, 10],
-			"rotation": {"angle": 45, "axis": "x", "origin": [8, 2, 8]},
+			"rotation": {"angle": -45, "axis": "x", "origin": [8, 2, 8]},
 			"faces": {
 				"up": {"uv": [6, 5.5, 8, 7.5], "texture": "#0"},
 				"down": {"uv": [6, 5.5, 8, 7.5], "texture": "#0"}
 			}
 		}
-	],
-	"display": {
-		"firstperson_righthand": {
-			"rotation": [0, 45, 0],
-			"translation": [0, 2.75, 0],
-			"scale": [0.4, 0.4, 0.4]
-		},
-		"firstperson_lefthand": {
-			"rotation": [0, 45, 0],
-			"translation": [0, 2.75, 0],
-			"scale": [0.4, 0.4, 0.4]
-		},
-		"gui": {
-			"rotation": [30, -135, 0],
-			"translation": [0, 1.5, 0],
-			"scale": [0.8, 0.8, 0.8]
-		}
-	}
+	]
 }
