@@ -70,6 +70,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModBlocks.IRON_LATTICE.asItem());
         basicItem(ModBlocks.GOLDEN_LATTICE.asItem());
         basicItem(ModBlocks.COPPER_LATTICE.asItem());
+        basicItem(ModBlocks.GUARANA_CAN.asItem());
 //        simpleBlockItem(ModBlocks.WOODEN_CRIB.get());
     }
 

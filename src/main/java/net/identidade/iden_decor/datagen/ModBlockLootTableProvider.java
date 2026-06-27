@@ -2,13 +2,23 @@ package net.identidade.iden_decor.datagen;
 
 import net.identidade.iden_decor.block.ModBlocks;
 import net.identidade.iden_decor.block.custom.CribBlock;
+import net.identidade.iden_decor.block.custom.templates.SimpleThreeStackableBlock;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CandleBlock;
 import net.minecraft.world.level.block.state.properties.BedPart;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 
+import java.util.List;
 import java.util.Set;
 
 public class ModBlockLootTableProvider extends BlockLootSubProvider {
@@ -167,6 +177,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.ENERGIZED_CORE_PLATES.get());
         dropSelf(ModBlocks.DIAGONAL_WHITE_TILES.get());
 
+        add(ModBlocks.GUARANA_CAN.get(), this::stackableBlockLoot);
+
         add(ModBlocks.WOODEN_CRIB.get(), block ->
                 createSinglePropConditionTable(block, CribBlock.PART, BedPart.HEAD));
 
@@ -208,6 +220,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 //                block -> createSilkTouchOnlyTable(ModBlocks.BLOODY_MOUTH.get()));
     }
 //
+    private LootTable.Builder stackableBlockLoot(Block block) {
+        return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add((LootPoolEntryContainer.Builder)this.applyExplosionDecay(block, LootItem.lootTableItem(block).apply(List.of(2, 3, 4), (p_249985_) -> SetItemCountFunction.setCount(ConstantValue.exactly((float)p_249985_)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(net.minecraft.advancements.critereon.StatePropertiesPredicate.Builder.properties().hasProperty(SimpleThreeStackableBlock.QUANTITY, p_249985_)))))));
+    }
+
     @Override
     protected Iterable<Block> getKnownBlocks() {
         return ModBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;

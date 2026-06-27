@@ -3,6 +3,7 @@ package net.identidade.iden_decor.datagen;
 import net.identidade.iden_decor.IdenDecorMod;
 import net.identidade.iden_decor.block.ModBlocks;
 import net.identidade.iden_decor.block.custom.*;
+import net.identidade.iden_decor.block.custom.templates.SimpleThreeStackableBlock;
 import net.identidade.iden_decor.block.properties.ColorProperty;
 import net.identidade.iden_decor.block.properties.HorizontalThreeConnectableProperty;
 import net.identidade.iden_decor.block.properties.VerticalThreeConnectableProperty;
@@ -243,6 +244,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.DIAGONAL_CORE_TILES);
         blockWithItem(ModBlocks.ENERGIZED_CORE_PLATES);
         blockWithItem(ModBlocks.DIAGONAL_WHITE_TILES);
+
+        threeStackableBlock(ModBlocks.GUARANA_CAN.get());
     }
 
     private void connectedBlockWithItem(Block block) {
@@ -320,6 +323,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         horizontalBlock(block, model);
         simpleBlockItem(block, model);
+    }
+
+    private void threeStackableBlock(Block block) {
+        getVariantBuilder(block).forAllStates(state -> {
+            int quantity = state.getValue(SimpleThreeStackableBlock.QUANTITY);
+
+            return ConfiguredModel.builder()
+                    .modelFile(models().getExistingFile(modLoc(getPath(block) + "_" + quantity)))
+                    .build();
+        });
     }
 
     private void curtainBlock(Block block) {

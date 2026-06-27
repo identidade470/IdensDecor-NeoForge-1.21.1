@@ -178,6 +178,7 @@ public class ModCreativeModeTab {
                 .add(ModBlocks.SMALL_BOX)
                 .add(ModBlocks.PLASTIC_TABLE)
                 .add(ModBlocks.METAL_TABLE)
+                .add(ModBlocks.GUARANA_CAN)
                 .add(ModBlocks.GUARANA_ANTARTICA)
                 .add(ModBlocks.TRAFFIC_CONE)
                 .add(ModBlocks.CONCRETE_BARRIER)

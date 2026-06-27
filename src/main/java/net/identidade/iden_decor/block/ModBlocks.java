@@ -6,6 +6,7 @@ import net.identidade.iden_decor.block.custom.RefrigeranteBlock;
 import net.identidade.iden_decor.block.custom.templates.SimpleHorizontalBlock;
 import net.identidade.iden_decor.block.custom.templates.SimpleMultidirectionalBlock;
 import net.identidade.iden_decor.item.ModItems;
+import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
@@ -474,6 +475,9 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> DIAGONAL_WHITE_TILES = registerBlock("diagonal_white_tiles",
             () -> new Block(BlockBehaviour.Properties.of().strength(2.0F, 6.0F)));
+
+    public static final DeferredBlock<GuaranaCanBlock> GUARANA_CAN = registerBlock("guarana_can",
+            () -> new GuaranaCanBlock(BlockBehaviour.Properties.of().sound(SoundType.LANTERN)));
 
     // Planks
     public static final Map<DyeColor, DeferredBlock<Block>> PAINTED_PLANKS = new HashMap<>();
