@@ -4,11 +4,9 @@ import net.identidade.iden_decor.IdenDecorMod;
 import net.identidade.iden_decor.block.ModBlocks;
 import net.mcexpanded.fancytabsections.FancyTabSections;
 import net.mcexpanded.fancytabsections.creativetab.ConglomerateOfItems;
-import net.mcexpanded.fancytabsections.creativetab.SectionColored;
 import net.mcexpanded.fancytabsections.creativetab.SectionTextured;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
@@ -75,6 +73,8 @@ public class ModCreativeModeTab {
                                 .add(ModBlocks.CORE_PILLAR)
                                 .add(ModBlocks.CORE_PILLAR_JUNCTION)
                                 .add(ModBlocks.CORE_PLATES)
+                                .add(ModBlocks.ENERGIZED_CORE_PLATES)
+                                .add(ModBlocks.DIAGONAL_CORE_TILES)
                                 .add(ModBlocks.CORE_TILES)
                                 .add(ModBlocks.CORE_DOOR)
                                 .add(ModBlocks.CORE_CONTROL_PANEL)
@@ -149,6 +149,7 @@ public class ModCreativeModeTab {
                                 .add(ModBlocks.WHITE_BRICKS)
                                 .add(ModBlocks.WHITE_BRICKS_STAIRS)
                                 .add(ModBlocks.WHITE_BRICKS_SLAB)
+                                .add(ModBlocks.DIAGONAL_WHITE_TILES)
                                 .add(ModBlocks.WHITE_TILES)
                                 .add(ModBlocks.WHITE_TILES_STAIRS)
                                 .add(ModBlocks.WHITE_TILES_SLAB)

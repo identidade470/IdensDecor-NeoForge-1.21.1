@@ -365,7 +365,11 @@ public class ModBlocks {
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL)));
     public static final DeferredBlock<Block> CORE_TILES = registerBlock("core_tiles",
             () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.METAL)));
+    public static final DeferredBlock<Block> DIAGONAL_CORE_TILES = registerBlock("diagonal_core_tiles",
+            () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.METAL)));
     public static final DeferredBlock<Block> CORE_PLATES = registerBlock("core_plates",
+            () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.METAL)));
+    public static final DeferredBlock<Block> ENERGIZED_CORE_PLATES = registerBlock("energized_core_plates",
             () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.METAL)));
     public static final DeferredBlock<Block> CORE_PILLAR_JUNCTION = registerBlock("core_pillar_junction",
             () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.METAL)));
@@ -468,6 +472,8 @@ public class ModBlocks {
             () -> new MetalTable(BlockBehaviour.Properties.of().sound(SoundType.METAL)));
     public static final DeferredBlock<Block> DIAGONAL_SMOOTH_STONE_TILES = registerBlock("diagonal_smooth_stone_tiles",
             () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> DIAGONAL_WHITE_TILES = registerBlock("diagonal_white_tiles",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.0F, 6.0F)));
 
     // Planks
     public static final Map<DyeColor, DeferredBlock<Block>> PAINTED_PLANKS = new HashMap<>();

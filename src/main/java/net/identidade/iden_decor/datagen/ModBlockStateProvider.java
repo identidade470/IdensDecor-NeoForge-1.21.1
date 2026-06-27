@@ -240,6 +240,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         horizontalBlockGen(ModBlocks.METAL_TABLE);
         blockWithItem(ModBlocks.DIAGONAL_SMOOTH_STONE_TILES);
+        blockWithItem(ModBlocks.DIAGONAL_CORE_TILES);
+        blockWithItem(ModBlocks.ENERGIZED_CORE_PLATES);
+        blockWithItem(ModBlocks.DIAGONAL_WHITE_TILES);
     }
 
     private void connectedBlockWithItem(Block block) {
