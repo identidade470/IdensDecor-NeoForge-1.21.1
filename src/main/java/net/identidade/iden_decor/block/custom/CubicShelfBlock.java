@@ -9,6 +9,7 @@ import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
@@ -20,12 +21,40 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 public class CubicShelfBlock extends BaseEntityBlock {
 
     public static final MapCodec<CubicShelfBlock> CODEC = simpleCodec(CubicShelfBlock::new);
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+
+    private static final VoxelShape SHAPE_NORTH = Shapes.or(
+            Block.box(2, 2, 10, 14, 4, 16),
+            Block.box(12, 2, 10, 14, 14, 16),
+            Block.box(2, 2, 10, 4, 14, 16),
+            Block.box(2, 12, 10, 14, 14, 16)
+    );
+    private static final VoxelShape SHAPE_SOUTH = Shapes.or(
+            Block.box(2, 2, 0, 14, 4, 6),
+            Block.box(2, 2, 0, 4, 14, 6),
+            Block.box(12, 2, 0, 14, 14, 6),
+            Block.box(2, 12, 0, 14, 14, 6)
+    );
+    private static final VoxelShape SHAPE_WEST = Shapes.or(
+            Block.box(10, 2, 2, 16, 4, 14),
+            Block.box(10, 2, 2, 16, 14, 4),
+            Block.box(10, 2, 12, 16, 14, 14),
+            Block.box(10, 12, 2, 16, 14, 14)
+    );
+    private static final VoxelShape SHAPE_EAST = Shapes.or(
+            Block.box(0, 2, 2, 6, 4, 14),
+            Block.box(0, 2, 12, 6, 14, 14),
+            Block.box(0, 2, 2, 6, 14, 4),
+            Block.box(0, 12, 2, 6, 14, 14)
+    );
 
     public CubicShelfBlock(Properties properties) {
         super(properties);
@@ -60,6 +89,16 @@ public class CubicShelfBlock extends BaseEntityBlock {
     @Override
     protected MapCodec<? extends BaseEntityBlock> codec() {
         return CODEC;
+    }
+
+    @Override
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return switch (state.getValue(FACING)) {
+            case EAST -> SHAPE_EAST;
+            case WEST -> SHAPE_WEST;
+            case SOUTH -> SHAPE_SOUTH;
+            default -> SHAPE_NORTH;
+        };
     }
 
     @Override

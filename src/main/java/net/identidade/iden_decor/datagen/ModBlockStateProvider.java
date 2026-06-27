@@ -210,7 +210,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         horizontalBlockWithExistingParent(ModBlocks.HANGING_MOON_LIGHT);
         horizontalBlockWithExistingParent(ModBlocks.HANGING_SUN_LIGHT);
         horizontalBlockWithExistingParent(ModBlocks.HANGING_CLOUD);
-        horizontalBlockWithExistingParent(ModBlocks.WHITE_CUBIC_SHELF, "cubic_shelf");
+        cubicShelfBlock(ModBlocks.WHITE_CUBIC_SHELF.get());
 
         blockWithExistingParent(ModBlocks.LONG_CONCRETE_VASE);
 
@@ -313,6 +313,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .texture("0", baseTexture)
                 .texture("particle", baseTexture)
                 .renderType(renderType));
+    }
+
+    private void cubicShelfBlock(Block block) {
+        ModelFile model = models().withExistingParent(getPath(block), modLoc("block/cubic_shelf"));
+
+        horizontalBlock(block, model);
+        simpleBlockItem(block, model);
     }
 
     private void curtainBlock(Block block) {

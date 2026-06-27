@@ -26,16 +26,16 @@ public class CubicShelfBlockRenderer implements BlockEntityRenderer<CubicShelfBl
         if (stack.isEmpty()) return;
 
         poseStack.pushPose();
-
-        poseStack.scale(0.35f,0.35f,0.35f);
-        poseStack.mulPose(Axis.YP.rotationDegrees(facing.toYRot()));
+        poseStack.translate(0.5, 0.5, 0.5);
+        poseStack.mulPose(Axis.YP.rotationDegrees(-facing.toYRot()));
+        poseStack.scale(.45f,.45f,.45f);
 
         if (stack.getItem() instanceof BlockItem blockItem) {
-            poseStack.translate(0.5f,0.5f,-0.15f);
+            poseStack.translate(-0.5, -0.55, -1);
             Minecraft.getInstance().getBlockRenderer()
                     .renderSingleBlock(blockItem.getBlock().defaultBlockState(), poseStack, multiBufferSource, i, i1);
         } else {
-            poseStack.translate(1,1,0.5f);
+            poseStack.translate(0,0,-.5f);
             Minecraft.getInstance().getItemRenderer()
                     .renderStatic(stack, ItemDisplayContext.FIXED, i, i1, poseStack, multiBufferSource, blockEntity.getLevel(), 0);
         }
