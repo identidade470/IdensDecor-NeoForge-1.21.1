@@ -464,6 +464,9 @@ public class ModBlocks {
     public static final DeferredBlock<IronBarsBlock> COPPER_LATTICE = registerBlock("copper_lattice",
             () -> new IronBarsBlock(BlockBehaviour.Properties.of().sound(SoundType.COPPER)));
 
+    public static final DeferredBlock<MetalTable> METAL_TABLE = registerBlock("metal_table",
+            () -> new MetalTable(BlockBehaviour.Properties.of().sound(SoundType.METAL)));
+
     // Planks
     public static final Map<DyeColor, DeferredBlock<Block>> PAINTED_PLANKS = new HashMap<>();
     public static final Map<DyeColor, DeferredBlock<StairBlock>> PAINTED_PLANKS_STAIRS = new HashMap<>();
