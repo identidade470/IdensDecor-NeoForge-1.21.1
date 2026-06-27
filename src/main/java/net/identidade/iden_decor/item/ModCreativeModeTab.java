@@ -153,6 +153,7 @@ public class ModCreativeModeTab {
                                 .add(ModBlocks.WHITE_TILES_STAIRS)
                                 .add(ModBlocks.WHITE_TILES_SLAB)
                                 .add(ModBlocks.SMOOTH_STONE_BRICKS)
+                                .add(ModBlocks.DIAGONAL_SMOOTH_STONE_TILES)
                                 .add(ModBlocks.SMOOTH_STONE_TILES)
                                 .add(ModBlocks.SMOOTH_STONE_TILES_STAIRS)
                                 .add(ModBlocks.SMOOTH_STONE_TILES_SLAB)

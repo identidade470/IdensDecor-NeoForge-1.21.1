@@ -239,6 +239,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         paneBlockWithRenderType(ModBlocks.COPPER_LATTICE.get(), modLoc("block/copper_lattice"), modLoc("block/copper_lattice"), "cutout");
 
         horizontalBlockGen(ModBlocks.METAL_TABLE);
+        blockWithItem(ModBlocks.DIAGONAL_SMOOTH_STONE_TILES);
     }
 
     private void connectedBlockWithItem(Block block) {

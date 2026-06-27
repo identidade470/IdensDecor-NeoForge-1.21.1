@@ -466,6 +466,8 @@ public class ModBlocks {
 
     public static final DeferredBlock<MetalTable> METAL_TABLE = registerBlock("metal_table",
             () -> new MetalTable(BlockBehaviour.Properties.of().sound(SoundType.METAL)));
+    public static final DeferredBlock<Block> DIAGONAL_SMOOTH_STONE_TILES = registerBlock("diagonal_smooth_stone_tiles",
+            () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.STONE)));
 
     // Planks
     public static final Map<DyeColor, DeferredBlock<Block>> PAINTED_PLANKS = new HashMap<>();
