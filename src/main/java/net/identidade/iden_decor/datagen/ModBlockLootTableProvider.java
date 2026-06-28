@@ -8,7 +8,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CandleBlock;
 import net.minecraft.world.level.block.state.properties.BedPart;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -176,6 +175,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.DIAGONAL_CORE_TILES.get());
         dropSelf(ModBlocks.ENERGIZED_CORE_PLATES.get());
         dropSelf(ModBlocks.DIAGONAL_WHITE_TILES.get());
+        dropSelf(ModBlocks.WHITE_SHORT_TILES.get());
+        dropSelf(ModBlocks.CRACKED_WHITE_SHORT_TILES.get());
 
         add(ModBlocks.GUARANA_CAN.get(), this::stackableBlockLoot);
 

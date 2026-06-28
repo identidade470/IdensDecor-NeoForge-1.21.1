@@ -150,6 +150,8 @@ public class ModCreativeModeTab {
                                 .add(ModBlocks.WHITE_BRICKS_STAIRS)
                                 .add(ModBlocks.WHITE_BRICKS_SLAB)
                                 .add(ModBlocks.DIAGONAL_WHITE_TILES)
+                                .add(ModBlocks.WHITE_SHORT_TILES)
+                                .add(ModBlocks.CRACKED_WHITE_SHORT_TILES)
                                 .add(ModBlocks.WHITE_TILES)
                                 .add(ModBlocks.WHITE_TILES_STAIRS)
                                 .add(ModBlocks.WHITE_TILES_SLAB)

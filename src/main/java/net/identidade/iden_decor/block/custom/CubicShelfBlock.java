@@ -4,7 +4,10 @@ import com.mojang.serialization.MapCodec;
 import net.identidade.iden_decor.blockentity.CubicShelfBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -64,14 +67,54 @@ public class CubicShelfBlock extends BaseEntityBlock {
 
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+
+        if (stack.isEmpty()) {
+            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        }
+
         BlockEntity be = level.getBlockEntity(pos);
         if (be instanceof CubicShelfBlockEntity blockEntity) {
-            blockEntity.setItem(stack);
+
+            if (!blockEntity.getItem().isEmpty()) {
+                return ItemInteractionResult.CONSUME;
+            }
+
+            level.playSound(player, pos, SoundEvents.BUNDLE_INSERT, SoundSource.PLAYERS);
+
+            ItemStack stored = stack.copyWithCount(1);
+            blockEntity.setItem(stored);
+            stack.consume(1, player);
 
             return ItemInteractionResult.sidedSuccess(level.isClientSide);
         }
 
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+    }
+
+    @Override
+    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+        BlockEntity be = level.getBlockEntity(pos);
+
+        System.out.println(0);
+
+        if (be instanceof CubicShelfBlockEntity blockEntity) {
+            if (blockEntity.getItem().isEmpty()) {
+                return InteractionResult.PASS;
+            }
+
+            if (!level.isClientSide) {
+                ItemStack stack = blockEntity.getItem().copy();
+                if (!player.addItem(stack)) {
+                    player.drop(stack, false);
+                }
+            }
+
+            blockEntity.setItem(ItemStack.EMPTY);
+
+            return InteractionResult.sidedSuccess(level.isClientSide);
+        }
+
+        return InteractionResult.PASS;
     }
 
     @Override

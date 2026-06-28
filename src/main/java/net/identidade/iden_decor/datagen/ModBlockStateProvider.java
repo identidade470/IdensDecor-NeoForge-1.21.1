@@ -226,24 +226,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         wallProp(ModBlocks.WALL_NOTES.get());
         wallProp(ModBlocks.WALL_CABLE.get());
-
         medalBlock(ModBlocks.GOLDEN_MEDAL.get());
         medalBlock(ModBlocks.SILVER_MEDAL.get());
         medalBlock(ModBlocks.COPPER_MEDAL.get());
-
         wheelBlock(ModBlocks.WHEEL.get());
         wheelBlock(ModBlocks.WHEEL_TIRE.get());
-
         leverBlock(ModBlocks.BLAST_LEVER.get());
         paneBlockWithRenderType(ModBlocks.IRON_LATTICE.get(), modLoc("block/iron_lattice"), modLoc("block/iron_lattice"), "cutout");
         paneBlockWithRenderType(ModBlocks.GOLDEN_LATTICE.get(), modLoc("block/golden_lattice"), modLoc("block/golden_lattice"), "cutout");
         paneBlockWithRenderType(ModBlocks.COPPER_LATTICE.get(), modLoc("block/copper_lattice"), modLoc("block/copper_lattice"), "cutout");
-
         horizontalBlockGen(ModBlocks.METAL_TABLE);
         blockWithItem(ModBlocks.DIAGONAL_SMOOTH_STONE_TILES);
         blockWithItem(ModBlocks.DIAGONAL_CORE_TILES);
         blockWithItem(ModBlocks.ENERGIZED_CORE_PLATES);
         blockWithItem(ModBlocks.DIAGONAL_WHITE_TILES);
+        blockWithItem(ModBlocks.WHITE_SHORT_TILES);
+        blockWithItem(ModBlocks.CRACKED_WHITE_SHORT_TILES);
 
         threeStackableBlock(ModBlocks.GUARANA_CAN.get());
     }

@@ -6,7 +6,6 @@ import net.identidade.iden_decor.block.custom.RefrigeranteBlock;
 import net.identidade.iden_decor.block.custom.templates.SimpleHorizontalBlock;
 import net.identidade.iden_decor.block.custom.templates.SimpleMultidirectionalBlock;
 import net.identidade.iden_decor.item.ModItems;
-import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
@@ -474,6 +473,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> DIAGONAL_SMOOTH_STONE_TILES = registerBlock("diagonal_smooth_stone_tiles",
             () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> DIAGONAL_WHITE_TILES = registerBlock("diagonal_white_tiles",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.0F, 6.0F)));
+    public static final DeferredBlock<Block> WHITE_SHORT_TILES = registerBlock("white_short_tiles",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.0F, 6.0F)));
+    public static final DeferredBlock<Block> CRACKED_WHITE_SHORT_TILES = registerBlock("cracked_white_short_tiles",
             () -> new Block(BlockBehaviour.Properties.of().strength(2.0F, 6.0F)));
 
     public static final DeferredBlock<GuaranaCanBlock> GUARANA_CAN = registerBlock("guarana_can",
