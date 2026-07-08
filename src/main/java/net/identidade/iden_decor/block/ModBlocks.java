@@ -3,8 +3,10 @@ package net.identidade.iden_decor.block;
 import net.identidade.iden_decor.IdenDecorMod;
 import net.identidade.iden_decor.block.custom.*;
 import net.identidade.iden_decor.block.custom.RefrigeranteBlock;
+import net.identidade.iden_decor.block.custom.templates.SimpleFourStackableBlock;
 import net.identidade.iden_decor.block.custom.templates.SimpleHorizontalBlock;
 import net.identidade.iden_decor.block.custom.templates.SimpleMultidirectionalBlock;
+import net.identidade.iden_decor.block.custom.templates.SimpleThreeStackableBlock;
 import net.identidade.iden_decor.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -128,6 +130,8 @@ public class ModBlocks {
     public static final DeferredBlock<Block> PLUSHIE_RED = registerBlock("plushie_red",
             () -> new PlushieBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(1.0F)));
     public static final DeferredBlock<Block> PLUSHIE_RAFA = registerBlock("plushie_rafa",
+            () -> new PlushieBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(1.0F)));
+    public static final DeferredBlock<Block> PLUSHIE_WOW = registerBlock("plushie_wow",
             () -> new PlushieBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).strength(1.0F)));
 
     // Sheet Metals
@@ -477,33 +481,77 @@ public class ModBlocks {
     public static final DeferredBlock<Block> WHITE_SHORT_TILES = registerBlock("white_short_tiles",
             () -> new Block(BlockBehaviour.Properties.of().strength(2.0F, 6.0F)));
     public static final DeferredBlock<Block> CRACKED_WHITE_SHORT_TILES = registerBlock("cracked_white_short_tiles",
-            () -> new Block(BlockBehaviour.Properties.of().strength(2.0F, 6.0F)));
+            () -> new TransparentBlock(BlockBehaviour.Properties.of().strength(2.0F, 6.0F)));
 
     public static final DeferredBlock<GuaranaCanBlock> GUARANA_CAN = registerBlock("guarana_can",
             () -> new GuaranaCanBlock(BlockBehaviour.Properties.of().sound(SoundType.LANTERN)));
+
+    public static final DeferredBlock<SimpleWindowBlock> WHITE_CLEAR_WINDOW = registerBlock("white_clear_window",
+            () -> new SimpleWindowBlock(BlockBehaviour.Properties.of()));
+    public static final DeferredBlock<TransparentBlock> WHITE_CLEAR_WINDOW_BLOCK = registerBlock("white_clear_window_block",
+            () -> new TransparentBlock(BlockBehaviour.Properties.of()));
+
+    public static final DeferredBlock<SimpleFourStackableBlock> JUICE_BOTTLE = registerBlock("juice_bottle",
+            () -> new JuiceBottleBlock(BlockBehaviour.Properties.of().sound(SoundType.BAMBOO)));
+
+    public static final DeferredBlock<Block> BLACK_BRICKS = registerBlock("black_bricks",
+            () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2.0F, 6.0f)));
+    public static final DeferredBlock<Block> GRAY_BRICKS = registerBlock("gray_bricks",
+            () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2.0F, 6.0f)));
+    public static final DeferredBlock<Block> LIGHT_GRAY_BRICKS = registerBlock("light_gray_bricks",
+            () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2.0F, 6.0f)));
+    public static final DeferredBlock<Block> BLUE_BRICKS = registerBlock("blue_bricks",
+            () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2.0F, 6.0f)));
+
+    public static final DeferredBlock<Block> OAK_PLANKS_STRIPS = registerBlock("oak_planks_strips",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> SPRUCE_PLANKS_STRIPS = registerBlock("spruce_planks_strips",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> DARK_OAK_PLANKS_STRIPS = registerBlock("dark_oak_planks_strips",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> MANGROVE_PLANKS_STRIPS = registerBlock("mangrove_planks_strips",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> CRIMSON_PLANKS_STRIPS = registerBlock("crimson_planks_strips",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> WARPED_PLANKS_STRIPS = registerBlock("warped_planks_strips",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> ACACIA_PLANKS_STRIPS = registerBlock("acacia_planks_strips",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> JUNGLE_PLANKS_STRIPS = registerBlock("jungle_planks_strips",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> CHERRY_PLANKS_STRIPS = registerBlock("cherry_planks_strips",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> BIRCH_PLANKS_STRIPS = registerBlock("birch_planks_strips",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD).ignitedByLava()));
+
 
     // Planks
     public static final Map<DyeColor, DeferredBlock<Block>> PAINTED_PLANKS = new HashMap<>();
     public static final Map<DyeColor, DeferredBlock<StairBlock>> PAINTED_PLANKS_STAIRS = new HashMap<>();
     public static final Map<DyeColor, DeferredBlock<SlabBlock>> PAINTED_PLANKS_SLABS = new HashMap<>();
+    public static final Map<DyeColor, DeferredBlock<Block>> PAINTED_PLANKS_STRIPS = new HashMap<>();
     public static final Map<DyeColor, DeferredBlock<Block>> FRAMED_PLANKS = new HashMap<>();
     static {
         for (DyeColor color:DyeColor.values()) {
             PAINTED_PLANKS.put(color, registerBlock(
                     color.getSerializedName() + "_painted_planks",
-                    () -> new Block(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.WOOD))
+                    () -> new Block(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava())
             ));
             PAINTED_PLANKS_STAIRS.put(color, registerBlock(
                     color.getSerializedName() + "_painted_planks_stairs",
-                    () -> new StairBlock(PAINTED_PLANKS.get(color).get().defaultBlockState(), BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.WOOD))
+                    () -> new StairBlock(PAINTED_PLANKS.get(color).get().defaultBlockState(), BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava())
             ));
             PAINTED_PLANKS_SLABS.put(color, registerBlock(
                     color.getSerializedName() + "_painted_plank_slab",
-                    () -> new SlabBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.WOOD))
+                    () -> new SlabBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava())
+            ));
+            PAINTED_PLANKS_STRIPS.put(color, registerBlock(
+                    color.getSerializedName() + "_painted_planks_strips",
+                    () -> new Block(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava())
             ));
             FRAMED_PLANKS.put(color, registerBlock(
                     color.getSerializedName() + "_framed_planks",
-                    () -> new Block(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD))
+                    () -> new Block(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD).ignitedByLava())
             ));
         }
     }

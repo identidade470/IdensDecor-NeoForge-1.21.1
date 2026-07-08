@@ -4,11 +4,15 @@ import net.minecraft.util.StringRepresentable;
 
 import java.util.Locale;
 
-public enum HorizontalThreeConnectableProperty implements StringRepresentable {
+public enum HorizontalConnectableProperty implements StringRepresentable {
     LEFT,
     CENTER,
     RIGHT,
-    SINGLE;
+    SINGLE,
+    INNER_LEFT,
+    INNER_RIGHT,
+    OUTER_LEFT,
+    OUTER_RIGHT;
 
     @Override
     public String getSerializedName() {

@@ -2,6 +2,7 @@ package net.identidade.iden_decor.datagen;
 
 import net.identidade.iden_decor.block.ModBlocks;
 import net.identidade.iden_decor.block.custom.CribBlock;
+import net.identidade.iden_decor.block.custom.templates.SimpleFourStackableBlock;
 import net.identidade.iden_decor.block.custom.templates.SimpleThreeStackableBlock;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
@@ -177,13 +178,32 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.DIAGONAL_WHITE_TILES.get());
         dropSelf(ModBlocks.WHITE_SHORT_TILES.get());
         dropSelf(ModBlocks.CRACKED_WHITE_SHORT_TILES.get());
+        dropSelf(ModBlocks.WHITE_CLEAR_WINDOW.get());
+        dropSelf(ModBlocks.WHITE_CLEAR_WINDOW_BLOCK.get());
+        dropSelf(ModBlocks.PLUSHIE_WOW.get());
+        dropSelf(ModBlocks.BLACK_BRICKS.get());
+        dropSelf(ModBlocks.GRAY_BRICKS.get());
+        dropSelf(ModBlocks.LIGHT_GRAY_BRICKS.get());
+        dropSelf(ModBlocks.BLUE_BRICKS.get());
+        dropSelf(ModBlocks.OAK_PLANKS_STRIPS.get());
+        dropSelf(ModBlocks.SPRUCE_PLANKS_STRIPS.get());
+        dropSelf(ModBlocks.DARK_OAK_PLANKS_STRIPS.get());
+        dropSelf(ModBlocks.ACACIA_PLANKS_STRIPS.get());
+        dropSelf(ModBlocks.JUNGLE_PLANKS_STRIPS.get());
+        dropSelf(ModBlocks.CHERRY_PLANKS_STRIPS.get());
+        dropSelf(ModBlocks.MANGROVE_PLANKS_STRIPS.get());
+        dropSelf(ModBlocks.BIRCH_PLANKS_STRIPS.get());
+        dropSelf(ModBlocks.WARPED_PLANKS_STRIPS.get());
+        dropSelf(ModBlocks.CRIMSON_PLANKS_STRIPS.get());
 
-        add(ModBlocks.GUARANA_CAN.get(), this::stackableBlockLoot);
+        add(ModBlocks.GUARANA_CAN.get(), this::threeStackableBlockLoot);
+        add(ModBlocks.JUICE_BOTTLE.get(), this::fourStackableBlockLoot);
 
         add(ModBlocks.WOODEN_CRIB.get(), block ->
                 createSinglePropConditionTable(block, CribBlock.PART, BedPart.HEAD));
 
         ModBlocks.PAINTED_PLANKS.values().forEach(block -> dropSelf(block.get()));
+        ModBlocks.PAINTED_PLANKS_STRIPS.values().forEach(block -> dropSelf(block.get()));
         ModBlocks.PAINTED_PLANKS_STAIRS.values().forEach(block -> dropSelf(block.get()));
         ModBlocks.FRAMED_PLANKS.values().forEach(block -> dropSelf(block.get()));
 
@@ -221,8 +241,12 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 //                block -> createSilkTouchOnlyTable(ModBlocks.BLOODY_MOUTH.get()));
     }
 //
-    private LootTable.Builder stackableBlockLoot(Block block) {
+    private LootTable.Builder threeStackableBlockLoot(Block block) {
         return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add((LootPoolEntryContainer.Builder)this.applyExplosionDecay(block, LootItem.lootTableItem(block).apply(List.of(2, 3, 4), (p_249985_) -> SetItemCountFunction.setCount(ConstantValue.exactly((float)p_249985_)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(net.minecraft.advancements.critereon.StatePropertiesPredicate.Builder.properties().hasProperty(SimpleThreeStackableBlock.QUANTITY, p_249985_)))))));
+    }
+
+    private LootTable.Builder fourStackableBlockLoot(Block block) {
+        return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add((LootPoolEntryContainer.Builder)this.applyExplosionDecay(block, LootItem.lootTableItem(block).apply(List.of(2, 3, 4), (p_249985_) -> SetItemCountFunction.setCount(ConstantValue.exactly((float)p_249985_)).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block).setProperties(net.minecraft.advancements.critereon.StatePropertiesPredicate.Builder.properties().hasProperty(SimpleFourStackableBlock.QUANTITY, p_249985_)))))));
     }
 
     @Override

@@ -3,8 +3,10 @@ package net.identidade.iden_decor.datagen;
 import net.identidade.iden_decor.IdenDecorMod;
 import net.identidade.iden_decor.block.ModBlocks;
 import net.identidade.iden_decor.block.custom.*;
+import net.identidade.iden_decor.block.custom.templates.SimpleFourStackableBlock;
 import net.identidade.iden_decor.block.custom.templates.SimpleThreeStackableBlock;
 import net.identidade.iden_decor.block.properties.ColorProperty;
+import net.identidade.iden_decor.block.properties.HorizontalConnectableProperty;
 import net.identidade.iden_decor.block.properties.HorizontalThreeConnectableProperty;
 import net.identidade.iden_decor.block.properties.VerticalThreeConnectableProperty;
 import net.minecraft.core.Direction;
@@ -17,6 +19,7 @@ import net.minecraft.world.level.block.LeverBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.AttachFace;
+import net.minecraft.world.level.block.state.properties.StairsShape;
 import net.minecraft.world.level.block.state.properties.WallSide;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -135,6 +138,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleModelWithRenderType(ModBlocks.PLASTIC_TABLE.get(), "cutout");
 
         ModBlocks.PAINTED_PLANKS.values().forEach(block -> simpleBlockWithItem(block.get(), cubeAll(block.get())));
+        ModBlocks.PAINTED_PLANKS_STRIPS.values().forEach(block -> simpleBlockWithItem(block.get(), cubeAll(block.get())));
         ModBlocks.PAINTED_PLANKS_STAIRS.forEach((color, block) -> {stairsBlock(block.get(), blockTexture(ModBlocks.PAINTED_PLANKS.get(color).get()));blockItem(block);});
         ModBlocks.PAINTED_PLANKS_SLABS.forEach((color, block) -> {slabBlock(block.get(), blockTexture(ModBlocks.PAINTED_PLANKS.get(color).get()), blockTexture(ModBlocks.PAINTED_PLANKS.get(color).get()));blockItem(block);});
         ModBlocks.FRAMED_PLANKS.values().forEach(block -> connectedBlockWithItem(block.get()));
@@ -176,6 +180,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         connectedBlockWithItem(ModBlocks.GREEN_ARROW_CARPET_BLOCK.get());
         connectedBlockWithItem(ModBlocks.GREEN_ARROW_CARPET.get());
         connectedBlockWithItem(ModBlocks.CAUTION_FLOOR.get());
+        connectedBlockWithItem(ModBlocks.WHITE_CLEAR_WINDOW.get());
 
         horizontalBlockGen(ModBlocks.ROOF);
         window(ModBlocks.WHITE_PANEL_WINDOW.get(), "panel_window");
@@ -242,8 +247,26 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.DIAGONAL_WHITE_TILES);
         blockWithItem(ModBlocks.WHITE_SHORT_TILES);
         blockWithItem(ModBlocks.CRACKED_WHITE_SHORT_TILES);
+        blockWithItem(ModBlocks.BLACK_BRICKS);
+        blockWithItem(ModBlocks.GRAY_BRICKS);
+        blockWithItem(ModBlocks.LIGHT_GRAY_BRICKS);
+        blockWithItem(ModBlocks.BLUE_BRICKS);
+
+        blockWithItem(ModBlocks.OAK_PLANKS_STRIPS);
+        blockWithItem(ModBlocks.SPRUCE_PLANKS_STRIPS);
+        blockWithItem(ModBlocks.DARK_OAK_PLANKS_STRIPS);
+        blockWithItem(ModBlocks.ACACIA_PLANKS_STRIPS);
+        blockWithItem(ModBlocks.JUNGLE_PLANKS_STRIPS);
+        blockWithItem(ModBlocks.CHERRY_PLANKS_STRIPS);
+        blockWithItem(ModBlocks.MANGROVE_PLANKS_STRIPS);
+        blockWithItem(ModBlocks.CRIMSON_PLANKS_STRIPS);
+        blockWithItem(ModBlocks.WARPED_PLANKS_STRIPS);
+        blockWithItem(ModBlocks.BIRCH_PLANKS_STRIPS);
 
         threeStackableBlock(ModBlocks.GUARANA_CAN.get());
+        connectedBlockWithItem(ModBlocks.WHITE_CLEAR_WINDOW_BLOCK.get());
+        plushie(ModBlocks.PLUSHIE_WOW.get());
+        fourStackableBlock(ModBlocks.JUICE_BOTTLE.get());
     }
 
     private void connectedBlockWithItem(Block block) {
@@ -326,6 +349,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private void threeStackableBlock(Block block) {
         getVariantBuilder(block).forAllStates(state -> {
             int quantity = state.getValue(SimpleThreeStackableBlock.QUANTITY);
+
+            return ConfiguredModel.builder()
+                    .modelFile(models().getExistingFile(modLoc(getPath(block) + "_" + quantity)))
+                    .build();
+        });
+    }
+
+    private void fourStackableBlock(Block block) {
+        getVariantBuilder(block).forAllStates(state -> {
+            int quantity = state.getValue(SimpleFourStackableBlock.QUANTITY);
 
             return ConfiguredModel.builder()
                     .modelFile(models().getExistingFile(modLoc(getPath(block) + "_" + quantity)))
@@ -641,12 +674,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void controlPanel(Block block, String path) {
-        controlPanelInternal(
-                block,
-                path,
-                state -> {
-                    HorizontalThreeConnectableProperty part =
-                            state.getValue(ControlPanelBlock.PART);
+        controlPanelInternal(block, path, state -> {
+                    HorizontalConnectableProperty part = state.getValue(ControlPanelBlock.SHAPE);
 
                     return modLoc(path + "lower_" + part.getSerializedName());
                 }
@@ -654,38 +683,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void buttonControlPanel(Block block, String path) {
-        controlPanelInternal(
-                block,
-                path,
-                state -> {
-                    HorizontalThreeConnectableProperty part =
-                            state.getValue(ControlPanelBlock.PART);
+        controlPanelInternal(block, path, state -> {
+                    HorizontalConnectableProperty part = state.getValue(ControlPanelBlock.SHAPE);
 
-                    boolean powered =
-                            state.getValue(ButtonControlPanelBlock.POWERED);
+                    boolean powered = state.getValue(ButtonControlPanelBlock.POWERED);
 
-                    return modLoc(
-                            path + "lower_" + part.getSerializedName()
-                                    + (powered ? "_powered" : "")
-                    );
+                    return modLoc(path + "lower_" + part.getSerializedName() + (powered ? "_powered" : ""));
                 }
         );
     }
     private void leverControlPanel(Block block, String path) {
-        controlPanelInternal(
-                block,
-                path,
-                state -> {
-                    HorizontalThreeConnectableProperty part =
-                            state.getValue(ControlPanelBlock.PART);
+        controlPanelInternal(block, path, state -> {
+                    HorizontalConnectableProperty part = state.getValue(ControlPanelBlock.SHAPE);
 
-                    boolean powered =
-                            state.getValue(LeverControlPanelBlock.POWERED);
+                    boolean powered = state.getValue(LeverControlPanelBlock.POWERED);
 
-                    return modLoc(
-                            path + "lower_" + part.getSerializedName()
-                                    + (powered ? "_powered" : "")
-                    );
+                    return modLoc(path + "lower_" + part.getSerializedName() + (powered ? "_powered" : ""));
                 }
         );
     }

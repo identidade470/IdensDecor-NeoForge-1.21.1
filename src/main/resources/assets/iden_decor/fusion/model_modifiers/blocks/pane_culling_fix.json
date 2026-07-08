@@ -1,0 +1,6 @@
+{
+  "targets": [
+    "iden_decor:white_clear_window"
+  ],
+  "pane_culling_fix": true
+}

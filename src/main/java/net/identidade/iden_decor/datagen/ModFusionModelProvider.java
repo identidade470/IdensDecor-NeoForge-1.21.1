@@ -32,6 +32,8 @@ public class ModFusionModelProvider extends FusionModelProvider {
         simpleConnectedBlock(ModBlocks.RED_GOLDEN_CARPET_BLOCK.get());
         simpleConnectedBlock(ModBlocks.GREEN_ARROW_CARPET_BLOCK.get());
         simpleConnectedBlock(ModBlocks.CAUTION_FLOOR.get());
+        transparentConnectedBlock(ModBlocks.WHITE_CLEAR_WINDOW_BLOCK.get());
+        windowConnectedBlock(ModBlocks.WHITE_CLEAR_WINDOW.get());
 
         carpetConnectedBlock(ModBlocks.RED_GOLDEN_CARPET.get(), ModBlocks.RED_GOLDEN_CARPET_BLOCK.get());
         carpetConnectedBlock(ModBlocks.GREEN_ARROW_CARPET.get(), ModBlocks.GREEN_ARROW_CARPET_BLOCK.get());
@@ -48,6 +50,28 @@ public class ModFusionModelProvider extends FusionModelProvider {
 
         var modelInstance = ModelInstance.of(DefaultModelTypes.CONNECTING, modelData);
         this.addModel(ResourceLocation.fromNamespaceAndPath("iden_decor", "block/"+getPath(block)), modelInstance);
+    }
+
+    private void transparentConnectedBlock(Block block) {
+        var modelData = ConnectingModelDataBuilder.builder()
+                .parent(IdenDecorMod.rl("block/base/transparent_all"))
+                .texture("all", IdenDecorMod.rl("block/"+getPath(block)))
+                .build();
+
+        var modelInstance = ModelInstance.of(DefaultModelTypes.CONNECTING, modelData);
+        this.addModel(ResourceLocation.fromNamespaceAndPath("iden_decor", "block/"+getPath(block)), modelInstance);
+    }
+
+    private void windowConnectedBlock(Block block) {
+        var modelData = ConnectingModelDataBuilder.builder()
+                .parent(IdenDecorMod.rl("block/base/clear_window"))
+                .texture("side", IdenDecorMod.rl("block/" + getPath(block)))
+                .texture("top", IdenDecorMod.rl("block/" + getPath(block)))
+                .texture("base", IdenDecorMod.rl("block/" + getPath(block)))
+                .build();
+
+        var modelInstance = ModelInstance.of(DefaultModelTypes.CONNECTING, modelData);
+        this.addModel(IdenDecorMod.rl("block/" + getPath(block)), modelInstance);
     }
 
     private void carpetConnectedBlock(Block block, Block wool) {

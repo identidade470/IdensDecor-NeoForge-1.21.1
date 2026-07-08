@@ -59,6 +59,7 @@ public class ModCreativeModeTab {
                                 .add(ModBlocks.COPPER_MEDAL)
                                 .add(ModBlocks.WHEEL)
                                 .add(ModBlocks.WHEEL_TIRE)
+                                .add(ModBlocks.JUICE_BOTTLE)
                 ));
 
 
@@ -201,7 +202,21 @@ public class ModCreativeModeTab {
                 .add(ModBlocks.WHITE_WOOD_RAILING)
                 .add(ModBlocks.WHITE_WOODEN_PANEL_DOOR)
                 .add(ModBlocks.CALENDAR)
-                .add(ModBlocks.WALL_NOTES);
+                .add(ModBlocks.WALL_NOTES)
+                .add(ModBlocks.BLACK_BRICKS)
+                .add(ModBlocks.GRAY_BRICKS)
+                .add(ModBlocks.LIGHT_GRAY_BRICKS)
+                .add(ModBlocks.BLUE_BRICKS)
+                .add(ModBlocks.OAK_PLANKS_STRIPS)
+                .add(ModBlocks.SPRUCE_PLANKS_STRIPS)
+                .add(ModBlocks.BIRCH_PLANKS_STRIPS)
+                .add(ModBlocks.ACACIA_PLANKS_STRIPS)
+                .add(ModBlocks.JUNGLE_PLANKS_STRIPS)
+                .add(ModBlocks.DARK_OAK_PLANKS_STRIPS)
+                .add(ModBlocks.MANGROVE_PLANKS_STRIPS)
+                .add(ModBlocks.CHERRY_PLANKS_STRIPS)
+                .add(ModBlocks.CRIMSON_PLANKS_STRIPS)
+                .add(ModBlocks.WARPED_PLANKS_STRIPS);
 
         COLOR_ORDER.forEach(color -> {
             urban.add(ModBlocks.FRAMED_PLANKS.get(color));
@@ -261,6 +276,7 @@ public class ModCreativeModeTab {
                                 .add(ModBlocks.PLUSHIE_DOLI)
                                 .add(ModBlocks.PLUSHIE_RED)
                                 .add(ModBlocks.PLUSHIE_DINO)
+                                .add(ModBlocks.PLUSHIE_WOW)
                                 .add(ModBlocks.PLUSHIE_RAFA)
                 ));
 
@@ -287,6 +303,7 @@ public class ModCreativeModeTab {
             coloredPlanks.add(ModBlocks.PAINTED_PLANKS.get(color));
             coloredPlanks.add(ModBlocks.PAINTED_PLANKS_STAIRS.get(color));
             coloredPlanks.add(ModBlocks.PAINTED_PLANKS_SLABS.get(color));
+            coloredPlanks.add(ModBlocks.PAINTED_PLANKS_STRIPS.get(color));
         });
 
         FancyTabSections.addSection(IdenDecorMod.rl("base"),
