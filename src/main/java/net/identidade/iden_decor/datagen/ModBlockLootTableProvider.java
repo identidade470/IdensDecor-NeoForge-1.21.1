@@ -185,6 +185,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.GRAY_BRICKS.get());
         dropSelf(ModBlocks.LIGHT_GRAY_BRICKS.get());
         dropSelf(ModBlocks.BLUE_BRICKS.get());
+        dropSelf(ModBlocks.RED_BRICKS.get());
         dropSelf(ModBlocks.OAK_PLANKS_STRIPS.get());
         dropSelf(ModBlocks.SPRUCE_PLANKS_STRIPS.get());
         dropSelf(ModBlocks.DARK_OAK_PLANKS_STRIPS.get());
@@ -216,6 +217,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.SILVER_MEDAL.get());
         dropSelf(ModBlocks.COPPER_MEDAL.get());
 
+        dropSelf(ModBlocks.RED_METAL_GAS_CYLINDER.get());
+        dropSelf(ModBlocks.RED_SLIM_METAL_GAS_CYLINDER.get());
+        dropSelf(ModBlocks.RED_WIDE_METAL_GAS_CYLINDER.get());
+        dropSelf(ModBlocks.INDUSTRIAL_RED_LAMP.get());
 
         ModBlocks.PAINTED_PLANKS_SLABS.values().forEach(block -> {
             add(block.get(), block1 -> createSlabItemTable(block.get()));
@@ -223,6 +228,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 //
         add(ModBlocks.GRID_METAL_DOOR.get(),
                 block -> createDoorTable(ModBlocks.GRID_METAL_DOOR.get()));
+        add(ModBlocks.BLACK_OFFICE_DOOR.get(),
+                block -> createDoorTable(ModBlocks.BLACK_OFFICE_DOOR.get()));
         add(ModBlocks.YELLOW_METAL_DOOR.get(),
                 block -> createDoorTable(ModBlocks.YELLOW_METAL_DOOR.get()));
         add(ModBlocks.WHITE_METAL_DOOR.get(),

@@ -19,7 +19,6 @@ import net.minecraft.world.level.block.LeverBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.AttachFace;
-import net.minecraft.world.level.block.state.properties.StairsShape;
 import net.minecraft.world.level.block.state.properties.WallSide;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -234,8 +233,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         medalBlock(ModBlocks.GOLDEN_MEDAL.get());
         medalBlock(ModBlocks.SILVER_MEDAL.get());
         medalBlock(ModBlocks.COPPER_MEDAL.get());
-        wheelBlock(ModBlocks.WHEEL.get());
-        wheelBlock(ModBlocks.WHEEL_TIRE.get());
+        horizontalFaceBlock(ModBlocks.WHEEL.get());
+        horizontalFaceBlock(ModBlocks.WHEEL_TIRE.get());
         leverBlock(ModBlocks.BLAST_LEVER.get());
         paneBlockWithRenderType(ModBlocks.IRON_LATTICE.get(), modLoc("block/iron_lattice"), modLoc("block/iron_lattice"), "cutout");
         paneBlockWithRenderType(ModBlocks.GOLDEN_LATTICE.get(), modLoc("block/golden_lattice"), modLoc("block/golden_lattice"), "cutout");
@@ -251,6 +250,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.GRAY_BRICKS);
         blockWithItem(ModBlocks.LIGHT_GRAY_BRICKS);
         blockWithItem(ModBlocks.BLUE_BRICKS);
+        blockWithItem(ModBlocks.RED_BRICKS);
 
         blockWithItem(ModBlocks.OAK_PLANKS_STRIPS);
         blockWithItem(ModBlocks.SPRUCE_PLANKS_STRIPS);
@@ -262,6 +262,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.CRIMSON_PLANKS_STRIPS);
         blockWithItem(ModBlocks.WARPED_PLANKS_STRIPS);
         blockWithItem(ModBlocks.BIRCH_PLANKS_STRIPS);
+
+        blockWithExistingParent(ModBlocks.RED_METAL_GAS_CYLINDER);
+        simpleBlockItem(ModBlocks.RED_METAL_GAS_CYLINDER.get(), models().getExistingFile(modLoc("block/red_metal_gas_cylinder")));
+        blockWithExistingParent(ModBlocks.RED_SLIM_METAL_GAS_CYLINDER);
+        simpleBlockItem(ModBlocks.RED_SLIM_METAL_GAS_CYLINDER.get(), models().getExistingFile(modLoc("block/red_slim_metal_gas_cylinder")));
+        blockWithExistingParent(ModBlocks.RED_WIDE_METAL_GAS_CYLINDER);
+        simpleBlockItem(ModBlocks.RED_WIDE_METAL_GAS_CYLINDER.get(), models().getExistingFile(modLoc("block/red_wide_metal_gas_cylinder")));
+
+        horizontalFaceBlock(ModBlocks.INDUSTRIAL_RED_LAMP.get());
+        doorBlockWithRenderType(ModBlocks.BLACK_OFFICE_DOOR.get(), modLoc("block/black_office_door_bottom"), modLoc("block/black_office_door_top"), "cutout");
 
         threeStackableBlock(ModBlocks.GUARANA_CAN.get());
         connectedBlockWithItem(ModBlocks.WHITE_CLEAR_WINDOW_BLOCK.get());
@@ -703,7 +713,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         );
     }
 
-    private void wheelBlock(Block block) {
+    private void horizontalFaceBlock(Block block) {
         ModelFile model = models().getExistingFile(modLoc("block/" + getPath(block)));
 
         horizontalFaceBlock(block, model);

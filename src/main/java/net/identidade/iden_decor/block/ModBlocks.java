@@ -6,7 +6,6 @@ import net.identidade.iden_decor.block.custom.RefrigeranteBlock;
 import net.identidade.iden_decor.block.custom.templates.SimpleFourStackableBlock;
 import net.identidade.iden_decor.block.custom.templates.SimpleHorizontalBlock;
 import net.identidade.iden_decor.block.custom.templates.SimpleMultidirectionalBlock;
-import net.identidade.iden_decor.block.custom.templates.SimpleThreeStackableBlock;
 import net.identidade.iden_decor.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -502,6 +501,8 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2.0F, 6.0f)));
     public static final DeferredBlock<Block> BLUE_BRICKS = registerBlock("blue_bricks",
             () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2.0F, 6.0f)));
+    public static final DeferredBlock<Block> RED_BRICKS = registerBlock("red_bricks",
+            () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(2.0F, 6.0f)));
 
     public static final DeferredBlock<Block> OAK_PLANKS_STRIPS = registerBlock("oak_planks_strips",
             () -> new Block(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD).ignitedByLava()));
@@ -524,6 +525,17 @@ public class ModBlocks {
     public static final DeferredBlock<Block> BIRCH_PLANKS_STRIPS = registerBlock("birch_planks_strips",
             () -> new Block(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD).ignitedByLava()));
 
+    public static final DeferredBlock<Block> RED_SLIM_METAL_GAS_CYLINDER = registerBlock("red_slim_metal_gas_cylinder",
+            () -> new SlimGasCylinderBlock(BlockBehaviour.Properties.of().sound(SoundType.COPPER)));
+    public static final DeferredBlock<Block> RED_METAL_GAS_CYLINDER = registerBlock("red_metal_gas_cylinder",
+            () -> new GasCylinderBlock(BlockBehaviour.Properties.of().sound(SoundType.COPPER)));
+    public static final DeferredBlock<Block> RED_WIDE_METAL_GAS_CYLINDER = registerBlock("red_wide_metal_gas_cylinder",
+            () -> new WideGasCylinderBlock(BlockBehaviour.Properties.of().sound(SoundType.COPPER)));
+
+    public static final DeferredBlock<Block> INDUSTRIAL_RED_LAMP = registerBlock("industrial_red_lamp",
+            () -> new IndustrialLampBlock(BlockBehaviour.Properties.of().sound(SoundType.COPPER).lightLevel(state -> 10)));
+    public static final DeferredBlock<DoorBlock> BLACK_OFFICE_DOOR = registerBlock("black_office_door",
+            () -> new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.of().sound(SoundType.WOOD)));
 
     // Planks
     public static final Map<DyeColor, DeferredBlock<Block>> PAINTED_PLANKS = new HashMap<>();
