@@ -535,7 +535,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> INDUSTRIAL_RED_LAMP = registerBlock("industrial_red_lamp",
             () -> new IndustrialLampBlock(BlockBehaviour.Properties.of().sound(SoundType.COPPER).lightLevel(state -> 10)));
     public static final DeferredBlock<DoorBlock> BLACK_OFFICE_DOOR = registerBlock("black_office_door",
-            () -> new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.of().sound(SoundType.WOOD)));
+            () -> new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion()));
     public static final DeferredBlock<Block> ELECTRICAL_PANEL = registerBlock("electrical_panel",
             () -> new ElectricalPanelBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL)));
     public static final DeferredBlock<Block> BLISTER_TACTILE_PAVING = registerBlock("blister_tactile_paving",
