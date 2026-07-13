@@ -58,6 +58,7 @@ public class ModCreativeModeTab {
                         .add(ModBlocks.WHEEL)
                         .add(ModBlocks.WHEEL_TIRE)
                         .add(ModBlocks.JUICE_BOTTLE)
+                        .add(ModItems.PLIERS)
                 );
 
 
@@ -109,6 +110,7 @@ public class ModCreativeModeTab {
                         .add(ModBlocks.FLOOD_LAMP)
                         .add(ModBlocks.FLUORESCENT_LIGHT)
                         .add(ModBlocks.FLUORESCENT_LIGHT_BLOCK)
+                        .add(ModBlocks.CEILING_LIGHT)
 
                         .add(ModBlocks.DRINKING_FOUNTAIN)
                         .add(ModBlocks.CUP_DISPENSER)

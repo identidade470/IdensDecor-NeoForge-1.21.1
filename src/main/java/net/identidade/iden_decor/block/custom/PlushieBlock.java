@@ -46,7 +46,7 @@ public class PlushieBlock extends SimpleHorizontalBlock {
                     pos.getZ() + 0.5 + (level.random.nextDouble() - 0.5) * 0.4,
                     0,
                     0.02,
-                    0)
+                    0);
             ;
         }
         return InteractionResult.SUCCESS;

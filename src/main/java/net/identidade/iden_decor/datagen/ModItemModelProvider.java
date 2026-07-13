@@ -73,6 +73,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModBlocks.GUARANA_CAN.asItem());
         basicItem(ModBlocks.JUICE_BOTTLE.asItem());
         basicItem(ModBlocks.BLACK_OFFICE_DOOR.asItem());
+
+        handheldItem(ModItems.PLIERS.get());
 //        simpleBlockItem(ModBlocks.WOODEN_CRIB.get());
     }
 

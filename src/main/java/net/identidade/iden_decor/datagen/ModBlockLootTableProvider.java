@@ -224,6 +224,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.ELECTRICAL_PANEL.get());
         dropSelf(ModBlocks.BLISTER_TACTILE_PAVING.get());
         dropSelf(ModBlocks.LOZENGE_TACTILE_PAVING.get());
+        dropSelf(ModBlocks.CEILING_LIGHT.get());
 
         ModBlocks.PAINTED_PLANKS_SLABS.values().forEach(block -> {
             add(block.get(), block1 -> createSlabItemTable(block.get()));

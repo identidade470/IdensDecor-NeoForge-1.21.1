@@ -58,5 +58,11 @@
     "sounds": [
       "iden_decor:breaker_click"
     ]
+  },
+  "screw_click": {
+    "subtitle": "sounds.iden_decor.screw_click",
+    "sounds": [
+      "iden_decor:screw_click"
+    ]
   }
 }

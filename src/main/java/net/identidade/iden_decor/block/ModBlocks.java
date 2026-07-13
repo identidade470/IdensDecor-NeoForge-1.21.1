@@ -533,7 +533,7 @@ public class ModBlocks {
             () -> new WideGasCylinderBlock(BlockBehaviour.Properties.of().sound(SoundType.COPPER)));
 
     public static final DeferredBlock<Block> INDUSTRIAL_RED_LAMP = registerBlock("industrial_red_lamp",
-            () -> new IndustrialLampBlock(BlockBehaviour.Properties.of().sound(SoundType.COPPER).lightLevel(state -> 10)));
+            () -> new IndustrialLampBlock(BlockBehaviour.Properties.of().sound(SoundType.COPPER).lightLevel(state -> state.getValue(IndustrialLampBlock.POWERED)?15:0)));
     public static final DeferredBlock<DoorBlock> BLACK_OFFICE_DOOR = registerBlock("black_office_door",
             () -> new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion()));
     public static final DeferredBlock<Block> ELECTRICAL_PANEL = registerBlock("electrical_panel",
@@ -542,6 +542,8 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of()));
     public static final DeferredBlock<Block> LOZENGE_TACTILE_PAVING = registerBlock("lozenge_tactile_paving",
             () -> new SimpleHorizontalBlock(BlockBehaviour.Properties.of()));
+    public static final DeferredBlock<Block> CEILING_LIGHT = registerBlock("ceiling_light",
+            () -> new CeilingLightBlock(BlockBehaviour.Properties.of().sound(SoundType.LANTERN)));
 
     // Planks
     public static final Map<DyeColor, DeferredBlock<Block>> PAINTED_PLANKS = new HashMap<>();

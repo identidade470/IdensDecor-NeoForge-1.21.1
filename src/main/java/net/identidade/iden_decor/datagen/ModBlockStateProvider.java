@@ -13,12 +13,10 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CarpetBlock;
-import net.minecraft.world.level.block.LeverBlock;
-import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.AttachFace;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.WallSide;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -270,12 +268,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithExistingParent(ModBlocks.RED_WIDE_METAL_GAS_CYLINDER);
         simpleBlockItem(ModBlocks.RED_WIDE_METAL_GAS_CYLINDER.get(), models().getExistingFile(modLoc("block/red_wide_metal_gas_cylinder")));
 
-        horizontalFaceBlock(ModBlocks.INDUSTRIAL_RED_LAMP.get());
+        industrialLampBlock(ModBlocks.INDUSTRIAL_RED_LAMP.get());
         doorBlockWithRenderType(ModBlocks.BLACK_OFFICE_DOOR.get(), modLoc("block/black_office_door_bottom"), modLoc("block/black_office_door_top"), "cutout");
         electricalPanel(ModBlocks.ELECTRICAL_PANEL.get());
         blockWithItem(ModBlocks.BLISTER_TACTILE_PAVING);
         horizontalBlock(ModBlocks.LOZENGE_TACTILE_PAVING.get(), models().cubeAll("lozenge_tactile_paving", modLoc("block/lozenge_tactile_paving")));
         simpleBlockItem(ModBlocks.LOZENGE_TACTILE_PAVING.get(), new ModelFile.UncheckedModelFile(modLoc("block/lozenge_tactile_paving")));
+        ceilingLightBlock(ModBlocks.CEILING_LIGHT.get(), mcLoc("block/crafter_bottom"));
 
         threeStackableBlock(ModBlocks.GUARANA_CAN.get());
         connectedBlockWithItem(ModBlocks.WHITE_CLEAR_WINDOW_BLOCK.get());
@@ -399,6 +398,69 @@ public class ModBlockStateProvider extends BlockStateProvider {
         });
 
         simpleBlockItem(block, new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/" + getPath(block))));
+    }
+
+    private void industrialLampBlock(Block block) {
+
+        ResourceLocation onTexture = modLoc("block/" + getPath(block));
+        ResourceLocation offTexture = modLoc("block/" + getPath(block) + "_off");
+
+        ModelFile onModel = models().getBuilder(getPath(block) + "_on")
+                .parent(models().getExistingFile(modLoc("block/base/industrial_lamp")))
+                .texture("0", onTexture);
+        ModelFile offModel = models().getBuilder(getPath(block) + "_off")
+                .parent(models().getExistingFile(modLoc("block/base/industrial_lamp")))
+                .texture("0", offTexture);
+
+        getVariantBuilder(block).forAllStates(state -> {
+            Direction facing = state.getValue(IndustrialLampBlock.FACING);
+            AttachFace face = state.getValue(IndustrialLampBlock.FACE);
+            Boolean powered = state.getValue(IndustrialLampBlock.POWERED);
+
+            int rotX = switch (face) {
+                case FLOOR -> 0;
+                case WALL -> 90;
+                case CEILING -> 180;
+            };
+
+            return ConfiguredModel.builder()
+                    .modelFile(powered?onModel:offModel)
+                    .rotationY(((int) facing.toYRot() + 180) % 360)
+                    .rotationX(rotX)
+                    .build();
+        });
+
+        simpleBlockItem(block, onModel);
+    }
+
+    private void ceilingLightBlock(Block block, ResourceLocation top) {
+
+        ResourceLocation textureSideOn = modLoc("block/" + getPath(block) + "_side_on");
+        ResourceLocation textureSideOff = modLoc("block/" + getPath(block) + "_side_off");
+        ResourceLocation textureBottomOn = modLoc("block/" + getPath(block) + "_bottom_on");
+        ResourceLocation textureBottomOff = modLoc("block/" + getPath(block) + "_bottom_off");
+
+        ModelFile onModel = this.models().cubeBottomTop(getPath(block) + "_on", textureSideOn, textureBottomOn, top);
+        ModelFile offModel = this.models().cubeBottomTop(getPath(block) + "_off", textureSideOff, textureBottomOff, top);
+
+        getVariantBuilder(block).forAllStates(state -> {
+            Direction facing = state.getValue(CeilingLightBlock.FACING);
+            AttachFace face = state.getValue(CeilingLightBlock.FACE);
+            Boolean powered = state.getValue(CeilingLightBlock.POWERED);
+
+            int rotX = switch (face) {
+                case FLOOR -> 180;
+                case WALL -> 90;
+                case CEILING -> 0;
+            };
+
+            return ConfiguredModel.builder()
+                    .modelFile(powered?onModel:offModel)
+                    .rotationY((int)(facing.toYRot() + 180) % 360)
+                    .rotationX(rotX)
+                    .build();
+        });
+
     }
 
     private void electricalPanel(Block block) {

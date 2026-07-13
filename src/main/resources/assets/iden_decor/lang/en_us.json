@@ -259,6 +259,9 @@
   "section.iden_decor.levers_and_buttons": "Levers & Buttons",
   "section.iden_decor.misc_blocks": "Misc",
 
+  "iden_decor.messages.set_analog_on": "Toggle Condition set to §cManual",
+  "iden_decor.messages.set_analog_off": "Toggle Condition set to §cRedstone",
+
   "examplemod.configuration.title": "Example Mod Configs",
   "examplemod.configuration.section.examplemod.common.toml": "Example Mod Configs",
   "examplemod.configuration.section.examplemod.common.toml.title": "Example Mod Configs",

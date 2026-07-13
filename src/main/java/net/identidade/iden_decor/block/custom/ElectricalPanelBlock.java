@@ -4,6 +4,8 @@ import net.identidade.iden_decor.block.custom.templates.SimpleHorizontalBlock;
 import net.identidade.iden_decor.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
@@ -63,10 +65,23 @@ public class ElectricalPanelBlock extends SimpleHorizontalBlock {
             // Cycles the powered
 
             if (state.getValue(OPENED)) {
+
+                level.addParticle(
+                        new DustParticleOptions(DustParticleOptions.REDSTONE_PARTICLE_COLOR, 1f),
+                        pos.getX() + 0.5f + (level.random.nextDouble() - 0.5) * 0.4,
+                        pos.getY() + 0.5f + (level.random.nextDouble() - 0.5) * 0.4,
+                        pos.getZ() + 0.5f + (level.random.nextDouble() - 0.5) * 0.4,
+                        0, 0, 0
+                );
+
                 if (!level.isClientSide) {
                     level.setBlock(pos, state.cycle(POWERED), 3);
                     updateNeighbors(state, level, pos);
-                    level.playSound(null, pos, ModSounds.BREAKER_CLICK.get(), SoundSource.BLOCKS);
+
+
+
+                    level.playSound(null, pos, ModSounds.BREAKER_CLICK.get(), SoundSource.BLOCKS, 1, state.getValue(POWERED)?1:0.75f);
+
                 }
 
                 return InteractionResult.SUCCESS;
