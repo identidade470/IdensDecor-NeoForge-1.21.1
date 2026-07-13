@@ -272,6 +272,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         horizontalFaceBlock(ModBlocks.INDUSTRIAL_RED_LAMP.get());
         doorBlockWithRenderType(ModBlocks.BLACK_OFFICE_DOOR.get(), modLoc("block/black_office_door_bottom"), modLoc("block/black_office_door_top"), "cutout");
+        electricalPanel(ModBlocks.ELECTRICAL_PANEL.get());
+        blockWithItem(ModBlocks.BLISTER_TACTILE_PAVING);
+        horizontalBlock(ModBlocks.LOZENGE_TACTILE_PAVING.get(), models().cubeAll("lozenge_tactile_paving", modLoc("block/lozenge_tactile_paving")));
+        simpleBlockItem(ModBlocks.LOZENGE_TACTILE_PAVING.get(), new ModelFile.UncheckedModelFile(modLoc("block/lozenge_tactile_paving")));
 
         threeStackableBlock(ModBlocks.GUARANA_CAN.get());
         connectedBlockWithItem(ModBlocks.WHITE_CLEAR_WINDOW_BLOCK.get());
@@ -395,6 +399,26 @@ public class ModBlockStateProvider extends BlockStateProvider {
         });
 
         simpleBlockItem(block, new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/" + getPath(block))));
+    }
+
+    private void electricalPanel(Block block) {
+
+        ModelFile closedModel = models().getExistingFile(modLoc("block/electrical_panel/closed"));
+        ModelFile openedOnModel = models().getExistingFile(modLoc("block/electrical_panel/opened_on"));
+        ModelFile openedOffModel = models().getExistingFile(modLoc("block/electrical_panel/opened_off"));
+
+        getVariantBuilder(block).forAllStates(state -> {
+            Direction facing = state.getValue(ElectricalPanelBlock.FACING);
+            Boolean powered = state.getValue(ElectricalPanelBlock.POWERED);
+            Boolean opened = state.getValue(ElectricalPanelBlock.OPENED);
+
+            return ConfiguredModel.builder()
+                    .modelFile(opened?(powered?openedOnModel:openedOffModel):closedModel)
+                    .rotationY((int)(facing.toYRot() + 180) % 360)
+                    .build();
+        });
+
+        simpleBlockItem(block, closedModel);
     }
 
     private void wallProp(Block block) {

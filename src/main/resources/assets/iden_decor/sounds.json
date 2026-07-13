@@ -52,5 +52,11 @@
     "sounds": [
       "iden_decor:eletronic_beep"
     ]
+  },
+  "breaker_click": {
+    "subtitle": "sounds.iden_decor.breaker_click",
+    "sounds": [
+      "iden_decor:breaker_click"
+    ]
   }
 }

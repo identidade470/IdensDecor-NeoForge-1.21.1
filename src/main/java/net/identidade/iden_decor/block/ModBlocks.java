@@ -536,6 +536,12 @@ public class ModBlocks {
             () -> new IndustrialLampBlock(BlockBehaviour.Properties.of().sound(SoundType.COPPER).lightLevel(state -> 10)));
     public static final DeferredBlock<DoorBlock> BLACK_OFFICE_DOOR = registerBlock("black_office_door",
             () -> new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.of().sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> ELECTRICAL_PANEL = registerBlock("electrical_panel",
+            () -> new ElectricalPanelBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL)));
+    public static final DeferredBlock<Block> BLISTER_TACTILE_PAVING = registerBlock("blister_tactile_paving",
+            () -> new Block(BlockBehaviour.Properties.of()));
+    public static final DeferredBlock<Block> LOZENGE_TACTILE_PAVING = registerBlock("lozenge_tactile_paving",
+            () -> new SimpleHorizontalBlock(BlockBehaviour.Properties.of()));
 
     // Planks
     public static final Map<DyeColor, DeferredBlock<Block>> PAINTED_PLANKS = new HashMap<>();

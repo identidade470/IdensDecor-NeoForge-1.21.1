@@ -46,6 +46,10 @@ public class ModCreativeModeTab {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, IdenDecorMod.MOD_ID);
 
     static void addItems() {
+
+        //--------------------------------------------
+        // MISC
+        //--------------------------------------------
         FancyTabSections.addSection(IdenDecorMod.rl("base"),
                 new SectionTextured(IdenDecorMod.rl("misc_blocks"))
                         .add(ModBlocks.GOLDEN_MEDAL)
@@ -57,6 +61,9 @@ public class ModCreativeModeTab {
                 );
 
 
+        //--------------------------------------------
+        // SCI-FI
+        //--------------------------------------------
         FancyTabSections.addSection(IdenDecorMod.rl("base"),
                 new SectionTextured(IdenDecorMod.rl("scifi_blocks"))
                         .add(ModBlocks.CORE_PILLAR)
@@ -75,6 +82,9 @@ public class ModCreativeModeTab {
                         .add(ModBlocks.WALL_CABLE)
                 );
 
+        //--------------------------------------------
+        // FACILITY
+        //--------------------------------------------
         FancyTabSections.addSection(IdenDecorMod.rl("base"),
                 new SectionTextured(IdenDecorMod.rl("facility_blocks"))
                         .add(ModBlocks.OAK_METAL_SHELF)
@@ -160,7 +170,9 @@ public class ModCreativeModeTab {
                         .add(ModItems.GUARANA_CUP)
                 );
 
-
+        //--------------------------------------------
+        // URBAN
+        //--------------------------------------------
         ConglomerateOfItems urban = ConglomerateOfItems.create()
                 .add(ModBlocks.WHITE_CUBIC_SHELF)
                 .add(ModBlocks.WALL_CLOCK)
@@ -191,6 +203,8 @@ public class ModCreativeModeTab {
                 .add(ModBlocks.WHITE_WOODEN_PANEL_DOOR)
                 .add(ModBlocks.CALENDAR)
                 .add(ModBlocks.WALL_NOTES)
+                .add(ModBlocks.BLISTER_TACTILE_PAVING)
+                .add(ModBlocks.LOZENGE_TACTILE_PAVING)
                 .add(ModBlocks.RED_BRICKS)
                 .add(ModBlocks.BLACK_BRICKS)
                 .add(ModBlocks.GRAY_BRICKS)
@@ -216,6 +230,9 @@ public class ModCreativeModeTab {
                         .setItems(urban)
         );
 
+        //--------------------------------------------
+        // HOTEL
+        //--------------------------------------------
         FancyTabSections.addSection(IdenDecorMod.rl("base"),
                 new SectionTextured(IdenDecorMod.rl("hotel_blocks"))
                         .add(ModBlocks.RED_DIAMOND_WALLPAPER)
@@ -234,6 +251,9 @@ public class ModCreativeModeTab {
                         .add(ModItems.TELEPHONE_ITEM)
         );
 
+        //--------------------------------------------
+        // DAYCARE
+        //--------------------------------------------
         FancyTabSections.addSection(IdenDecorMod.rl("base"),
                 new SectionTextured(IdenDecorMod.rl("daycare_blocks"))
                         .add(ModBlocks.BLUE_CLOUDS_WALLPAPER)
@@ -253,6 +273,9 @@ public class ModCreativeModeTab {
                         .add(ModBlocks.PLUSHIE_RAFA)
         );
 
+        //--------------------------------------------
+        // LEVERS & BUTTONS
+        //--------------------------------------------
         FancyTabSections.addSection(IdenDecorMod.rl("base"),
                 new SectionTextured(IdenDecorMod.rl("levers_and_buttons"))
                         .add(ModBlocks.EMERGENCY_LEVER)
@@ -263,8 +286,12 @@ public class ModCreativeModeTab {
                         .add(ModBlocks.GATE_BUTTON)
                         .add(ModBlocks.HEAVY_BUTTON)
                         .add(ModBlocks.BLAST_LEVER)
+                        .add(ModBlocks.ELECTRICAL_PANEL)
         );
 
+        //--------------------------------------------
+        // COLORED_WOOD
+        //--------------------------------------------
         ConglomerateOfItems coloredPlanks = ConglomerateOfItems.create();
         COLOR_ORDER.forEach(color -> {
             coloredPlanks.add(ModBlocks.PAINTED_PLANKS.get(color));

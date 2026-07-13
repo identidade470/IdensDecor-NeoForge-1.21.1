@@ -21,6 +21,7 @@ public class ModSounds {
     public static final Supplier<SoundEvent> FLOPPY_DISK_INSERT = registerSoundEvent("floppy_disk_insert");
     public static final Supplier<SoundEvent> GUARANA_SOUND = registerSoundEvent("guarana_sound");
     public static final Supplier<SoundEvent> ELETRONIC_BEEP = registerSoundEvent("eletronic_beep");
+    public static final Supplier<SoundEvent> BREAKER_CLICK = registerSoundEvent("breaker_click");
 
     private static Supplier<SoundEvent> registerSoundEvent(String name) {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, name);
