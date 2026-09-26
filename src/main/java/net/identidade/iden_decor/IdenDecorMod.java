@@ -12,7 +12,9 @@ import net.identidade.iden_decor.recipe.ModRecipes;
 import net.identidade.iden_decor.sound.ModSounds;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.ModList;
+import net.neoforged.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -58,7 +60,7 @@ public class IdenDecorMod {
         ModDataComponents.register(modEventBus);
 //        ModEntities.register(modEventBus);
 
-        if(ModList.get().isLoaded("refurbished_furniture")) {
+        if(ModList.get().isLoaded("refurbished_furniture") && FMLEnvironment.dist == Dist.CLIENT) {
             modEventBus.register(RefurbishedFurnitureCompat.class);
         }
 
