@@ -28,6 +28,22 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.BLUE_CLOUDS_WALLPAPER.get())
                 .add(ModBlocks.BLACK_CLOUDS_WALLPAPER.get())
                 .add(ModBlocks.BLACK_STARRY_WALLPAPER.get())
+                .add(ModBlocks.CYAN_ARROW_WALLPAPER.get())
+                .add(ModBlocks.OAK_PLANKS_STRIPS.get())
+                .add(ModBlocks.SPRUCE_PLANKS_STRIPS.get())
+                .add(ModBlocks.BIRCH_PLANKS_STRIPS.get())
+                .add(ModBlocks.DARK_OAK_PLANKS_STRIPS.get())
+                .add(ModBlocks.JUNGLE_PLANKS_STRIPS.get())
+                .add(ModBlocks.ACACIA_PLANKS_STRIPS.get())
+                .add(ModBlocks.MANGROVE_PLANKS_STRIPS.get())
+                .add(ModBlocks.WARPED_PLANKS_STRIPS.get())
+                .add(ModBlocks.CRIMSON_PLANKS_STRIPS.get())
+                .add(ModBlocks.CHERRY_PLANKS_STRIPS.get())
+                .add(ModBlocks.BLACK_OFFICE_DOOR.get())
+                .add(ModBlocks.GREEN_OFFICE_DOOR.get())
+                .add(ModBlocks.WHITE_CUBIC_SHELF.get())
+                .add(ModBlocks.BLACK_WOOD_RAILING.get())
+                .add(ModBlocks.BLACK_WOODEN_PANEL_DOOR.get())
 
                 .add(ModBlocks.WOODEN_CRIB.get())
 
@@ -78,6 +94,23 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.WHITE_BRICKS_STAIRS.get())
                 .add(ModBlocks.WHITE_BRICKS_SLAB.get())
 
+                .add(ModBlocks.LIGHT_GRAY_BRICKS.get())
+                .add(ModBlocks.LIGHT_GRAY_BRICK_STAIRS.get())
+                .add(ModBlocks.LIGHT_GRAY_BRICK_SLAB.get())
+                .add(ModBlocks.RED_BRICKS.get())
+                .add(ModBlocks.RED_BRICK_STAIRS.get())
+                .add(ModBlocks.RED_BRICK_SLAB.get())
+                .add(ModBlocks.BLUE_BRICKS.get())
+                .add(ModBlocks.BLUE_BRICK_STAIRS.get())
+                .add(ModBlocks.BLUE_BRICK_SLAB.get())
+                .add(ModBlocks.GRAY_BRICKS.get())
+                .add(ModBlocks.GRAY_BRICK_STAIRS.get())
+                .add(ModBlocks.GRAY_BRICK_SLAB.get())
+                .add(ModBlocks.BLACK_BRICKS.get())
+                .add(ModBlocks.BLACK_BRICK_STAIRS.get())
+                .add(ModBlocks.BLACK_BRICK_SLAB.get())
+
+
                 .add(ModBlocks.IRON_SHEET_METAL.get())
                 .add(ModBlocks.AIR_DUCT.get())
 
@@ -103,6 +136,58 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.FLUORESCENT_LIGHT.get())
                 .add(ModBlocks.METAL_SHELF.get())
 
+                .add(ModBlocks.CORE_PILLAR.get())
+                .add(ModBlocks.CORE_PILLAR_JUNCTION.get())
+                .add(ModBlocks.CORE_PLATES.get())
+                .add(ModBlocks.ENERGIZED_CORE_PLATES.get())
+                .add(ModBlocks.DIAGONAL_CORE_TILES.get())
+                .add(ModBlocks.CORE_TILES.get())
+                .add(ModBlocks.CORE_DOOR.get())
+                .add(ModBlocks.CORE_CONTROL_PANEL_SCREEN.get())
+                .add(ModBlocks.CORE_CONTROL_PANEL.get())
+                .add(ModBlocks.CORE_LEVER_CONTROL_PANEL.get())
+                .add(ModBlocks.CORE_BUTTON_CONTROL_PANEL.get())
+                .add(ModBlocks.BATTERY_CELL.get())
+
+                .add(ModBlocks.LED_LAMP.get())
+                .add(ModBlocks.RED_LED_LAMP.get())
+                .add(ModBlocks.ORANGE_LED_LAMP.get())
+                .add(ModBlocks.YELLOW_LED_LAMP.get())
+                .add(ModBlocks.LIME_LED_LAMP.get())
+                .add(ModBlocks.GREEN_LED_LAMP.get())
+                .add(ModBlocks.CYAN_LED_LAMP.get())
+                .add(ModBlocks.LIGHT_BLUE_LED_LAMP.get())
+                .add(ModBlocks.BLUE_LED_LAMP.get())
+                .add(ModBlocks.PURPLE_LED_LAMP.get())
+                .add(ModBlocks.MAGENTA_LED_LAMP.get())
+                .add(ModBlocks.PINK_LED_LAMP.get())
+
+                .add(ModBlocks.INDUSTRIAL_RED_LAMP.get())
+                .add(ModBlocks.LIGHT_BULB.get())
+                .add(ModBlocks.COPPER_LATTICE.get())
+                .add(ModBlocks.IRON_LATTICE.get())
+                .add(ModBlocks.GOLDEN_LATTICE.get())
+                .add(ModBlocks.RED_SLIM_METAL_GAS_CYLINDER.get())
+                .add(ModBlocks.RED_METAL_GAS_CYLINDER.get())
+                .add(ModBlocks.RED_WIDE_METAL_GAS_CYLINDER.get())
+                .add(ModBlocks.CAUTION_FLOOR.get())
+                .add(ModBlocks.DIAGONAL_WHITE_TILES.get())
+                .add(ModBlocks.WHITE_SHORT_TILES.get())
+                .add(ModBlocks.CRACKED_WHITE_SHORT_TILES.get())
+                .add(ModBlocks.DIAGONAL_SMOOTH_STONE_TILES.get())
+                .add(ModBlocks.WALL_CLOCK.get())
+                .add(ModBlocks.METAL_TABLE.get())
+                .add(ModBlocks.RED_BRICKS.get())
+                .add(ModBlocks.BLUE_BRICKS.get())
+                .add(ModBlocks.LIGHT_GRAY_BRICKS.get())
+                .add(ModBlocks.GRAY_BRICKS.get())
+                .add(ModBlocks.BLACK_BRICKS.get())
+                .add(ModBlocks.BLISTER_TACTILE_PAVING.get())
+                .add(ModBlocks.LOZENGE_TACTILE_PAVING.get())
+                .add(ModBlocks.ELECTRICAL_PANEL.get())
+                .add(ModBlocks.BLAST_LEVER.get())
+                .add(ModBlocks.SEWING_MACHINE.get())
+
                 .add(ModBlocks.LONG_CONCRETE_VASE.get())
         ;
 
@@ -123,6 +208,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(block.get()));
 
         ModBlocks.FRAMED_PLANKS.values().forEach(block -> tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(block.get()));
+
+        ModBlocks.PAINTED_PLANKS_STRIPS.values().forEach(block -> tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(block.get()));
 
         ModBlocks.PAINTED_PLANKS_SLABS.values().forEach(block -> {
@@ -163,6 +251,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.GRID_METAL_DOOR.get())
                 .add(ModBlocks.WHITE_WOODEN_PANEL_DOOR.get())
                 .add(ModBlocks.BLACK_WOODEN_PANEL_DOOR.get())
+                .add(ModBlocks.CORE_DOOR.get())
+                .add(ModBlocks.BLACK_OFFICE_DOOR.get())
+                .add(ModBlocks.GREEN_OFFICE_DOOR.get())
                 .add(ModBlocks.WOODEN_PANEL_DOOR.get())
         ;
 

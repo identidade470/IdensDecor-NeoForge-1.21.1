@@ -2,6 +2,7 @@ package net.identidade.iden_decor.datagen;
 
 import net.identidade.iden_decor.block.ModBlocks;
 import net.identidade.iden_decor.item.ModItems;
+import net.identidade.iden_decor.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -45,6 +46,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('B', ItemTags.PLANKS)
                 .define('A', DyeItem.byColor(color))
                 .unlockedBy("has_planks", has(ItemTags.PLANKS)).save(recipeOutput));
+
+        ModBlocks.PAINTED_PLANKS_STRIPS.forEach((color, block) -> ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, block.get(), 8)
+                .pattern("BBB")
+                .pattern("BAB")
+                .pattern("BBB")
+                .define('B', ModTags.Items.PLANKS_STRIPS)
+                .define('A', DyeItem.byColor(color))
+                .unlockedBy("has_planks_strips", has(ModTags.Items.PLANKS_STRIPS)).save(recipeOutput));
 
         ModBlocks.PAINTED_PLANKS_STAIRS.forEach((color, block) ->
                 stairBuilder(block.get(), Ingredient.of(ModBlocks.PAINTED_PLANKS.get(color).get())).group("painted_"+color+"_planks")

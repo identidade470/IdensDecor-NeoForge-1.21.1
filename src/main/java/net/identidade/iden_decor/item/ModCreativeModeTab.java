@@ -52,6 +52,10 @@ public class ModCreativeModeTab {
         //--------------------------------------------
         FancyTabSections.addSection(IdenDecorMod.rl("base"),
                 new SectionTextured(IdenDecorMod.rl("misc_blocks"))
+                        .setCentered(true)
+                        //.setTextOutline(0xFF191818)
+                        .setTextShadow(false)
+
                         .add(ModBlocks.GOLDEN_MEDAL)
                         .add(ModBlocks.SILVER_MEDAL)
                         .add(ModBlocks.COPPER_MEDAL)
@@ -67,6 +71,8 @@ public class ModCreativeModeTab {
         //--------------------------------------------
         FancyTabSections.addSection(IdenDecorMod.rl("base"),
                 new SectionTextured(IdenDecorMod.rl("scifi_blocks"))
+                        .setCentered(true)
+
                         .add(ModBlocks.CORE_PILLAR)
                         .add(ModBlocks.CORE_PILLAR_JUNCTION)
                         .add(ModBlocks.CORE_PLATES)
@@ -88,6 +94,8 @@ public class ModCreativeModeTab {
         //--------------------------------------------
         FancyTabSections.addSection(IdenDecorMod.rl("base"),
                 new SectionTextured(IdenDecorMod.rl("facility_blocks"))
+                        .setCentered(true)
+
                         .add(ModBlocks.OAK_METAL_SHELF)
                         .add(ModBlocks.ACACIA_METAL_SHELF)
                         .add(ModBlocks.BIRCH_METAL_SHELF)
@@ -110,7 +118,18 @@ public class ModCreativeModeTab {
                         .add(ModBlocks.FLOOD_LAMP)
                         .add(ModBlocks.FLUORESCENT_LIGHT)
                         .add(ModBlocks.FLUORESCENT_LIGHT_BLOCK)
-                        .add(ModBlocks.CEILING_LIGHT)
+                        .add(ModBlocks.LED_LAMP)
+                        .add(ModBlocks.RED_LED_LAMP)
+                        .add(ModBlocks.ORANGE_LED_LAMP)
+                        .add(ModBlocks.YELLOW_LED_LAMP)
+                        .add(ModBlocks.LIME_LED_LAMP)
+                        .add(ModBlocks.GREEN_LED_LAMP)
+                        .add(ModBlocks.CYAN_LED_LAMP)
+                        .add(ModBlocks.LIGHT_BLUE_LED_LAMP)
+                        .add(ModBlocks.BLUE_LED_LAMP)
+                        .add(ModBlocks.PURPLE_LED_LAMP)
+                        .add(ModBlocks.MAGENTA_LED_LAMP)
+                        .add(ModBlocks.PINK_LED_LAMP)
 
                         .add(ModBlocks.DRINKING_FOUNTAIN)
                         .add(ModBlocks.CUP_DISPENSER)
@@ -161,6 +180,7 @@ public class ModCreativeModeTab {
                         .add(ModBlocks.SMOOTH_STONE_TILES_SLAB)
 
                         .add(ModBlocks.BLACK_OFFICE_DOOR)
+                        .add(ModBlocks.GREEN_OFFICE_DOOR)
                         .add(ModBlocks.GRID_METAL_DOOR)
                         .add(ModBlocks.WHITE_METAL_DOOR)
                         .add(ModBlocks.YELLOW_METAL_DOOR)
@@ -203,15 +223,33 @@ public class ModCreativeModeTab {
                 .add(ModBlocks.WHITE_LATTICE_WINDOW)
                 .add(ModBlocks.WHITE_WOOD_RAILING)
                 .add(ModBlocks.WHITE_WOODEN_PANEL_DOOR)
+                .add(ModBlocks.WHITE_WOODEN_TILE_DOOR)
+                .add(ModBlocks.WHITE_WOODEN_CLEAR_DOOR)
                 .add(ModBlocks.CALENDAR)
                 .add(ModBlocks.WALL_NOTES)
                 .add(ModBlocks.BLISTER_TACTILE_PAVING)
                 .add(ModBlocks.LOZENGE_TACTILE_PAVING)
+
                 .add(ModBlocks.RED_BRICKS)
+                .add(ModBlocks.RED_BRICK_STAIRS)
+                .add(ModBlocks.RED_BRICK_SLAB)
+
                 .add(ModBlocks.BLACK_BRICKS)
+                .add(ModBlocks.BLACK_BRICK_STAIRS)
+                .add(ModBlocks.BLACK_BRICK_SLAB)
+
                 .add(ModBlocks.GRAY_BRICKS)
+                .add(ModBlocks.GRAY_BRICK_STAIRS)
+                .add(ModBlocks.GRAY_BRICK_SLAB)
+
                 .add(ModBlocks.LIGHT_GRAY_BRICKS)
+                .add(ModBlocks.LIGHT_GRAY_BRICK_STAIRS)
+                .add(ModBlocks.LIGHT_GRAY_BRICK_SLAB)
+
                 .add(ModBlocks.BLUE_BRICKS)
+                .add(ModBlocks.BLUE_BRICK_STAIRS)
+                .add(ModBlocks.BLUE_BRICK_SLAB)
+
                 .add(ModBlocks.OAK_PLANKS_STRIPS)
                 .add(ModBlocks.SPRUCE_PLANKS_STRIPS)
                 .add(ModBlocks.BIRCH_PLANKS_STRIPS)
@@ -250,6 +288,8 @@ public class ModCreativeModeTab {
                         .add(ModBlocks.WALL_LAMP)
                         .add(ModBlocks.LONG_CONCRETE_VASE)
                         .add(ModBlocks.WOODEN_PANEL_DOOR)
+                        .add(ModBlocks.WOODEN_TILE_DOOR)
+                        .add(ModBlocks.WOODEN_CLEAR_DOOR)
                         .add(ModItems.TELEPHONE_ITEM)
         );
 
@@ -273,6 +313,7 @@ public class ModCreativeModeTab {
                         .add(ModBlocks.PLUSHIE_DINO)
                         .add(ModBlocks.PLUSHIE_WOW)
                         .add(ModBlocks.PLUSHIE_RAFA)
+                        .add(ModBlocks.PLUSHIE_WD)
         );
 
         //--------------------------------------------

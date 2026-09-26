@@ -5,6 +5,7 @@ import net.identidade.iden_decor.block.ModBlocks;
 import net.identidade.iden_decor.block.custom.*;
 import net.identidade.iden_decor.block.custom.templates.SimpleFourStackableBlock;
 import net.identidade.iden_decor.block.custom.templates.SimpleThreeStackableBlock;
+import net.identidade.iden_decor.block.custom.templates.light.GenericLightBlock;
 import net.identidade.iden_decor.block.properties.ColorProperty;
 import net.identidade.iden_decor.block.properties.HorizontalConnectableProperty;
 import net.identidade.iden_decor.block.properties.HorizontalThreeConnectableProperty;
@@ -16,7 +17,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.AttachFace;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.WallSide;
 import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -80,6 +80,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.WHITE_BRICKS_STAIRS);
         blockItem(ModBlocks.WHITE_TILES_SLAB);
         blockItem(ModBlocks.WHITE_TILES_STAIRS);
+        blockItem(ModBlocks.RED_BRICK_STAIRS);
+        blockItem(ModBlocks.RED_BRICK_SLAB);
+        blockItem(ModBlocks.LIGHT_GRAY_BRICK_STAIRS);
+        blockItem(ModBlocks.LIGHT_GRAY_BRICK_SLAB);
+        blockItem(ModBlocks.GRAY_BRICK_STAIRS);
+        blockItem(ModBlocks.GRAY_BRICK_SLAB);
+        blockItem(ModBlocks.BLUE_BRICK_STAIRS);
+        blockItem(ModBlocks.BLUE_BRICK_SLAB);
+        blockItem(ModBlocks.BLACK_BRICK_STAIRS);
+        blockItem(ModBlocks.BLACK_BRICK_SLAB);
         blockItem(ModBlocks.SMOOTH_STONE_TILES_SLAB);
         blockItem(ModBlocks.SMOOTH_STONE_TILES_STAIRS);
         blockItem(ModBlocks.AIR_VENT, "_bottom");
@@ -90,7 +100,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.TRAFFIC_CONE);
         blockItem(ModBlocks.CAUTION_BLOCK_SLAB);
         blockItem(ModBlocks.CAUTION_BLOCK_STAIRS);
-        blockItem(ModBlocks.CEILING_LAMP);
 
         blockWithItem(ModBlocks.IRON_SHEET_METAL);
         blockWithItem(ModBlocks.AIR_DUCT);
@@ -146,8 +155,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         doorBlockWithRenderType(ModBlocks.WHITE_METAL_DOOR.get(), modLoc("block/white_metal_door_bottom"), modLoc("block/white_metal_door_top"), "cutout");
         doorBlock(ModBlocks.CORE_DOOR.get(), modLoc("block/core_door_bottom"), modLoc("block/core_door_top"));
         doorBlock(ModBlocks.WHITE_WOODEN_PANEL_DOOR.get(), modLoc("block/white_wooden_panel_door_bottom"), modLoc("block/white_wooden_panel_door_top"));
+        doorBlock(ModBlocks.WHITE_WOODEN_TILE_DOOR.get(), modLoc("block/white_wooden_tile_door_bottom"), modLoc("block/white_wooden_tile_door_top"));
+        doorBlock(ModBlocks.WHITE_WOODEN_CLEAR_DOOR.get(), modLoc("block/white_wooden_clear_door_bottom"), modLoc("block/white_wooden_clear_door_top"));
         doorBlock(ModBlocks.BLACK_WOODEN_PANEL_DOOR.get(), modLoc("block/black_wooden_panel_door_bottom"), modLoc("block/black_wooden_panel_door_top"));
         doorBlock(ModBlocks.WOODEN_PANEL_DOOR.get(), modLoc("block/wooden_panel_door_bottom"), modLoc("block/wooden_panel_door_top"));
+        doorBlock(ModBlocks.WOODEN_TILE_DOOR.get(), modLoc("block/wooden_tile_door_bottom"), modLoc("block/wooden_tile_door_top"));
+        doorBlock(ModBlocks.WOODEN_CLEAR_DOOR.get(), modLoc("block/wooden_clear_door_bottom"), modLoc("block/wooden_clear_door_top"));
         doorBlock(ModBlocks.YELLOW_METAL_DOOR.get(), modLoc("block/yellow_metal_door_bottom"), modLoc("block/yellow_metal_door_top"));
         fenceBlock(ModBlocks.CAUTION_BLOCK_FENCE.get(), blockTexture(ModBlocks.CAUTION_BLOCK.get()));
         wallBlock(ModBlocks.CAUTION_BLOCK_WALL.get(), blockTexture(ModBlocks.CAUTION_BLOCK.get()));
@@ -190,7 +203,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         fence_railing(ModBlocks.WHITE_WOOD_RAILING.get());
         fence_railing(ModBlocks.BLACK_WOOD_RAILING.get());
 
-        simpleBlock(ModBlocks.CEILING_LAMP.get(), models().getExistingFile(modLoc("block/ceiling_lamp")));
+        genericLightBlock(ModBlocks.CEILING_LAMP.get());
 
         shelfBlock(ModBlocks.OAK_METAL_SHELF.get(), "smooth_oak_planks");
         shelfBlock(ModBlocks.SPRUCE_METAL_SHELF.get(), "smooth_spruce_planks");
@@ -203,7 +216,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         shelfBlock(ModBlocks.CRIMSON_METAL_SHELF.get(), "smooth_crimson_planks");
         shelfBlock(ModBlocks.BAMBOO_METAL_SHELF.get(), "smooth_bamboo_planks");
         shelfBlock(ModBlocks.MANGROVE_METAL_SHELF.get(), "smooth_mangrove_planks");
-        shelfBlock(ModBlocks.METAL_SHELF.get(), "steel_grate");
+        shelfBlock(ModBlocks.METAL_SHELF.get(), "metal_grate_shelf");
 
         horizontalBlockGen(ModBlocks.WALL_LAMP);
         horizontalBlockGen(ModBlocks.WALL_CLOCK);
@@ -244,11 +257,26 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.DIAGONAL_WHITE_TILES);
         blockWithItem(ModBlocks.WHITE_SHORT_TILES);
         blockWithItem(ModBlocks.CRACKED_WHITE_SHORT_TILES);
+
         blockWithItem(ModBlocks.BLACK_BRICKS);
+        stairsBlock(ModBlocks.BLACK_BRICK_STAIRS.get(), blockTexture(ModBlocks.BLACK_BRICKS.get()));
+        slabBlock(ModBlocks.BLACK_BRICK_SLAB.get(), blockTexture(ModBlocks.BLACK_BRICKS.get()), blockTexture(ModBlocks.BLACK_BRICKS.get()));
+
         blockWithItem(ModBlocks.GRAY_BRICKS);
+        stairsBlock(ModBlocks.GRAY_BRICK_STAIRS.get(), blockTexture(ModBlocks.GRAY_BRICKS.get()));
+        slabBlock(ModBlocks.GRAY_BRICK_SLAB.get(), blockTexture(ModBlocks.GRAY_BRICKS.get()), blockTexture(ModBlocks.GRAY_BRICKS.get()));
+
         blockWithItem(ModBlocks.LIGHT_GRAY_BRICKS);
+        stairsBlock(ModBlocks.LIGHT_GRAY_BRICK_STAIRS.get(), blockTexture(ModBlocks.LIGHT_GRAY_BRICKS.get()));
+        slabBlock(ModBlocks.LIGHT_GRAY_BRICK_SLAB.get(), blockTexture(ModBlocks.LIGHT_GRAY_BRICKS.get()), blockTexture(ModBlocks.LIGHT_GRAY_BRICKS.get()));
+
         blockWithItem(ModBlocks.BLUE_BRICKS);
+        stairsBlock(ModBlocks.BLUE_BRICK_STAIRS.get(), blockTexture(ModBlocks.BLUE_BRICKS.get()));
+        slabBlock(ModBlocks.BLUE_BRICK_SLAB.get(), blockTexture(ModBlocks.BLUE_BRICKS.get()), blockTexture(ModBlocks.BLUE_BRICKS.get()));
+
         blockWithItem(ModBlocks.RED_BRICKS);
+        stairsBlock(ModBlocks.RED_BRICK_STAIRS.get(), blockTexture(ModBlocks.RED_BRICKS.get()));
+        slabBlock(ModBlocks.RED_BRICK_SLAB.get(), blockTexture(ModBlocks.RED_BRICKS.get()), blockTexture(ModBlocks.RED_BRICKS.get()));
 
         blockWithItem(ModBlocks.OAK_PLANKS_STRIPS);
         blockWithItem(ModBlocks.SPRUCE_PLANKS_STRIPS);
@@ -270,16 +298,31 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         industrialLampBlock(ModBlocks.INDUSTRIAL_RED_LAMP.get());
         doorBlockWithRenderType(ModBlocks.BLACK_OFFICE_DOOR.get(), modLoc("block/black_office_door_bottom"), modLoc("block/black_office_door_top"), "cutout");
+        doorBlockWithRenderType(ModBlocks.GREEN_OFFICE_DOOR.get(), modLoc("block/green_office_door_bottom"), modLoc("block/green_office_door_top"), "cutout");
         electricalPanel(ModBlocks.ELECTRICAL_PANEL.get());
         blockWithItem(ModBlocks.BLISTER_TACTILE_PAVING);
         horizontalBlock(ModBlocks.LOZENGE_TACTILE_PAVING.get(), models().cubeAll("lozenge_tactile_paving", modLoc("block/lozenge_tactile_paving")));
         simpleBlockItem(ModBlocks.LOZENGE_TACTILE_PAVING.get(), new ModelFile.UncheckedModelFile(modLoc("block/lozenge_tactile_paving")));
-        ceilingLightBlock(ModBlocks.CEILING_LIGHT.get(), mcLoc("block/crafter_bottom"));
+
+        ceilingLightBlock(ModBlocks.LED_LAMP.get(), mcLoc("block/crafter_bottom"));
+        ceilingLightBlock(ModBlocks.ORANGE_LED_LAMP.get(), mcLoc("block/crafter_bottom"));
+        ceilingLightBlock(ModBlocks.YELLOW_LED_LAMP.get(), mcLoc("block/crafter_bottom"));
+        ceilingLightBlock(ModBlocks.RED_LED_LAMP.get(), mcLoc("block/crafter_bottom"));
+        ceilingLightBlock(ModBlocks.CYAN_LED_LAMP.get(), mcLoc("block/crafter_bottom"));
+        ceilingLightBlock(ModBlocks.BLUE_LED_LAMP.get(), mcLoc("block/crafter_bottom"));
+        ceilingLightBlock(ModBlocks.LIGHT_BLUE_LED_LAMP.get(), mcLoc("block/crafter_bottom"));
+        ceilingLightBlock(ModBlocks.PURPLE_LED_LAMP.get(), mcLoc("block/crafter_bottom"));
+        ceilingLightBlock(ModBlocks.MAGENTA_LED_LAMP.get(), mcLoc("block/crafter_bottom"));
+        ceilingLightBlock(ModBlocks.PINK_LED_LAMP.get(), mcLoc("block/crafter_bottom"));
+        ceilingLightBlock(ModBlocks.LIME_LED_LAMP.get(), mcLoc("block/crafter_bottom"));
+        ceilingLightBlock(ModBlocks.GREEN_LED_LAMP.get(), mcLoc("block/crafter_bottom"));
 
         threeStackableBlock(ModBlocks.GUARANA_CAN.get());
         connectedBlockWithItem(ModBlocks.WHITE_CLEAR_WINDOW_BLOCK.get());
         plushie(ModBlocks.PLUSHIE_WOW.get());
+        plushie(ModBlocks.PLUSHIE_WD.get());
         fourStackableBlock(ModBlocks.JUICE_BOTTLE.get());
+        directionalLightBlock(ModBlocks.LIGHT_BULB.get());
     }
 
     private void connectedBlockWithItem(Block block) {
@@ -433,34 +476,54 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(block, onModel);
     }
 
-    private void ceilingLightBlock(Block block, ResourceLocation top) {
-
-        ResourceLocation textureSideOn = modLoc("block/" + getPath(block) + "_side_on");
-        ResourceLocation textureSideOff = modLoc("block/" + getPath(block) + "_side_off");
-        ResourceLocation textureBottomOn = modLoc("block/" + getPath(block) + "_bottom_on");
-        ResourceLocation textureBottomOff = modLoc("block/" + getPath(block) + "_bottom_off");
-
-        ModelFile onModel = this.models().cubeBottomTop(getPath(block) + "_on", textureSideOn, textureBottomOn, top);
-        ModelFile offModel = this.models().cubeBottomTop(getPath(block) + "_off", textureSideOff, textureBottomOff, top);
-
+    private void directionalLightBlock(Block block, ModelFile onModel, ModelFile offModel) {
         getVariantBuilder(block).forAllStates(state -> {
-            Direction facing = state.getValue(CeilingLightBlock.FACING);
-            AttachFace face = state.getValue(CeilingLightBlock.FACE);
-            Boolean powered = state.getValue(CeilingLightBlock.POWERED);
-
-            int rotX = switch (face) {
-                case FLOOR -> 180;
-                case WALL -> 90;
-                case CEILING -> 0;
-            };
+            Direction facing = state.getValue(LedLampBlock.FACING);
+            Boolean powered = state.getValue(LedLampBlock.POWERED);
 
             return ConfiguredModel.builder()
                     .modelFile(powered?onModel:offModel)
-                    .rotationY((int)(facing.toYRot() + 180) % 360)
-                    .rotationX(rotX)
+                    .rotationX(facing == Direction.DOWN?180:(facing.getAxis().isHorizontal()?90:0))
+                    .rotationY(facing.getAxis().isVertical()?0:(((int)facing.toYRot() + 180) % 360))
                     .build();
         });
 
+        simpleBlockItem(block, onModel);
+    }
+
+    private void directionalLightBlock(Block block) {
+        ModelFile onModel = models().getExistingFile(modLoc("block/" + getPath(block) + "_on"));
+        ModelFile offModel = models().getExistingFile(modLoc("block/" + getPath(block) + "_off"));
+
+        directionalLightBlock(block, onModel, offModel);
+    }
+
+    private void genericLightBlock(Block block) {
+        ModelFile onModel = models().getExistingFile(modLoc("block/" + getPath(block)));
+        ModelFile offModel = models().getExistingFile(modLoc("block/" + getPath(block) + "_off"));
+
+        getVariantBuilder(block).forAllStates(state -> {
+            Boolean powered = state.getValue(GenericLightBlock.POWERED);
+
+            return ConfiguredModel.builder()
+                    .modelFile(powered?onModel:offModel)
+                    .build();
+        });
+
+        simpleBlockItem(block, onModel);
+    }
+
+    private void ceilingLightBlock(Block block, ResourceLocation bottom) {
+
+        ResourceLocation textureSideOn = modLoc("block/" + getPath(block) + "_side_on");
+        ResourceLocation textureSideOff = modLoc("block/led_lamp_side_off");
+        ResourceLocation textureTopOn = modLoc("block/" + getPath(block) + "_top_on");
+        ResourceLocation textureTopOff = modLoc("block/led_lamp_top_off");
+
+        ModelFile onModel = this.models().cubeBottomTop(getPath(block) + "_on", textureSideOn, bottom, textureTopOn);
+        ModelFile offModel = this.models().cubeBottomTop(getPath(block) + "_off", textureSideOff, bottom, textureTopOff);
+
+        directionalLightBlock(block, onModel, offModel);
     }
 
     private void electricalPanel(Block block) {
@@ -816,14 +879,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void fluorescentLight(Block block) {
         simpleBlockItem(block, models().getExistingFile(modLoc("block/fluorescent_light/single")));
+
+        ResourceLocation baseTexture = ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/fluorescent_light");
+        ResourceLocation offTexture = ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/fluorescent_light_off");
+
         getVariantBuilder(block)
                 .forAllStates(state -> {
                     Direction facing = state.getValue(FluorescentLightBlock.FACING);
                     AttachFace face = state.getValue(FluorescentLightBlock.FACE);
                     HorizontalThreeConnectableProperty part = state.getValue(FluorescentLightBlock.PART);
-
-                    ResourceLocation parent = ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/fluorescent_light/" + part.getSerializedName());
-                    ResourceLocation baseTexture = ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, "block/fluorescent_light");
+                    Boolean powered = state.getValue(FluorescentLightBlock.POWERED);
 
                     int rotX = switch (face) {
                         case FLOOR -> 0;
@@ -832,10 +897,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                     };
 
                     return ConfiguredModel.builder()
-                            .modelFile(models().getBuilder(getPath(block) + "_" + part.getSerializedName())
-                                    .parent(models().getExistingFile(parent))
-                                    .texture("0", baseTexture)
-                                    .texture("particle", baseTexture))
+                            .modelFile(models().getExistingFile(IdenDecorMod.rl("block/fluorescent_light/" + part.getSerializedName() + (powered?"":"_off"))))
                             .rotationY(((int) facing.toYRot() + 180) % 360)
                             .rotationX(rotX)
                             .build();

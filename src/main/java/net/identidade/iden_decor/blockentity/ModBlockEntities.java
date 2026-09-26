@@ -37,6 +37,27 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("cubic_shelf_be", () -> BlockEntityType.Builder.of(
                     CubicShelfBlockEntity::new, ModBlocks.WHITE_CUBIC_SHELF.get()).build(null));
 
+    public static final Supplier<BlockEntityType<LightBlockEntity>> LIGHT_BE =
+            BLOCK_ENTITIES.register("light_be", () -> BlockEntityType.Builder.of(
+                    LightBlockEntity::new,
+                    ModBlocks.LED_LAMP.get(),
+                    ModBlocks.INDUSTRIAL_RED_LAMP.get(),
+                    ModBlocks.LIGHT_BULB.get(),
+                    ModBlocks.RED_LED_LAMP.get(),
+                    ModBlocks.ORANGE_LED_LAMP.get(),
+                    ModBlocks.YELLOW_LED_LAMP.get(),
+                    ModBlocks.LIME_LED_LAMP.get(),
+                    ModBlocks.GREEN_LED_LAMP.get(),
+                    ModBlocks.CYAN_LED_LAMP.get(),
+                    ModBlocks.LIGHT_BLUE_LED_LAMP.get(),
+                    ModBlocks.BLUE_LED_LAMP.get(),
+                    ModBlocks.PURPLE_LED_LAMP.get(),
+                    ModBlocks.MAGENTA_LED_LAMP.get(),
+                    ModBlocks.PINK_LED_LAMP.get(),
+                    ModBlocks.FLUORESCENT_LIGHT.get(),
+                    ModBlocks.CEILING_LAMP.get()
+            ).build(null));
+
     public static void register(IEventBus eventBus){
         BLOCK_ENTITIES.register(eventBus);
     }

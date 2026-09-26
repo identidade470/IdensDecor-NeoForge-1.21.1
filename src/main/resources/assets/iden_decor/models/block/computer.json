@@ -1,11 +1,11 @@
 {
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
+	"render_type": "cutout_mipped",
 	"texture_size": [64, 64],
-  "render_type": "cutout_mipped",
 	"textures": {
 		"1": "iden_decor:block/computer",
-        "particle": "iden_decor:block/computer"
+		"particle": "iden_decor:block/computer"
 	},
 	"elements": [
 		{
@@ -51,7 +51,7 @@
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 1, 0]},
 			"faces": {
 				"north": {"uv": [3.5, 0.25, 3.75, 2.25], "texture": "#1"},
-				"east": {"uv": [3.75, 6.25, 3.5, 8.75], "texture": "#1"},
+				"east": {"uv": [3.75, 6.5, 3.5, 8.5], "texture": "#1"},
 				"south": {"uv": [3.5, 2.5, 6.5, 5], "texture": "#1"},
 				"west": {"uv": [3.5, 6.25, 3.75, 8.75], "texture": "#1"},
 				"up": {"uv": [3.75, 5.25, 3.5, 5], "texture": "#1"},
@@ -92,7 +92,7 @@
 				"north": {"uv": [6.25, 0.25, 6.5, 2.25], "texture": "#1"},
 				"east": {"uv": [3.75, 6.25, 3.5, 8.75], "texture": "#1"},
 				"south": {"uv": [3.5, 2.5, 6.5, 5], "texture": "#1"},
-				"west": {"uv": [3.5, 6.25, 3.75, 8.75], "texture": "#1"},
+				"west": {"uv": [3.5, 6.5, 3.75, 8.5], "texture": "#1"},
 				"up": {"uv": [3.75, 5.25, 3.5, 5], "texture": "#1"},
 				"down": {"uv": [3.5, 5.25, 3.75, 5], "texture": "#1"}
 			}

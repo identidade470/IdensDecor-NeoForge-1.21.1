@@ -1,6 +1,8 @@
 package net.identidade.iden_decor.block.custom;
 
+import net.identidade.iden_decor.block.custom.interfaces.IPliersUsable;
 import net.identidade.iden_decor.block.custom.templates.SimpleMultidirectionalBlock;
+import net.identidade.iden_decor.block.custom.templates.light.MultifaceLightBlock;
 import net.identidade.iden_decor.block.properties.HorizontalThreeConnectableProperty;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -17,13 +19,17 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class FluorescentLightBlock extends SimpleMultidirectionalBlock {
+public class FluorescentLightBlock extends MultifaceLightBlock implements IPliersUsable {
 
     public static final EnumProperty<HorizontalThreeConnectableProperty> PART = EnumProperty.create("part", HorizontalThreeConnectableProperty.class);
 
     public FluorescentLightBlock(Properties properties) {
-        super(properties, true);
-        this.registerDefaultState(defaultBlockState().setValue(FACING,Direction.NORTH).setValue(FACE,AttachFace.FLOOR).setValue(PART, HorizontalThreeConnectableProperty.SINGLE));
+        super(properties);
+        this.registerDefaultState(defaultBlockState().
+                setValue(FACING,Direction.NORTH)
+                .setValue(FACE,AttachFace.FLOOR)
+                .setValue(PART, HorizontalThreeConnectableProperty.SINGLE)
+                .setValue(POWERED, false));
     }
 
     @Override

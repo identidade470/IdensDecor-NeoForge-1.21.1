@@ -35,8 +35,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModBlocks.YELLOW_METAL_DOOR.asItem());
         basicItem(ModBlocks.WHITE_METAL_DOOR.asItem());
         basicItem(ModBlocks.WHITE_WOODEN_PANEL_DOOR.asItem());
+        basicItem(ModBlocks.WHITE_WOODEN_CLEAR_DOOR.asItem());
+        basicItem(ModBlocks.WHITE_WOODEN_TILE_DOOR.asItem());
         basicItem(ModBlocks.BLACK_WOODEN_PANEL_DOOR.asItem());
         basicItem(ModBlocks.WOODEN_PANEL_DOOR.asItem());
+        basicItem(ModBlocks.WOODEN_CLEAR_DOOR.asItem());
+        basicItem(ModBlocks.WOODEN_TILE_DOOR.asItem());
+        basicItem(ModBlocks.GREEN_OFFICE_DOOR.asItem());
         basicItem(ModBlocks.CORE_DOOR.asItem());
         basicItem(ModBlocks.HANGING_CLOUD.asItem());
         basicItem(ModBlocks.HANGING_MOON_LIGHT.asItem());

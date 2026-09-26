@@ -20,6 +20,7 @@ public class ModTags {
     public static class Items {
 
         public static final TagKey<Item> URBAN = createTag("urban_tab");
+        public static final TagKey<Item> PLANKS_STRIPS = createTag("planks_strips");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(IdenDecorMod.MOD_ID, name));

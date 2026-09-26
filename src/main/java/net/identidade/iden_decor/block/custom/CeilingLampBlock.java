@@ -1,5 +1,7 @@
 package net.identidade.iden_decor.block.custom;
 
+import net.identidade.iden_decor.block.custom.interfaces.IPliersUsable;
+import net.identidade.iden_decor.block.custom.templates.light.GenericLightBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
@@ -9,7 +11,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class CeilingLampBlock extends Block {
+public class CeilingLampBlock extends GenericLightBlock implements IPliersUsable {
     public CeilingLampBlock(Properties properties) {
         super(properties);
     }

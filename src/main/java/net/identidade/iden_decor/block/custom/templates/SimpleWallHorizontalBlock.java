@@ -41,7 +41,6 @@ public class SimpleWallHorizontalBlock extends SimpleHorizontalBlock {
         BlockState state = this.defaultBlockState();
 
        for (Direction direction: context.getNearestLookingDirections()) {
-           System.out.println(direction.getAxis().isHorizontal());
             if (direction.getAxis().isHorizontal()) {
                 return state = state.setValue(FACING, direction.getOpposite());
             }

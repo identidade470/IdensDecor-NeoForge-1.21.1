@@ -3,13 +3,16 @@ package net.identidade.iden_decor;
 import net.identidade.iden_decor.block.ModBlocks;
 import net.identidade.iden_decor.blockentity.ModBlockEntities;
 import net.identidade.iden_decor.client.gui.ModMenus;
+import net.identidade.iden_decor.component.ModDataComponents;
 import net.identidade.iden_decor.entity.ModEntities;
+import net.identidade.iden_decor.integration.RefurbishedFurnitureCompat;
 import net.identidade.iden_decor.item.ModCreativeModeTab;
 import net.identidade.iden_decor.item.ModItems;
 import net.identidade.iden_decor.recipe.ModRecipes;
 import net.identidade.iden_decor.sound.ModSounds;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.neoforged.fml.ModList;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -52,7 +55,12 @@ public class IdenDecorMod {
         ModBlockEntities.register(modEventBus);
 
         ModRecipes.register(modEventBus);
+        ModDataComponents.register(modEventBus);
 //        ModEntities.register(modEventBus);
+
+        if(ModList.get().isLoaded("refurbished_furniture")) {
+            modEventBus.register(RefurbishedFurnitureCompat.class);
+        }
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

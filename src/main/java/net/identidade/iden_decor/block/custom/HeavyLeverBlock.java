@@ -54,7 +54,7 @@ public class HeavyLeverBlock extends LeverBlock {
         level.updateNeighborsAt(pos.relative(getConnectedDirection(state).getOpposite()), this);
         level.gameEvent(player, (Boolean)state.getValue(POWERED) ? GameEvent.BLOCK_ACTIVATE : GameEvent.BLOCK_DEACTIVATE, pos);
 
-        level.playSound(player, pos, ModSounds.LEVER_USE.get(), SoundSource.BLOCKS);
+        level.playSound(player, pos, SoundEvents.LEVER_CLICK, SoundSource.BLOCKS, .3f, (state.getValue(POWERED)?0.6F : 0.5F));
     }
 
     @Override

@@ -60,6 +60,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.PLUSHIE_DINO.get());
         dropSelf(ModBlocks.PLUSHIE_RED.get());
         dropSelf(ModBlocks.PLUSHIE_RAFA.get());
+        dropSelf(ModBlocks.PLUSHIE_WD.get());
 
         dropSelf(ModBlocks.BLUE_METAL_BARREL.get());
         dropSelf(ModBlocks.METAL_BARREL.get());
@@ -158,7 +159,6 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.CORE_PILLAR_JUNCTION.get());
         dropSelf(ModBlocks.CORE_TILES.get());
         dropSelf(ModBlocks.CORE_PLATES.get());
-        dropSelf(ModBlocks.CORE_DOOR.get());
         dropSelf(ModBlocks.CORE_CONTROL_PANEL.get());
         dropSelf(ModBlocks.CORE_BUTTON_CONTROL_PANEL.get());
         dropSelf(ModBlocks.CORE_LEVER_CONTROL_PANEL.get());
@@ -182,10 +182,20 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.WHITE_CLEAR_WINDOW_BLOCK.get());
         dropSelf(ModBlocks.PLUSHIE_WOW.get());
         dropSelf(ModBlocks.BLACK_BRICKS.get());
+        dropSelf(ModBlocks.BLACK_BRICK_STAIRS.get());
+        dropSelf(ModBlocks.BLACK_BRICK_SLAB.get());
         dropSelf(ModBlocks.GRAY_BRICKS.get());
+        dropSelf(ModBlocks.GRAY_BRICK_STAIRS.get());
+        dropSelf(ModBlocks.GRAY_BRICK_SLAB.get());
         dropSelf(ModBlocks.LIGHT_GRAY_BRICKS.get());
+        dropSelf(ModBlocks.LIGHT_GRAY_BRICK_STAIRS.get());
+        dropSelf(ModBlocks.LIGHT_GRAY_BRICK_SLAB.get());
         dropSelf(ModBlocks.BLUE_BRICKS.get());
+        dropSelf(ModBlocks.BLUE_BRICK_STAIRS.get());
+        dropSelf(ModBlocks.BLUE_BRICK_SLAB.get());
         dropSelf(ModBlocks.RED_BRICKS.get());
+        dropSelf(ModBlocks.RED_BRICK_STAIRS.get());
+        dropSelf(ModBlocks.RED_BRICK_SLAB.get());
         dropSelf(ModBlocks.OAK_PLANKS_STRIPS.get());
         dropSelf(ModBlocks.SPRUCE_PLANKS_STRIPS.get());
         dropSelf(ModBlocks.DARK_OAK_PLANKS_STRIPS.get());
@@ -224,7 +234,21 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.ELECTRICAL_PANEL.get());
         dropSelf(ModBlocks.BLISTER_TACTILE_PAVING.get());
         dropSelf(ModBlocks.LOZENGE_TACTILE_PAVING.get());
-        dropSelf(ModBlocks.CEILING_LIGHT.get());
+
+        dropSelf(ModBlocks.LED_LAMP.get());
+        dropSelf(ModBlocks.RED_LED_LAMP.get());
+        dropSelf(ModBlocks.ORANGE_LED_LAMP.get());
+        dropSelf(ModBlocks.YELLOW_LED_LAMP.get());
+        dropSelf(ModBlocks.LIME_LED_LAMP.get());
+        dropSelf(ModBlocks.GREEN_LED_LAMP.get());
+        dropSelf(ModBlocks.CYAN_LED_LAMP.get());
+        dropSelf(ModBlocks.LIGHT_BLUE_LED_LAMP.get());
+        dropSelf(ModBlocks.BLUE_LED_LAMP.get());
+        dropSelf(ModBlocks.PURPLE_LED_LAMP.get());
+        dropSelf(ModBlocks.MAGENTA_LED_LAMP.get());
+        dropSelf(ModBlocks.PINK_LED_LAMP.get());
+
+        dropSelf(ModBlocks.LIGHT_BULB.get());
 
         ModBlocks.PAINTED_PLANKS_SLABS.values().forEach(block -> {
             add(block.get(), block1 -> createSlabItemTable(block.get()));
@@ -234,16 +258,31 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createDoorTable(ModBlocks.GRID_METAL_DOOR.get()));
         add(ModBlocks.BLACK_OFFICE_DOOR.get(),
                 block -> createDoorTable(ModBlocks.BLACK_OFFICE_DOOR.get()));
+        add(ModBlocks.GREEN_OFFICE_DOOR.get(),
+                block -> createDoorTable(ModBlocks.GREEN_OFFICE_DOOR.get()));
         add(ModBlocks.YELLOW_METAL_DOOR.get(),
                 block -> createDoorTable(ModBlocks.YELLOW_METAL_DOOR.get()));
         add(ModBlocks.WHITE_METAL_DOOR.get(),
                 block -> createDoorTable(ModBlocks.WHITE_METAL_DOOR.get()));
+
         add(ModBlocks.WHITE_WOODEN_PANEL_DOOR.get(),
                 block -> createDoorTable(ModBlocks.WHITE_WOODEN_PANEL_DOOR.get()));
+        add(ModBlocks.WHITE_WOODEN_TILE_DOOR.get(),
+                block -> createDoorTable(ModBlocks.WHITE_WOODEN_TILE_DOOR.get()));
+        add(ModBlocks.WHITE_WOODEN_CLEAR_DOOR.get(),
+                block -> createDoorTable(ModBlocks.WHITE_WOODEN_CLEAR_DOOR.get()));
+
         add(ModBlocks.BLACK_WOODEN_PANEL_DOOR.get(),
                 block -> createDoorTable(ModBlocks.BLACK_WOODEN_PANEL_DOOR.get()));
+
         add(ModBlocks.WOODEN_PANEL_DOOR.get(),
                 block -> createDoorTable(ModBlocks.WHITE_WOODEN_PANEL_DOOR.get()));
+        add(ModBlocks.WOODEN_TILE_DOOR.get(),
+                block -> createDoorTable(ModBlocks.WOODEN_TILE_DOOR.get()));
+        add(ModBlocks.WOODEN_CLEAR_DOOR.get(),
+                block -> createDoorTable(ModBlocks.WOODEN_CLEAR_DOOR.get()));
+        add(ModBlocks.CORE_DOOR.get(),
+                block -> createDoorTable(ModBlocks.CORE_DOOR.get()));
 
 //
 //        dropOther(ModBlocks.FLESH_PLANT.get(), ModItems.RAW_FLESH_PLANT.get());

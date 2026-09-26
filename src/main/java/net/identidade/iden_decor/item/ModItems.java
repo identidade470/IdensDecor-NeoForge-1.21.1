@@ -3,6 +3,7 @@ package net.identidade.iden_decor.item;
 import net.identidade.iden_decor.IdenDecorMod;
 import net.identidade.iden_decor.item.custom.DrinkItem;
 import net.identidade.iden_decor.item.custom.GuaranaCupItem;
+import net.identidade.iden_decor.item.custom.PaintBrushItem;
 import net.identidade.iden_decor.item.custom.PlierItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
@@ -38,6 +39,9 @@ public class ModItems {
 
     public static final DeferredItem<Item> PLIERS = ITEMS.register("pliers",
             () -> new PlierItem(new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<Item> PAINT_BRUSH = ITEMS.register("paint_brush",
+            () -> new PaintBrushItem(new Item.Properties().stacksTo(1)));
 
 //    public static final Map<DyeColor, Supplier<PaintBrushItem>> PAINT_BRUSHES = new HashMap<>();
 //    static {

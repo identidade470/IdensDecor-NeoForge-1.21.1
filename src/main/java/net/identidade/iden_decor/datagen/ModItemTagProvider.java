@@ -6,6 +6,7 @@ import net.identidade.iden_decor.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -35,7 +36,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
         ModBlocks.PAINTED_PLANKS.values().forEach(block -> tag(ItemTags.PLANKS)
                 .add(block.get().asItem()));
 
-
+        ModBlocks.PAINTED_PLANKS.values().forEach(block -> tag(ModTags.Items.PLANKS_STRIPS)
+                .add(block.get().asItem()));
 
         tag(ModTags.Items.URBAN)
                 .add(ModBlocks.CEILING_LAMP.asItem())

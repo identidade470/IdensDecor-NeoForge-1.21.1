@@ -51,11 +51,6 @@ public class GateButtonBlock extends ButtonBlock {
     }
 
     @Override
-    protected void playSound(@Nullable Player player, LevelAccessor level, BlockPos pos, boolean hitByArrow) {
-        level.playSound(player, pos, ModSounds.BUTTON_USE.get(), SoundSource.BLOCKS);
-    }
-
-    @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         boolean pressed = state.getValue(POWERED);
         AttachFace face = state.getValue(FACE);
