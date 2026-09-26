@@ -26,10 +26,11 @@ public class ModTooltips {
         ItemStack stack = event.getItemStack();
 
         ResourceLocation id = BuiltInRegistries.ITEM.getKey(stack.getItem());
+        String namespace = id.getNamespace();
 
-        if (id==null) return;
+        if (id==null || namespace != IdenDecorMod.MOD_ID) return;
 
-        String base = "tooltip." + id.getNamespace() + "." + id.getPath();
+        String base = "tooltip." + namespace + "." + id.getPath();
 
         if (!I18n.exists(base)) return;
 
