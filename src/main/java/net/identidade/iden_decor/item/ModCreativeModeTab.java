@@ -330,6 +330,7 @@ public class ModCreativeModeTab {
                         .add(ModBlocks.HEAVY_BUTTON)
                         .add(ModBlocks.BLAST_LEVER)
                         .add(ModBlocks.ELECTRICAL_PANEL)
+                        .add(ModBlocks.KEYBOARD)
         );
 
         //--------------------------------------------

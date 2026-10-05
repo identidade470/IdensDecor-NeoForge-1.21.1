@@ -323,6 +323,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         plushie(ModBlocks.PLUSHIE_WD.get());
         fourStackableBlock(ModBlocks.JUICE_BOTTLE.get());
         directionalLightBlock(ModBlocks.LIGHT_BULB.get());
+
+        horizontalFaceBlock(ModBlocks.KEYBOARD.get());
+        blockItem(ModBlocks.KEYBOARD);
     }
 
     private void connectedBlockWithItem(Block block) {

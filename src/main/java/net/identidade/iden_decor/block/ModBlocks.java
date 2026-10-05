@@ -608,6 +608,9 @@ public class ModBlocks {
     public static final DeferredBlock<Block> LIGHT_BULB = registerBlock("light_bulb",
             () -> new LightBulbBlock(BlockBehaviour.Properties.of().lightLevel(state -> 15)));
 
+    public static final DeferredBlock<KeyboardBlock> KEYBOARD = registerBlock("keyboard",
+            () -> new KeyboardBlock(BlockSetType.IRON, 20, BlockBehaviour.Properties.of()));
+
     // Planks
     public static final Map<DyeColor, DeferredBlock<Block>> PAINTED_PLANKS = new HashMap<>();
     public static final Map<DyeColor, DeferredBlock<StairBlock>> PAINTED_PLANKS_STAIRS = new HashMap<>();

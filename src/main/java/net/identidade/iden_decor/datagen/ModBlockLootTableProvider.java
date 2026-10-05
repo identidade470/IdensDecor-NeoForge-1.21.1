@@ -248,6 +248,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.MAGENTA_LED_LAMP.get());
         dropSelf(ModBlocks.PINK_LED_LAMP.get());
 
+        dropSelf(ModBlocks.KEYBOARD.get());
+
         dropSelf(ModBlocks.LIGHT_BULB.get());
 
         ModBlocks.PAINTED_PLANKS_SLABS.values().forEach(block -> {
