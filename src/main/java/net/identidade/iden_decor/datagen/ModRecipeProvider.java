@@ -71,6 +71,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTH_STONE_TILES, ModBlocks.SMOOTH_STONE_BRICKS);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTH_STONE_TILES_STAIRS, ModBlocks.SMOOTH_STONE_TILES);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMOOTH_STONE_TILES_SLAB, ModBlocks.SMOOTH_STONE_TILES, 2);
+        
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIAGONAL_SMOOTH_STONE_TILES, Blocks.SMOOTH_STONE);
 
         stairBuilder(ModBlocks.SMOOTH_STONE_TILES_STAIRS.get(), Ingredient.of(ModBlocks.SMOOTH_STONE_TILES)).group("stone_tiles")
                 .unlockedBy("has_stone_tiles", has(ModBlocks.SMOOTH_STONE_TILES.asItem())).save(recipeOutput);
@@ -96,6 +98,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('A', Items.WHITE_DYE)
                 .unlockedBy("has_stone_tiles", has(ModBlocks.SMOOTH_STONE_TILES.asItem())).save(recipeOutput);
 
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIAGONAL_WHITE_TILES, ModBlocks.WHITE_TILES.get());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHITE_SHORT_TILES, ModBlocks.WHITE_TILES.get());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRAKED_WHITE_SHORT_TILES, ModBlocks.WHITE_TILES.get());
+
         stairBuilder(ModBlocks.WHITE_TILES_STAIRS.get(), Ingredient.of(ModBlocks.WHITE_TILES)).group("white_tiles")
                 .unlockedBy("has_stone_tiles", has(ModBlocks.WHITE_TILES.asItem())).save(recipeOutput);
 
@@ -116,6 +122,78 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHITE_BRICKS_SLAB.get(), ModBlocks.WHITE_BRICKS.get());
 
+
+        // BLACK BRICKS
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLACK_BRICKS.get(), 8)
+                .pattern("BBB")
+                .pattern("BAB")
+                .pattern("BBB")
+                .define('B', Blocks.BRICKS)
+                .define('A', Items.BLACK_DYE)
+                .unlockedBy("has_bricks", has(Blocks.BRICKS.asItem())).save(recipeOutput);
+
+        stairBuilder(ModBlocks.BLACK_BRICKS_STAIRS.get(), Ingredient.of(ModBlocks.BLACK_BRICKS)).group("black_bricks")
+                .unlockedBy("has_black_bricks", has(ModBlocks.BLACK_BRICKS.asItem())).save(recipeOutput);
+
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLACK_BRICKS_SLAB.get(), ModBlocks.BLACK_BRICKS.get());
+
+        // GRAY BRICKS
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRAY_BRICKS.get(), 8)
+                .pattern("BBB")
+                .pattern("BAB")
+                .pattern("BBB")
+                .define('B', Blocks.BRICKS)
+                .define('A', Items.GRAY_DYE)
+                .unlockedBy("has_bricks", has(Blocks.BRICKS.asItem())).save(recipeOutput);
+
+        stairBuilder(ModBlocks.GRAY_BRICKS_STAIRS.get(), Ingredient.of(ModBlocks.GRAY_BRICKS)).group("gray_bricks")
+                .unlockedBy("has_gray_bricks", has(ModBlocks.GRAY_BRICKS.asItem())).save(recipeOutput);
+
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRAY_BRICKS_SLAB.get(), ModBlocks.GRAY_BRICKS.get());
+
+        // LIGHT GRAY BRICKS
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_GRAY_BRICKS.get(), 8)
+                .pattern("BBB")
+                .pattern("BAB")
+                .pattern("BBB")
+                .define('B', Blocks.BRICKS)
+                .define('A', Items.LIGHT_GRAY_DYE)
+                .unlockedBy("has_bricks", has(Blocks.BRICKS.asItem())).save(recipeOutput);
+
+        stairBuilder(ModBlocks.LIGHT_GRAY_BRICKS_STAIRS.get(), Ingredient.of(ModBlocks.LIGHT_GRAY_BRICKS)).group("light_gray_bricks")
+                .unlockedBy("has_light_gray_bricks", has(ModBlocks.LIGHT_GRAY_BRICKS.asItem())).save(recipeOutput);
+
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_GRAY_BRICKS_SLAB.get(), ModBlocks.LIGHT_GRAY_BRICKS.get());
+
+        // BLUE BRICKS
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_BRICKS.get(), 8)
+                .pattern("BBB")
+                .pattern("BAB")
+                .pattern("BBB")
+                .define('B', Blocks.BRICKS)
+                .define('A', Items.WHITE_DYE)
+                .unlockedBy("has_bricks", has(Blocks.BRICKS.asItem())).save(recipeOutput);
+
+        stairBuilder(ModBlocks.BLUE_BRICKS_STAIRS.get(), Ingredient.of(ModBlocks.BLUE_BRICKS)).group("blue_bricks")
+                .unlockedBy("has_blue_bricks", has(ModBlocks.BLUE_BRICKS.asItem())).save(recipeOutput);
+
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_BRICKS_SLAB.get(), ModBlocks.BLUE_BRICKS.get());
+
+        //RED BRICKS
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_BRICKS.get(), 8)
+                .pattern("BBB")
+                .pattern("BAB")
+                .pattern("BBB")
+                .define('B', Blocks.BRICKS)
+                .define('A', Items.WHITE_DYE)
+                .unlockedBy("has_bricks", has(Blocks.BRICKS.asItem())).save(recipeOutput);
+
+        stairBuilder(ModBlocks.RED_BRICKS_STAIRS.get(), Ingredient.of(ModBlocks.RED_BRICKS)).group("red_bricks")
+                .unlockedBy("has_red_bricks", has(ModBlocks.RED_BRICKS.asItem())).save(recipeOutput);
+
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_BRICKS_SLAB.get(), ModBlocks.RED_BRICKS.get());
+        
+
         // Iron Block
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.IRON_SHEET_METAL.get(), Blocks.IRON_BLOCK, 32);
 
@@ -124,6 +202,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CAUTION_BLOCK_STAIRS.get(), ModBlocks.CAUTION_BLOCK.get());
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CAUTION_BLOCK_SLAB.get(), Blocks.IRON_BLOCK, 64);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CAUTION_BLOCK_SLAB.get(), ModBlocks.CAUTION_BLOCK.get(), 2);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CAUTION_FLOOR.get(), ModBlocks.CAUTION_BLOCK.get());
         stairBuilder(ModBlocks.CAUTION_BLOCK_STAIRS.get(), Ingredient.of(ModBlocks.CAUTION_BLOCK)).group("caution_blocks")
                         .unlockedBy("has_caution_block", has(ModBlocks.CAUTION_BLOCK.get())).save(recipeOutput);
         slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CAUTION_BLOCK_SLAB.get(), ModBlocks.CAUTION_BLOCK.get());
@@ -164,6 +243,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         stonecutterResultFromBase(recipeOutput, RecipeCategory.DECORATIONS, ModBlocks.PLUSHIE_RED.get(), Blocks.WHITE_WOOL);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.DECORATIONS, ModBlocks.PLUSHIE_DINO.get(), Blocks.WHITE_WOOL);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.DECORATIONS, ModBlocks.PLUSHIE_DOLI.get(), Blocks.WHITE_WOOL);
+        
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.DECORATIONS, ModBlocks.PLUSHIE_WOW.get(), Blocks.WHITE_WOOL);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.DECORATIONS, ModBlocks.PLUSHIE_WD.get(), Blocks.WHITE_WOOL);
 
         // Fluorescent Light
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.FLUORESCENT_LIGHT.get())
@@ -267,6 +349,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.POWER_SWITCH.get(), Blocks.LEVER);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.LIGHT_SWITCH.get(), Blocks.LEVER);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.VALVE_SWITCH.get(), Blocks.LEVER);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.BLAST_LEVER.get(), Blocks.LEVER);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.ELECTRICAL_PANEL.get(), Blocks.LEVER);
 
         stonecutterResultFromBase(recipeOutput, RecipeCategory.DECORATIONS, ModBlocks.HANGING_CLOUD.get(), Blocks.CHAIN);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.DECORATIONS, ModBlocks.HANGING_MOON_LIGHT.get(), Blocks.CHAIN);
@@ -279,12 +363,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_CLOUDS_WALLPAPER, Blocks.STRIPPED_SPRUCE_LOG, 4);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_DIAMOND_WALLPAPER, Blocks.STRIPPED_SPRUCE_LOG, 4);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.YELLOW_ARROW_WALLPAPER, Blocks.STRIPPED_SPRUCE_LOG, 4);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CYAN_ARROW_WALLPAPER, Blocks.STRIPPED_SPRUCE_LOG, 4);
 
         stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.WALL_LAMP, Blocks.REDSTONE_LAMP);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.CEILING_LAMP, Blocks.REDSTONE_LAMP);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, ModBlocks.WHITE_WOODEN_PANEL_DOOR.get())
                 .requires(Tags.Items.DYES_WHITE)
+                .requires(ModBlocks.WOODEN_PANEL_DOOR.asItem())
+                .unlockedBy("has_door", has(ItemTags.DOORS))
+                .save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, ModBlocks.BLACK_WOODEN_PANEL_DOOR.get())
+                .requires(Tags.Items.DYES_BLACK)
                 .requires(ModBlocks.WOODEN_PANEL_DOOR.asItem())
                 .unlockedBy("has_door", has(ItemTags.DOORS))
                 .save(recipeOutput);
@@ -377,6 +467,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_planks", has(ItemTags.PLANKS))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.BLACK_WOOD_RAILING.get(), 3)
+                .pattern("   ")
+                .pattern("ABA")
+                .pattern("ABA")
+                .define('A', ModBlocks.PAINTED_PLANKS.get(DyeColor.BLACK).get())
+                .define('B', Items.STICK)
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+
         // Telephone
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.TELEPHONE_ITEM.get())
                 .pattern("AAA")
@@ -416,6 +515,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         stonecutterResultFromBase(recipeOutput, RecipeCategory.DECORATIONS,ModBlocks.GRID_METAL_DOOR.asItem(), Items.IRON_DOOR);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.DECORATIONS,ModBlocks.YELLOW_METAL_DOOR.asItem(), Items.IRON_DOOR);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.DECORATIONS,ModBlocks.WHITE_METAL_DOOR.asItem(), Items.IRON_DOOR);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.DECORATIONS,ModBlocks.BLACK_OFFICE_DOOR.asItem(), Items.IRON_DOOR);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.DECORATIONS,ModBlocks.GREEN_OFFICE_DOOR.asItem(), Items.IRON_DOOR);
 
         // Others
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.DRINKING_FOUNTAIN.asItem())
@@ -460,6 +561,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('A', Items.SUGAR)
                 .define('B', Items.SUGAR_CANE)
                 .define('C', Items.GLASS_BOTTLE)
+                .unlockedBy("has_glass_bottle", has(Items.GLASS_BOTTLE))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.GUARANA_CAN.asItem())
+                .pattern(" A ")
+                .pattern(" B ")
+                .pattern(" A ")
+                .define('B', Items.SUGAR)
+                .define('A', Items.IRON_NUGGET)
                 .unlockedBy("has_glass_bottle", has(Items.GLASS_BOTTLE))
                 .save(recipeOutput);
 
@@ -600,8 +710,242 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('B', Blocks.BIRCH_PLANKS.asItem())
                 .unlockedBy("has_planks", has(ItemTags.PLANKS))
                 .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CORE_BATTERY.get())
+                .pattern(" B ")
+                .pattern(" A ")
+                .pattern(" B ")
+                .define('A', Items.REDSTONE)
+                .define('B', Items.IRON_INGOT)
+                .unlockedBy("has_iron", has(Items.IRON_INGOT))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.BATTERY_CELL.asItem())
+                .pattern(" B ")
+                .pattern(" A ")
+                .pattern(" B ")
+                .define('A', ModItems.CORE_BATTERY.get())
+                .define('B', ModBlocks.CORE_PLATES.asItem())
+                .unlockedBy("has_core_plates", has(ModBlocks.CORE_PLATES.asItem()))
+                .save(recipeOutput);
+        
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS,ModBlocks.CORE_PLATES.asItem(), Items.IRON_BLOCK, 32);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CORE_PILLAR.asItem(), ModBlocks.CORE_PLATES.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CORE_PILLAR_JUNCTION.asItem(), ModBlocks.CORE_PLATES.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ENERGIZED_CORE_PLATES.asItem(), ModBlocks.CORE_PLATES.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CORE_TILES.asItem(), ModBlocks.CORE_PLATES.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIAGONAL_CORE_TILES.asItem(), ModBlocks.CORE_PLATES.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CORE_CONTROL_PANEL.asItem(), ModBlocks.CORE_PLATES.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CORE_BUTTON_CONTROL_PANEL.asItem(), ModBlocks.CORE_PLATES.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CORE_LEVER_CONTROL_PANEL.asItem(), ModBlocks.CORE_PLATES.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CORE_CONTROL_PANEL_SCREEN.asItem(), ModBlocks.CORE_PLATES.asItem());
+        
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CORE_DOOR.asItem())
+                .pattern("AA ")
+                .pattern("AA ")
+                .pattern("AA ")
+                .define('A', ModBlocks.CORE_PLATES.asItem())
+                .unlockedBy("has_core_plates", has(ModBlocks.CORE_PLATES.asItem()))
+                .save(recipeOutput);
 
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WALL_NOTES.asItem(), Items.PAPER);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.JUICE_BOTTLE.asItem(), Items.PAPER);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLDEN_MEDAL.asItem(), Items.GOLD_INGOT);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SILVER_MEDAL.asItem(), Items.IRON_INGOT);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COPPER_MEDAL.asItem(), Items.COPPER_INGOT);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CORE_DOOR.asItem())
+                .pattern(" A ")
+                .pattern("ABA")
+                .pattern(" A ")
+                .define('A', Items.IRON_INGOT)
+                .define('B', Items.CLOCK)
+                .unlockedBy("has_clock", has(Items.CLOCK))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHEEL_TIRE.asItem())
+                .pattern(" A ")
+                .pattern("A A")
+                .pattern(" A ")
+                .define('A', Items.KELP)
+                .unlockedBy("has_kelp", has(Items.KELP))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHEEL.asItem())
+                .pattern(" A ")
+                .pattern("ABA")
+                .pattern(" A ")
+                .define('A', Items.KELP)
+                .define('A', Items.IRON_INGOT)
+                .unlockedBy("has_kelp", has(Items.KELP))
+                .save(recipeOutput);
+
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.IRON_LATTICE.asItem(), Items.IRON_INGOT, 2);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLDEN_LATTICE.asItem(), Items.GOLD_INGOT, 2);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COPPER_LATTICE.asItem(), Items.COPPER_LATTICE, 2);
+        
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.METAL_TABLE.asItem(), Items.IRON_INGOT);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SEWING_MACHINE.asItem(), Items.IRON_INGOT);
+
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.OAK_PLANKS_STRIPS.asItem(), Blocks.OAK_PLANKS.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DARK_OAK_PLANKS_STRIPS.asItem(), Blocks.DARK_OAK_PLANKS.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ACACIA_PLANKS_STRIPS.asItem(), Blocks.ACACIA_PLANKS.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.JUNGLE_PLANKS_STRIPS.asItem(), Blocks.JUNGLE_PLANKS.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BIRCH_PLANKS_STRIPS.asItem(), Blocks.BIRCH_PLANKS.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MANGROVE_PLANKS_STRIPS.asItem(), Blocks.MANGROVE_PLANKS.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHERRY_PLANKS_STRIPS.asItem(), Blocks.CHERRY_PLANKS.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SPRUCE_PLANKS_STRIPS.asItem(), Blocks.SPRUCE_PLANKS.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WARPED_PLANKS_STRIPS.asItem(), Blocks.WARPED_PLANKS.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRIMSON_PLANKS_STRIPS.asItem(), Blocks.CRIMSON_PLANKS.asItem());
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, ModBlocks.WHITE_CUBIC_SHELF.get())
+                .requires(ModBlocks.PAINTED_PLANKS.get(DyeColor.WHITE).get())
+                .unlockedBy("has_whited_planks", has(ModBlocks.PAINTED_PLANKS.get(DyeColor.WHITE).get()))
+                .save(recipeOutput);
+
+        //LIGHTS
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LED_LAMP.asItem())
+                .pattern("AAA")
+                .pattern("ACA")
+                .pattern("BBB")
+                .define('A', Blocks.COBBLESTONE.asItem())
+                .define('B', Blocks.GLASS_PANE.asItem())
+                .define('C', Blocks.REDSTONE_LAMP.asItem())
+                .unlockedBy("has_redstone_lamp", has(Blocks.REDSTONE_LAMP.asItem()))
+                .save(recipeOutput);
+
+            ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_LED_LAMP.asItem())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', ModBlocks.LED_LAMP.asItem())
+                .define('B', Items.RED_DYE)
+                .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
+                .save(recipeOutput);
+
+            ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ORANGE_LED_LAMP.asItem())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', ModBlocks.LED_LAMP.asItem())
+                .define('B', Items.ORANGE_DYE)
+                .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
+                .save(recipeOutput);
+
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.YELLOW_LED_LAMP.asItem())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', ModBlocks.LED_LAMP.asItem())
+                .define('B', Items.YELLOW_DYE)
+                .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
+                .save(recipeOutput);
+
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIME_LED_LAMP.asItem())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', ModBlocks.LED_LAMP.asItem())
+                .define('B', Items.LIME_DYE)
+                .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
+                .save(recipeOutput);
+
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GREEN_LED_LAMP.asItem())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', ModBlocks.LED_LAMP.asItem())
+                .define('B', Items.GREEN_DYE)
+                .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
+                .save(recipeOutput);
+
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CYAN_LED_LAMP.asItem())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', ModBlocks.LED_LAMP.asItem())
+                .define('B', Items.CYAN_DYE)
+                .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
+                .save(recipeOutput);
+
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_BLUE_LED_LAMP.asItem())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', ModBlocks.LED_LAMP.asItem())
+                .define('B', Items.LIGHT_BLUE_DYE)
+                .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
+                .save(recipeOutput);
+
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_LED_LAMP.asItem())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', ModBlocks.LED_LAMP.asItem())
+                .define('B', Items.BLUE_DYE)
+                .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
+                .save(recipeOutput);
+
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PURPLE_LED_LAMP.asItem())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', ModBlocks.LED_LAMP.asItem())
+                .define('B', Items.PURPLE_DYE)
+                .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
+                .save(recipeOutput);
+
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MAGENTA_LED_LAMP.asItem())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', ModBlocks.LED_LAMP.asItem())
+                .define('B', Items.MAGENTA_DYE)
+                .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
+                .save(recipeOutput);
+
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PINK_LED_LAMP.asItem())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', ModBlocks.LED_LAMP.asItem())
+                .define('B', Items.PINK_DYE)
+                .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
+                .save(recipeOutput);
+        
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_BULB.asItem(), ModBlocks.LED_LAMP.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.INDUSTRIAL_RED_LAMP.asItem(), ModBlocks.LED_LAMP.asItem());
+
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_SLIM_GAS_CYLINDER.asItem(), Items.IRON_INGOT);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_GAS_CYLINDER.asItem(), Items.IRON_INGOT);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_WIDE_GAS_CYLINDER.asItem(), Items.IRON_INGOT);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOZENGE_TACTILE_PAVING.asItem(), 6)
+                .pattern("A A")
+                .pattern("ABA")
+                .pattern("A A")
+                .define('A', Items.YELLOW_DYE)
+                .define('B', Blocks.SMOOTH_STONE.asItem())
+                .unlockedBy("has_smooth_stone", has(Blocks.SMOOTH_STONE))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLISTER_TACTILE_PAVING.asItem(), 4)
+                .pattern("A A")
+                .pattern(" B ")
+                .pattern("A A")
+                .define('A', Items.YELLOW_DYE)
+                .define('B', Blocks.SMOOTH_STONE.asItem())
+                .unlockedBy("has_smooth_stone", has(Blocks.SMOOTH_STONE))
+                .save(recipeOutput);
+
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.PLIERS.get(), 4)
+                .pattern("A A")
+                .pattern("BAB")
+                .pattern("C C")
+                .define('A', Items.IRON_NUGGET)
+                .define('B', Items.IRON_INGOT)
+                .define('C', Items.ORANGE_DYE)
+                .unlockedBy("has_iron", has(Items.IRON_INGOT))
+                .save(recipeOutput);
 //
 //        fenceBuilder(ModBlocks.BLOODY_FENCE.get(), Ingredient.of(ModBlocks.BLOODY_PLANKS)).group("bloody_planks")
 //                .unlockedBy("has_bloody_planks", has(ModBlocks.BLOODY_PLANKS)).save(recipeOutput);
