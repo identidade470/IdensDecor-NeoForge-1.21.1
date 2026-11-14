@@ -1,5 +1,6 @@
 package net.identidade.iden_decor.block.custom.templates;
 
+import net.identidade.screwlib.block.SimpleHorizontalBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;

@@ -1,7 +1,7 @@
 package net.identidade.iden_decor.block.custom;
 
-import net.identidade.iden_decor.block.custom.templates.SimpleHorizontalBlock;
 import net.identidade.iden_decor.item.ModItems;
+import net.identidade.screwlib.block.SimpleHorizontalBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;

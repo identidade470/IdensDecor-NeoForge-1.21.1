@@ -351,6 +351,7 @@
   "tooltip.iden_decor.pink_led_lamp": "Configurable with §6Pliers",
   "tooltip.iden_decor.industrial_red_lamp": "Configurable with §6Pliers",
   "tooltip.iden_decor.light_bulb": "Configurable with §6Pliers",
+  "tooltip.iden_decor.fluorescent_light": "Configurable with §6Pliers",
   "tooltip.iden_decor.electrical_panel": "Shift + Click to open",
 
   "iden_decor.messages.keycard_assign": "Assigned [ %s ] to Keycard Reader",
@@ -369,11 +370,6 @@
   "iden_decor.messages.activation_mode.1": "Toggle Condition set to §cRedstone",
   "iden_decor.messages.activation_mode.2": "Toggle Condition set to §cRefurbished Energy",
 
-  "examplemod.configuration.title": "Example Mod Configs",
-  "examplemod.configuration.section.examplemod.common.toml": "Example Mod Configs",
-  "examplemod.configuration.section.examplemod.common.toml.title": "Example Mod Configs",
-  "examplemod.configuration.items": "Item List",
-  "examplemod.configuration.logDirtBlock": "Log Dirt Block",
-  "examplemod.configuration.magicNumberIntroduction": "Magic Number Text",
-  "examplemod.configuration.magicNumber": "Magic Number"
+  "iden_decor.configuration.pliers_usable": "Pliers Usable",
+  "iden_decor.configuration.default_light_mode": "Default Light Mode"
 }

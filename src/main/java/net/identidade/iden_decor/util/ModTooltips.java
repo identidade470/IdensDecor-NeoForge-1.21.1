@@ -1,5 +1,6 @@
 package net.identidade.iden_decor.util;
 
+import net.identidade.iden_decor.Config;
 import net.identidade.iden_decor.IdenDecorMod;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.resources.language.I18n;
@@ -20,6 +21,15 @@ import java.util.List;
 )
 public class ModTooltips {
 
+    private static final List<String> PLIERS_ITEMS = List.of(
+            "purple_led_lamp",
+            "magenta_led_lamp",
+            "pink_led_lamp",
+            "industrial_red_lamp",
+            "light_bulb",
+            "fluorescent_light"
+    );
+
     @SubscribeEvent
     public static void onTooltip(ItemTooltipEvent event) {
         List<Component> tooltip = event.getToolTip();
@@ -31,6 +41,8 @@ public class ModTooltips {
         if (id==null || namespace != IdenDecorMod.MOD_ID) return;
 
         String base = "tooltip." + namespace + "." + id.getPath();
+
+        if (PLIERS_ITEMS.contains(id.getPath()) && !Config.PLIERS_USABLE.get()) return;
 
         if (!I18n.exists(base)) return;
 

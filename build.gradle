@@ -146,6 +146,8 @@ dependencies {
     localRuntime "curse.maven:furniture_refurbished-897116:7473565"
     localRuntime "curse.maven:framework-549225:7530361"
 
+    implementation "curse.maven:screwlib-1784005:9438936"
+
     // We add the full version to localRuntime, not runtimeOnly, so that we do not publish a dependency on it
     localRuntime "mezz.jei:jei-1.21.1-neoforge:19.27.0.340"
     implementation "maven.modrinth:fusion-connected-textures:1.2.12-neoforge-mc1.21.1"

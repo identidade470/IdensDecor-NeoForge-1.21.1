@@ -2,6 +2,7 @@ package net.identidade.iden_decor.block.custom.templates;
 
 import net.identidade.iden_decor.block.properties.HorizontalConnectableProperty;
 import net.identidade.iden_decor.util.ModTags;
+import net.identidade.screwlib.block.SimpleHorizontalBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;

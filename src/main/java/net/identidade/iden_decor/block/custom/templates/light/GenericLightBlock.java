@@ -1,14 +1,18 @@
 package net.identidade.iden_decor.block.custom.templates.light;
 
+import net.identidade.iden_decor.Config;
 import net.identidade.iden_decor.blockentity.LightBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.LightBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -66,6 +70,17 @@ public class GenericLightBlock extends Block implements EntityBlock {
         }
 
         return super.useWithoutItem(state, level, pos, player, hitResult);
+    }
+
+    @Override
+    public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+        BlockEntity be = level.getBlockEntity(pos);
+        if (be instanceof LightBlockEntity blockEntity) {
+            if (!level.isClientSide) {
+                blockEntity.setActivationMode(Config.DEFAULT_LIGHT_MODE.get().getKey());
+            }
+        }
+        super.setPlacedBy(level, pos, state, placer, stack);
     }
 
     @Override

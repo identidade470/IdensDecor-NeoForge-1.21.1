@@ -1,5 +1,6 @@
 package net.identidade.iden_decor.block.custom.interfaces;
 
+import net.identidade.iden_decor.Config;
 import net.identidade.iden_decor.block.custom.templates.light.GenericLightBlock;
 import net.identidade.iden_decor.block.custom.templates.light.MultifaceLightBlock;
 import net.identidade.iden_decor.blockentity.LightBlockEntity;
@@ -16,6 +17,11 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public interface IPliersUsable {
     default InteractionResult onPliers(BlockState state, UseOnContext context) {
+
+        if (!Config.PLIERS_USABLE.get()) {
+            return InteractionResult.PASS;
+        }
+
         Level level = context.getLevel();
         Player player = context.getPlayer();
         BlockPos pos = context.getClickedPos();

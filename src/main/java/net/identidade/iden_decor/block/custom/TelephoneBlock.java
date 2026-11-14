@@ -1,8 +1,8 @@
 package net.identidade.iden_decor.block.custom;
 
-import net.identidade.iden_decor.block.custom.templates.SimpleHorizontalBlock;
 import net.identidade.iden_decor.item.ModItems;
 import net.identidade.iden_decor.sound.ModSounds;
+import net.identidade.screwlib.block.SimpleHorizontalBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;

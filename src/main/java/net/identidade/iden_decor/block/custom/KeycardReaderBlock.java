@@ -1,7 +1,6 @@
 package net.identidade.iden_decor.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import net.identidade.iden_decor.block.custom.templates.SimpleHorizontalBlock;
 import net.identidade.iden_decor.blockentity.KeycardReaderBlockEntity;
 import net.identidade.iden_decor.item.ModItems;
 import net.identidade.iden_decor.sound.ModSounds;
@@ -9,7 +8,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
