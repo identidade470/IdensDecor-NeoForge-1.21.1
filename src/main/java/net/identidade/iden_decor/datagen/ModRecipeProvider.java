@@ -100,7 +100,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIAGONAL_WHITE_TILES, ModBlocks.WHITE_TILES.get());
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHITE_SHORT_TILES, ModBlocks.WHITE_TILES.get());
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRAKED_WHITE_SHORT_TILES, ModBlocks.WHITE_TILES.get());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_WHITE_SHORT_TILES, ModBlocks.WHITE_TILES.get());
 
         stairBuilder(ModBlocks.WHITE_TILES_STAIRS.get(), Ingredient.of(ModBlocks.WHITE_TILES)).group("white_tiles")
                 .unlockedBy("has_stone_tiles", has(ModBlocks.WHITE_TILES.asItem())).save(recipeOutput);
@@ -132,10 +132,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('A', Items.BLACK_DYE)
                 .unlockedBy("has_bricks", has(Blocks.BRICKS.asItem())).save(recipeOutput);
 
-        stairBuilder(ModBlocks.BLACK_BRICKS_STAIRS.get(), Ingredient.of(ModBlocks.BLACK_BRICKS)).group("black_bricks")
+        stairBuilder(ModBlocks.BLACK_BRICK_STAIRS.get(), Ingredient.of(ModBlocks.BLACK_BRICKS)).group("black_bricks")
                 .unlockedBy("has_black_bricks", has(ModBlocks.BLACK_BRICKS.asItem())).save(recipeOutput);
 
-        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLACK_BRICKS_SLAB.get(), ModBlocks.BLACK_BRICKS.get());
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLACK_BRICK_SLAB.get(), ModBlocks.BLACK_BRICKS.get());
 
         // GRAY BRICKS
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRAY_BRICKS.get(), 8)
@@ -146,10 +146,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('A', Items.GRAY_DYE)
                 .unlockedBy("has_bricks", has(Blocks.BRICKS.asItem())).save(recipeOutput);
 
-        stairBuilder(ModBlocks.GRAY_BRICKS_STAIRS.get(), Ingredient.of(ModBlocks.GRAY_BRICKS)).group("gray_bricks")
+        stairBuilder(ModBlocks.GRAY_BRICK_STAIRS.get(), Ingredient.of(ModBlocks.GRAY_BRICKS)).group("gray_bricks")
                 .unlockedBy("has_gray_bricks", has(ModBlocks.GRAY_BRICKS.asItem())).save(recipeOutput);
 
-        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRAY_BRICKS_SLAB.get(), ModBlocks.GRAY_BRICKS.get());
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRAY_BRICK_SLAB.get(), ModBlocks.GRAY_BRICKS.get());
 
         // LIGHT GRAY BRICKS
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_GRAY_BRICKS.get(), 8)
@@ -160,10 +160,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('A', Items.LIGHT_GRAY_DYE)
                 .unlockedBy("has_bricks", has(Blocks.BRICKS.asItem())).save(recipeOutput);
 
-        stairBuilder(ModBlocks.LIGHT_GRAY_BRICKS_STAIRS.get(), Ingredient.of(ModBlocks.LIGHT_GRAY_BRICKS)).group("light_gray_bricks")
+        stairBuilder(ModBlocks.LIGHT_GRAY_BRICK_STAIRS.get(), Ingredient.of(ModBlocks.LIGHT_GRAY_BRICKS)).group("light_gray_bricks")
                 .unlockedBy("has_light_gray_bricks", has(ModBlocks.LIGHT_GRAY_BRICKS.asItem())).save(recipeOutput);
 
-        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_GRAY_BRICKS_SLAB.get(), ModBlocks.LIGHT_GRAY_BRICKS.get());
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_GRAY_BRICK_SLAB.get(), ModBlocks.LIGHT_GRAY_BRICKS.get());
 
         // BLUE BRICKS
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_BRICKS.get(), 8)
@@ -171,13 +171,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("BAB")
                 .pattern("BBB")
                 .define('B', Blocks.BRICKS)
-                .define('A', Items.WHITE_DYE)
+                .define('A', Items.BLUE_DYE)
                 .unlockedBy("has_bricks", has(Blocks.BRICKS.asItem())).save(recipeOutput);
 
-        stairBuilder(ModBlocks.BLUE_BRICKS_STAIRS.get(), Ingredient.of(ModBlocks.BLUE_BRICKS)).group("blue_bricks")
+        stairBuilder(ModBlocks.BLUE_BRICK_STAIRS.get(), Ingredient.of(ModBlocks.BLUE_BRICKS)).group("blue_bricks")
                 .unlockedBy("has_blue_bricks", has(ModBlocks.BLUE_BRICKS.asItem())).save(recipeOutput);
 
-        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_BRICKS_SLAB.get(), ModBlocks.BLUE_BRICKS.get());
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_BRICK_SLAB.get(), ModBlocks.BLUE_BRICKS.get());
 
         //RED BRICKS
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_BRICKS.get(), 8)
@@ -188,10 +188,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('A', Items.WHITE_DYE)
                 .unlockedBy("has_bricks", has(Blocks.BRICKS.asItem())).save(recipeOutput);
 
-        stairBuilder(ModBlocks.RED_BRICKS_STAIRS.get(), Ingredient.of(ModBlocks.RED_BRICKS)).group("red_bricks")
+        stairBuilder(ModBlocks.RED_BRICK_STAIRS.get(), Ingredient.of(ModBlocks.RED_BRICKS)).group("red_bricks")
                 .unlockedBy("has_red_bricks", has(ModBlocks.RED_BRICKS.asItem())).save(recipeOutput);
 
-        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_BRICKS_SLAB.get(), ModBlocks.RED_BRICKS.get());
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_BRICK_SLAB.get(), ModBlocks.RED_BRICKS.get());
         
 
         // Iron Block
@@ -246,16 +246,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         
         stonecutterResultFromBase(recipeOutput, RecipeCategory.DECORATIONS, ModBlocks.PLUSHIE_WOW.get(), Blocks.WHITE_WOOL);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.DECORATIONS, ModBlocks.PLUSHIE_WD.get(), Blocks.WHITE_WOOL);
-
-        // Fluorescent Light
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.FLUORESCENT_LIGHT.get())
-                .pattern("AAA")
-                .pattern("BCB")
-                .define('A', Items.IRON_INGOT)
-                .define('B', Blocks.GLASS)
-                .define('C', Blocks.REDSTONE_LAMP)
-                .unlockedBy("has_iron", has(Items.IRON_INGOT))
-                .save(recipeOutput);
 
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.FLOODLIGHT.asItem())
@@ -351,9 +341,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.VALVE_SWITCH.get(), Blocks.LEVER);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.BLAST_LEVER.get(), Blocks.LEVER);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.ELECTRICAL_PANEL.get(), Blocks.LEVER);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.KEYBOARD.get(), Blocks.LEVER);
 
         stonecutterResultFromBase(recipeOutput, RecipeCategory.DECORATIONS, ModBlocks.HANGING_CLOUD.get(), Blocks.CHAIN);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.DECORATIONS, ModBlocks.HANGING_MOON_LIGHT.get(), Blocks.CHAIN);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.DECORATIONS, ModBlocks.HANGING_SUN_LIGHT.get(), Blocks.CHAIN);
 
         stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.WOODEN_PANEL_DOOR.get(), Blocks.SPRUCE_DOOR);
 
@@ -366,7 +358,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CYAN_ARROW_WALLPAPER, Blocks.STRIPPED_SPRUCE_LOG, 4);
 
         stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.WALL_LAMP, Blocks.REDSTONE_LAMP);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.CEILING_LAMP, Blocks.REDSTONE_LAMP);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, ModBlocks.WHITE_WOODEN_PANEL_DOOR.get())
                 .requires(Tags.Items.DYES_WHITE)
@@ -440,6 +431,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_planks", has(ItemTags.PLANKS))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.BLACK_HALF_WINDOW.get(), 4)
+                .pattern("AAA")
+                .pattern("BBB")
+                .pattern("AAA")
+                .define('A', ModBlocks.PAINTED_PLANKS.get(DyeColor.BLACK).get())
+                .define('B', Items.STICK)
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.WHITE_PANEL_WINDOW.get(), 4)
                 .pattern("ABA")
                 .pattern("BBB")
@@ -449,11 +449,29 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_planks", has(ItemTags.PLANKS))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.BLACK_PANEL_WINDOW.get(), 4)
+                .pattern("ABA")
+                .pattern("BBB")
+                .pattern("ABA")
+                .define('A', ModBlocks.PAINTED_PLANKS.get(DyeColor.BLACK).get())
+                .define('B', Items.STICK)
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.WHITE_LATTICE_WINDOW.get(), 4)
                 .pattern("ABA")
                 .pattern("B B")
                 .pattern("ABA")
                 .define('A', ModBlocks.PAINTED_PLANKS.get(DyeColor.WHITE).get())
+                .define('B', Items.STICK)
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.BLACK_LATTICE_WINDOW.get(), 4)
+                .pattern("ABA")
+                .pattern("B B")
+                .pattern("ABA")
+                .define('A', ModBlocks.PAINTED_PLANKS.get(DyeColor.BLACK).get())
                 .define('B', Items.STICK)
                 .unlockedBy("has_planks", has(ItemTags.PLANKS))
                 .save(recipeOutput);
@@ -752,15 +770,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SILVER_MEDAL.asItem(), Items.IRON_INGOT);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COPPER_MEDAL.asItem(), Items.COPPER_INGOT);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CORE_DOOR.asItem())
-                .pattern(" A ")
-                .pattern("ABA")
-                .pattern(" A ")
-                .define('A', Items.IRON_INGOT)
-                .define('B', Items.CLOCK)
-                .unlockedBy("has_clock", has(Items.CLOCK))
-                .save(recipeOutput);
-
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHEEL_TIRE.asItem())
                 .pattern(" A ")
                 .pattern("A A")
@@ -769,18 +778,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_kelp", has(Items.KELP))
                 .save(recipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHEEL.asItem())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHEEL.asItem(), 1)
                 .pattern(" A ")
                 .pattern("ABA")
                 .pattern(" A ")
                 .define('A', Items.KELP)
-                .define('A', Items.IRON_INGOT)
+                .define('B', Items.IRON_INGOT)
                 .unlockedBy("has_kelp", has(Items.KELP))
                 .save(recipeOutput);
 
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.IRON_LATTICE.asItem(), Items.IRON_INGOT, 2);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLDEN_LATTICE.asItem(), Items.GOLD_INGOT, 2);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COPPER_LATTICE.asItem(), Items.COPPER_LATTICE, 2);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COPPER_LATTICE.asItem(), Items.COPPER_INGOT, 2);
         
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.METAL_TABLE.asItem(), Items.IRON_INGOT);
         stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SEWING_MACHINE.asItem(), Items.IRON_INGOT);
@@ -813,7 +822,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_redstone_lamp", has(Blocks.REDSTONE_LAMP.asItem()))
                 .save(recipeOutput);
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_LED_LAMP.asItem())
+            ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_LED_LAMP.asItem(), 8)
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
@@ -822,7 +831,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
                 .save(recipeOutput);
 
-            ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ORANGE_LED_LAMP.asItem())
+            ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ORANGE_LED_LAMP.asItem(), 8)
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
@@ -831,7 +840,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
                 .save(recipeOutput);
 
-                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.YELLOW_LED_LAMP.asItem())
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.YELLOW_LED_LAMP.asItem(), 8)
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
@@ -840,7 +849,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
                 .save(recipeOutput);
 
-                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIME_LED_LAMP.asItem())
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIME_LED_LAMP.asItem(), 8)
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
@@ -849,7 +858,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
                 .save(recipeOutput);
 
-                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GREEN_LED_LAMP.asItem())
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GREEN_LED_LAMP.asItem(), 8)
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
@@ -858,7 +867,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
                 .save(recipeOutput);
 
-                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CYAN_LED_LAMP.asItem())
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CYAN_LED_LAMP.asItem(), 8)
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
@@ -867,7 +876,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
                 .save(recipeOutput);
 
-                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_BLUE_LED_LAMP.asItem())
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_BLUE_LED_LAMP.asItem(), 8)
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
@@ -876,7 +885,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
                 .save(recipeOutput);
 
-                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_LED_LAMP.asItem())
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_LED_LAMP.asItem(), 8)
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
@@ -885,7 +894,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
                 .save(recipeOutput);
 
-                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PURPLE_LED_LAMP.asItem())
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PURPLE_LED_LAMP.asItem(), 8)
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
@@ -894,7 +903,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
                 .save(recipeOutput);
 
-                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MAGENTA_LED_LAMP.asItem())
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MAGENTA_LED_LAMP.asItem(), 8)
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
@@ -903,7 +912,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
                 .save(recipeOutput);
 
-                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PINK_LED_LAMP.asItem())
+                    ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PINK_LED_LAMP.asItem(), 8)
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
@@ -912,12 +921,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_led_lamp", has(ModBlocks.LED_LAMP.asItem()))
                 .save(recipeOutput);
         
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_BULB.asItem(), ModBlocks.LED_LAMP.asItem());
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.INDUSTRIAL_RED_LAMP.asItem(), ModBlocks.LED_LAMP.asItem());
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_BULB.asItem(), ModBlocks.LED_LAMP.asItem(), 6);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.INDUSTRIAL_RED_LAMP.asItem(), ModBlocks.LED_LAMP.asItem(), 4);
 
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_SLIM_GAS_CYLINDER.asItem(), Items.IRON_INGOT);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_GAS_CYLINDER.asItem(), Items.IRON_INGOT);
-        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_WIDE_GAS_CYLINDER.asItem(), Items.IRON_INGOT);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.CEILING_LAMP, ModBlocks.LED_LAMP.get(), 4);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.REDSTONE, ModBlocks.FLUORESCENT_LIGHT, ModBlocks.LED_LAMP.get(), 4);
+
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_SLIM_METAL_GAS_CYLINDER.asItem(), Items.IRON_INGOT);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_METAL_GAS_CYLINDER.asItem(), Items.IRON_INGOT);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_WIDE_METAL_GAS_CYLINDER.asItem(), Items.IRON_INGOT);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LOZENGE_TACTILE_PAVING.asItem(), 6)
                 .pattern("A A")
@@ -937,7 +949,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_smooth_stone", has(Blocks.SMOOTH_STONE))
                 .save(recipeOutput);
 
-                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.PLIERS.get(), 4)
+                ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.PLIERS.get(), 1)
                 .pattern("A A")
                 .pattern("BAB")
                 .pattern("C C")
@@ -945,6 +957,29 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('B', Items.IRON_INGOT)
                 .define('C', Items.ORANGE_DYE)
                 .unlockedBy("has_iron", has(Items.IRON_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WALL_CLOCK.get().asItem(), 1)
+                .pattern(" A ")
+                .pattern("ABA")
+                .pattern(" A ")
+                .define('A', Items.IRON_INGOT)
+                .define('B', Items.CLOCK)
+                .unlockedBy("has_iron", has(Items.IRON_INGOT))
+                .save(recipeOutput);
+
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHITE_WOODEN_TILE_DOOR.asItem(), ModBlocks.WHITE_WOODEN_PANEL_DOOR);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHITE_WOODEN_CLEAR_DOOR.asItem(), ModBlocks.WHITE_WOODEN_PANEL_DOOR);
+
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WOODEN_TILE_DOOR.asItem(), ModBlocks.WOODEN_PANEL_DOOR);
+        stonecutterResultFromBase(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WOODEN_CLEAR_DOOR.asItem(), ModBlocks.WOODEN_PANEL_DOOR);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WOODEN_CRIB.get().asItem(), 1)
+                .pattern("A A")
+                .pattern("ABA")
+                .define('A', Items.OAK_PLANKS)
+                .define('B', Items.WHITE_WOOL)
+                .unlockedBy("has_wool", has(Items.WHITE_WOOL))
                 .save(recipeOutput);
 //
 //        fenceBuilder(ModBlocks.BLOODY_FENCE.get(), Ingredient.of(ModBlocks.BLOODY_PLANKS)).group("bloody_planks")

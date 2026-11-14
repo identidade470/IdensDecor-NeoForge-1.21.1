@@ -112,6 +112,7 @@ public class ModCreativeModeTab {
                         .add(ModBlocks.COMPUTER)
                         .add(ModBlocks.KEYCARD_READER)
 
+                        .add(ModBlocks.LIGHT_BULB)
                         .add(ModBlocks.CEILING_LAMP)
                         .add(ModBlocks.INDUSTRIAL_RED_LAMP)
                         .add(ModBlocks.FLOODLIGHT)
